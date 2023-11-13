@@ -12,6 +12,7 @@ using UnityEngine.InputSystem.XInput;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks.Triggers;
+using System.Threading;
 
 public class MenuManager : MonoBehaviour
 {
@@ -55,6 +56,8 @@ public class MenuManager : MonoBehaviour
     #region HUD Fields
     [Header("HUD"), Space(5)]
     public TextMeshProUGUI m_subtitles;
+    public Color m_playerColour = Color.blue;
+    public Color m_swordColour = Color.red;
     public Slider m_health;
     public Slider m_mana;
     public TextMeshProUGUI m_tutorial;
@@ -119,7 +122,7 @@ public class MenuManager : MonoBehaviour
     GameManager m_game;
     public PlayerController m_player;
     public EventSystem m_eventSystem;
-   
+    
     private void Start()
     {
         m_game = GameManager.Instance;
@@ -300,6 +303,7 @@ public class MenuManager : MonoBehaviour
     }
     void TitleScreen()
     {
+        m_game.m_audioManager.EndFmodLoop(m_game.m_audioManager.m_menuMusicInstance);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     void MainMenu()
@@ -335,7 +339,7 @@ public class MenuManager : MonoBehaviour
         {
             m_game.m_controlsLastState = GameState.PAUSE;
         }
-        else if(m_game.m_gameState == GameState.MENU)
+        else if (m_game.m_gameState == GameState.MENU)
         {
             m_game.m_controlsLastState = GameState.MENU;
         }
@@ -639,32 +643,20 @@ public class MenuManager : MonoBehaviour
         m_showSubtitle = show;
     }
 
-    public void SetSubtitle(string subtitile)
-    {
-        if (!m_showSubtitle)
+    public bool m_stopSubtitle = false;
+    public void SetSubtitle(string subtitile, bool isPlayer)
+    {       
+        m_subtitles.gameObject.SetActive(m_showSubtitle);
+        if (isPlayer) 
         {
-            return;
+            m_subtitles.color = m_playerColour;
         }
-        if (!m_subtitles.gameObject.activeSelf)
+        else
         {
-            m_subtitles.gameObject.SetActive(true);
+            m_subtitles.color = m_swordColour;
         }
-        m_subtitles.text = subtitile;
-        SubtitleTimeOut(Time.time).Forget();
-    }
-
-    async UniTask SubtitleTimeOut(float startTime)
-    {
-        string currentSub = m_subtitles.text;
-        while (Time.time <= startTime + m_subtitleTime)
-        {
-            await UniTask.Yield();
-        }
-        if (m_subtitles.text == currentSub)
-        {
-            m_subtitles.text = string.Empty;
-        }
-    }
+        m_subtitles.text = subtitile;        
+    }    
 
     public async UniTask HitReticle()
     {

@@ -76,8 +76,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_23cb606114564c9c997b3cc72ced20bc_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 01b04f67eeb8e3b469f0a407b56f5d93, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_36d46a15c1c3493bb7b14e862b53ee90_Texture_1:
+        m_Texture: {fileID: 2800000, guid: c437e3a0e4bbe5542855b2285aa5584a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_451e13408d174b44a0d605739ce97a9e_Texture_1:
         m_Texture: {fileID: 2800000, guid: 298e31b8ba019aa4793aea4253af815b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_6990340435c044afb3c53cfdf38a1026_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 01b04f67eeb8e3b469f0a407b56f5d93, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_773b2531bf414760b3996eea83976ee4_Texture_1:
@@ -125,11 +137,13 @@ Material:
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Radius: 0.86
     - _ReceiveShadows: 0
     - _Rotation_Speed: 1.93
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SpeedNoise: 5
     - _SrcBlend: 5
     - _Surface: 1
     - _WorkflowMode: 1

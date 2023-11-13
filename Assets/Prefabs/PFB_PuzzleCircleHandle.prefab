@@ -251,7 +251,7 @@ PrefabInstance:
     - target: {fileID: -1866684829979831508, guid: fe05753656b00a4489922c40d6e1462c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ab4c256e8bce8a438dd29a4b04efc3e, type: 2}
+      objectReference: {fileID: 2100000, guid: fc4d7a33b0c9a5b469a2485cb73a176d, type: 2}
     - target: {fileID: -63226036347362924, guid: fe05753656b00a4489922c40d6e1462c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -263,7 +263,7 @@ PrefabInstance:
     - target: {fileID: 908424039969760297, guid: fe05753656b00a4489922c40d6e1462c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ab4c256e8bce8a438dd29a4b04efc3e, type: 2}
+      objectReference: {fileID: 2100000, guid: fc4d7a33b0c9a5b469a2485cb73a176d, type: 2}
     - target: {fileID: 919132149155446097, guid: fe05753656b00a4489922c40d6e1462c, type: 3}
       propertyPath: m_Name
       value: SM_PuzzleHandle_01
@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 3485038740202821861, guid: fe05753656b00a4489922c40d6e1462c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ab4c256e8bce8a438dd29a4b04efc3e, type: 2}
+      objectReference: {fileID: 2100000, guid: fc4d7a33b0c9a5b469a2485cb73a176d, type: 2}
     - target: {fileID: 3636789441811828803, guid: fe05753656b00a4489922c40d6e1462c, type: 3}
       propertyPath: m_Layer
       value: 11

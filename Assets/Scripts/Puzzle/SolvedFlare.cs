@@ -10,6 +10,7 @@ public class SolvedFlare : Puzzle
     public Light m_light;
 
     bool m_isSolved = false;
+    bool m_first = true;
     private void Update()
     {
         if(m_updateMana && !m_isSolved)
@@ -18,8 +19,12 @@ public class SolvedFlare : Puzzle
             m_isSolved = true;
             m_flare.Play();
             m_light.gameObject.SetActive(true);
-            GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOn, gameObject.transform.position);
-            GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, gameObject.transform.position);
+            if (m_first)
+            {
+                m_first = false;
+                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOn, gameObject.transform.position);
+                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, gameObject.transform.position);
+            }
             foreach (Door door in m_doors)
             {
                 door.CheckState();

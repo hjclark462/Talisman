@@ -7,4 +7,5 @@ public class DialogueObject : Dialogue
 {
     public FMODUnity.EventReference m_eventReference;
     public string m_subtitle;
+    public bool m_isPlayer;
 }

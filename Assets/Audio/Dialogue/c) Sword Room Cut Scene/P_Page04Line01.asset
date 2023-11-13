@@ -19,4 +19,5 @@ MonoBehaviour:
       Data3: 1709705904
       Data4: 1886688924
     Path: event:/Dialogue/c) Sword Room Cutscene/01_Player_Page04_Line01
-  m_subtitle: 'Player:  <b><i>(Grunts)</i></b>'
+  m_subtitle: <b><i>(Grunts)</i></b>
+  m_isPlayer: 1

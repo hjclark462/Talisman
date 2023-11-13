@@ -57,6 +57,8 @@ namespace AISystem
         public float m_deathTime = 3f;
         public ParticleSystem m_swordTrailParticle;
 
+        public float m_stoneSpeed = 5f;
+        public float m_armourDelay = 1;
         public float m_armourSpeed = 5f;
         #endregion
 
@@ -72,7 +74,7 @@ namespace AISystem
 
             List<IOptic> optics = CreateOptics();
             AIKnowledge aIKnowledge = new AIKnowledge();
-            AIMovement aIMovement = new AIMovement(AISettings.MovementSettings, m_animator, this, m_aiManager, m_rootMotionSync, m_swordCollider, m_mesh, m_armourSpeed);
+            AIMovement aIMovement = new AIMovement(AISettings.MovementSettings, m_animator, this, m_aiManager, m_rootMotionSync, m_swordCollider, m_mesh, m_stoneSpeed, m_armourDelay, m_armourSpeed);
             BehaviourManager behaviourManager = new BehaviourManager(UnpackBehaviourTree(AISettings.BehaviourTree, new BehaviourInput()
             {
                 m_aIKnowledge = aIKnowledge,
@@ -101,7 +103,7 @@ namespace AISystem
         void OnDestroy()
         {
             m_intelligience?.DisableIntelligience();
-            m_aiManager?.DeregisterBeing(this);
+            m_aiManager?.DeregisterBeing(this);            
         }
 
         List<IOptic> CreateOptics()
@@ -142,6 +144,14 @@ namespace AISystem
         {
             int grunt = UnityEngine.Random.Range(0, m_gruntsAwake.Count - 1);
             m_intelligience.SetStatue(state, m_stoneAwake, m_armourAwake, m_gruntsAwake[grunt]);
+            if(state)
+            {
+                GameManager.Instance.DeactivateEnemy(this);
+            }
+            else
+            {
+                GameManager.Instance.ActivateEnemy(this);
+            }
             if (m_activationParticle != null)
             { 
                 m_activationParticle.Play(); 
@@ -190,6 +200,7 @@ namespace AISystem
             {
                 await UniTask.Yield();
             }
+            GameManager.Instance.DeactivateEnemy(this);
             Destroy(gameObject);
         }
 

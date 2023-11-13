@@ -9666,7 +9666,6 @@ GameObject:
   - component: {fileID: 6401465964559973944}
   - component: {fileID: 424437078005057766}
   - component: {fileID: 1791306105140475677}
-  - component: {fileID: 7384736391290127244}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -9796,6 +9795,8 @@ MonoBehaviour:
   m_controlsMain: {fileID: 6528843275141030689}
   m_quit: {fileID: 6408217582561603033}
   m_subtitles: {fileID: 8996121688656819825}
+  m_playerColour: {r: 0.4224813, g: 0.4224813, b: 0.8867924, a: 1}
+  m_swordColour: {r: 0.8490566, g: 0.18823424, b: 0.18823424, a: 1}
   m_health: {fileID: 5738702264856308868}
   m_mana: {fileID: 6693074865266019478}
   m_tutorial: {fileID: 2869942065449170089}
@@ -9834,6 +9835,7 @@ MonoBehaviour:
   m_creditsBack: {fileID: 8500987986136616181}
   m_player: {fileID: 0}
   m_eventSystem: {fileID: 0}
+  m_stopSubtitle: 0
 --- !u!114 &424437078005057766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9859,10 +9861,12 @@ MonoBehaviour:
   m_talismanFadeClear: 1
   m_moveToCinematicSpeed: 1
   m_rotateToCinematicSpeed: 1
+  m_combatTutorial: {fileID: 0}
   m_respawnPoint: {fileID: 0}
   m_initialSpawn: {fileID: 0}
   m_respawnHealth: 30
   m_respawnMana: 30
+  m_activeEnemies: []
   m_isEnd: 0
 --- !u!114 &1791306105140475677
 MonoBehaviour:
@@ -9950,18 +9954,6 @@ MonoBehaviour:
   m_ending: {fileID: 11400000, guid: 52abd24a45127064091ca31b692ade4e, type: 2}
   m_stopInteractions: 0
   m_allPuzzlesSolved: {fileID: 0}
---- !u!114 &7384736391290127244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8225780667573492059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf7bea7ef2db13c4b881fa32798c82d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8285437667905867347
 GameObject:
   m_ObjectHideFlags: 0

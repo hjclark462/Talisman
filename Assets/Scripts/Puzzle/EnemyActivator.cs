@@ -51,5 +51,9 @@ public class EnemyActivator : Puzzle
         {
             GameManager.Instance.m_audioManager.PlaySwordRoomEndDialogue();
         }
+        if(m_bridge != null)
+        {
+            m_bridge.SetBridgeState(true);
+        }
     }
 }

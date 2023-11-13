@@ -28,12 +28,15 @@ namespace AISystem.Systems
 
         public bool m_isInterrupted = false;
         public bool m_isHit = false;
+        public float m_stoneSpeed = 5f;
+        public float m_armourDelay = 1f;
         public float m_armourSpeed = 5f;
         public Vector2 m_hitDirection;
         public CapsuleCollider m_swordCollider;
         public SkinnedMeshRenderer m_mesh;
 
-        public AIMovement(MovementSettings settings, [CanBeNull] Animator animator, IBeing attachedBeing, IManager manager, RootMotionSync rootMotionSync, CapsuleCollider swordCollider, SkinnedMeshRenderer mesh, float armourSpeed)
+        public AIMovement(MovementSettings settings, [CanBeNull] Animator animator, IBeing attachedBeing, IManager manager, 
+            RootMotionSync rootMotionSync, CapsuleCollider swordCollider, SkinnedMeshRenderer mesh, float stoneSpeed, float armourDelay, float armourSpeed)
         {
             m_settings = settings;
             m_animator = animator;
@@ -43,6 +46,8 @@ namespace AISystem.Systems
             m_swordCollider = swordCollider;
             m_rootMotionSync.m_movement = this;
             m_mesh = mesh;
+            m_stoneSpeed = stoneSpeed;
+            m_armourDelay = armourDelay;    
             m_armourSpeed = armourSpeed;
         }
 
@@ -156,8 +161,19 @@ namespace AISystem.Systems
             GameManager.Instance.m_audioManager.PlayOneShot(grunt, m_mesh.gameObject.transform.position);
             while (alpha < 1f)
             {
-                alpha += Time.deltaTime * m_armourSpeed;
-                m_mesh.materials[0].SetFloat("_Manual", alpha);
+                alpha += Time.deltaTime * m_stoneSpeed;
+                m_mesh.materials[0].SetFloat("_Manual", alpha);                
+                await UniTask.Yield();
+            }
+            float time = Time.time;
+            while(Time.time <= time + m_armourDelay)
+            {
+                await UniTask.Yield();
+            }
+            alpha = 0;
+            while (alpha < 1f)
+            {
+                alpha += Time.deltaTime * m_armourSpeed;                
                 m_mesh.materials[1].SetFloat("_ArmorFade", alpha);
                 await UniTask.Yield();
             }

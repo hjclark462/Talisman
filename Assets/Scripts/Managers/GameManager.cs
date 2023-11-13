@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using AISystem.Systems;
-using UnityEngine.UIElements;
+using AISystem;
+using AISystem.Contracts;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,11 +20,14 @@ public class GameManager : MonoBehaviour
 
     public List<Interactable> m_cinematicTriggers;
     public List<Transform> m_cinematicPoints;
+    float m_meshActivationTime;
     public float m_talismanFadeWhite = 1f;
     public float m_talismanFadeBlack = 1f;
     public float m_talismanFadeClear = 1f;
     public float m_moveToCinematicSpeed = 1f;
     public float m_rotateToCinematicSpeed = 1f;
+
+    public Collider m_combatTutorial;
 
     [HideInInspector]
     public Transform m_respawnPoint;
@@ -31,6 +35,8 @@ public class GameManager : MonoBehaviour
     public Transform m_initialSpawn;
     public float m_respawnHealth;
     public float m_respawnMana;
+    
+    public List<IBeing> m_activeBeings = new();   
 
     public static GameManager Instance
     {
@@ -166,16 +172,15 @@ public class GameManager : MonoBehaviour
             }
             await UniTask.Yield();
         }
-        TurnOnPlayer();
+        TurnOnPlayer().Forget();
         m_player.m_animator.SetTrigger("TalismanCinematic");
         m_audioManager.PlayCinematic().Forget();
     }
 
-    float meshTime;
     async UniTask TurnOnPlayer()
     {
-        meshTime = Time.time;
-        while (Time.time <= meshTime + 0.1f)
+        m_meshActivationTime = Time.time;
+        while (Time.time <= m_meshActivationTime + 0.1f)
         {
             await UniTask.Yield();
         }
@@ -293,6 +298,26 @@ public class GameManager : MonoBehaviour
         m_menuManager.UpdateHealth();
         m_menuManager.UpdateMana();
         m_aiManager.ResetEnemies();
+    }
+
+    public void ActivateEnemy(IBeing being)
+    {
+        m_activeBeings.Add(being);
+        Debug.Log(m_activeBeings.Count + " upon activation");
+        if(m_activeBeings.Count == 1)
+        {
+            m_audioManager.StartCombatMusic();
+        }
+    }
+
+    public void DeactivateEnemy(IBeing being)
+    {
+        m_activeBeings.Remove(being);
+        Debug.Log(m_activeBeings.Count + " upon deactivation");
+        if (m_activeBeings.Count == 0)
+        {
+            m_audioManager.StopCombatMusic();
+        }
     }
 }
 

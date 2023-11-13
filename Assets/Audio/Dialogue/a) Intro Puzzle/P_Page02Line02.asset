@@ -19,4 +19,5 @@ MonoBehaviour:
       Data3: 119145882
       Data4: -750900948
     Path: event:/Dialogue/a) Intro Puzzle/Player_Page02_Line02
-  m_subtitle: 'Player: This seems to be some kind of ancient puzzle, I must be close.'
+  m_subtitle: This seems to be some kind of ancient puzzle, I must be close.
+  m_isPlayer: 1

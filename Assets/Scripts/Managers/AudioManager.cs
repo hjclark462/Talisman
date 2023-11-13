@@ -155,7 +155,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (reference is DialogueObject)
         {
-            PlayOneShotAttachedDialogue((DialogueObject)reference, m_game.m_player.gameObject);
+            PlayOneShotAttachedDialogue((DialogueObject)reference, m_game.m_player.gameObject).Forget();
         }
     }
 
@@ -165,10 +165,12 @@ public class AudioManager : MonoBehaviour
         m_dialogueInstance.getPlaybackState(out current);
 
         if (current == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        {
-            m_dialogueInstance.release();
+        {            
             m_dialogueInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            m_game.m_menuManager.SetSubtitle(string.Empty, true);
         }
+        m_game.m_menuManager.m_stopSubtitle = false;
+
         int index = 0;
         m_playLines = true;
         if (m_stopInteractions)
@@ -183,13 +185,15 @@ public class AudioManager : MonoBehaviour
             m_dialogueInstance.release();
             m_dialogueInstance.getPlaybackState(out current);
 
-            m_game.m_menuManager.SetSubtitle(reference.m_sequence[index].m_subtitle);
+            m_game.m_menuManager.SetSubtitle(reference.m_sequence[index].m_subtitle, reference.m_sequence[index].m_isPlayer);
             index++;
-            while (current != FMOD.Studio.PLAYBACK_STATE.STOPPED)
+            while (current != FMOD.Studio.PLAYBACK_STATE.STOPPING)
             {
                 m_dialogueInstance.getPlaybackState(out current);
                 await UniTask.Yield();
             }
+            m_game.m_menuManager.SetSubtitle(string.Empty, true);
+
             if (index > reference.m_sequence.Count - 1)
             {
                 m_playLines = false;
@@ -199,25 +203,31 @@ public class AudioManager : MonoBehaviour
         m_nextCinematic = false;
     }
 
-    void PlayOneShotAttachedDialogue(DialogueObject fmodEvent, GameObject go)
+    public async UniTask PlayOneShotAttachedDialogue(DialogueObject fmodEvent, GameObject go)
     {
         FMOD.Studio.PLAYBACK_STATE current;
         m_dialogueInstance.getPlaybackState(out current);
 
         if (current == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        {
-            m_dialogueInstance.release();
+        {         
             m_dialogueInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        }
+            m_game.m_menuManager.SetSubtitle(string.Empty, fmodEvent.m_isPlayer);
+        }       
         m_dialogueInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent.m_eventReference);
         RuntimeManager.AttachInstanceToGameObject(m_dialogueInstance, go.transform);
         m_dialogueInstance.start();
-        m_game.m_menuManager.SetSubtitle(fmodEvent.m_subtitle);
+        m_game.m_menuManager.SetSubtitle(fmodEvent.m_subtitle, fmodEvent.m_isPlayer);
 
         if (m_stopInteractions)
         {
             StopInteractions(m_dialogueInstance).Forget();
         }
+        while (current != FMOD.Studio.PLAYBACK_STATE.STOPPING)
+        {
+            m_dialogueInstance.getPlaybackState(out current);
+            await UniTask.Yield();
+        }
+        m_game.m_menuManager.SetSubtitle(string.Empty, true);
     }
 
     public void PlayTalismanLoop()
@@ -333,6 +343,7 @@ public class AudioManager : MonoBehaviour
                 await UniTask.Yield();
             }
             m_game.m_player.FinishCinematic();
+            m_game.m_combatTutorial.gameObject.SetActive(true);
         }
         else if (m_cinematics == 2)
         {
@@ -354,7 +365,7 @@ public class AudioManager : MonoBehaviour
 
     public void OnMenuSelect()
     {
-      //  PlayOneShot(m_selectedButton, m_game.m_player.gameObject.transform.position);
+        //  PlayOneShot(m_selectedButton, m_game.m_player.gameObject.transform.position);
     }
 
     public void OnMenuSlider()
@@ -365,5 +376,14 @@ public class AudioManager : MonoBehaviour
     public void OnMenuBack()
     {
         PlayOneShot(m_menuBack, m_game.m_player.gameObject.transform.position);
-    }    
+    }
+
+    public void StartCombatMusic()
+    {
+        m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Combat");
+    }
+    public void StopCombatMusic()
+    {
+        Debug.Log(m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Exploring"));
+    }
 }
