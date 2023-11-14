@@ -1938,6 +1938,14 @@ PrefabInstance:
       propertyPath: m_isMurrayCircle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 75124921798298821, guid: 2102ad9bd24838c4cabd4b3cd4bd9f9d, type: 3}
+      propertyPath: m_outputLeftObject
+      value: 
+      objectReference: {fileID: 406601650305159510}
+    - target: {fileID: 75124921798298821, guid: 2102ad9bd24838c4cabd4b3cd4bd9f9d, type: 3}
+      propertyPath: m_outputRightObject
+      value: 
+      objectReference: {fileID: 5631836671193129095}
     - target: {fileID: 571277236461019048, guid: 2102ad9bd24838c4cabd4b3cd4bd9f9d, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -2134,6 +2142,14 @@ PrefabInstance:
       propertyPath: m_isMurrayCircle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7044706928079297559, guid: 2102ad9bd24838c4cabd4b3cd4bd9f9d, type: 3}
+      propertyPath: m_outputLeftObject
+      value: 
+      objectReference: {fileID: 7697121906538847208}
+    - target: {fileID: 7044706928079297559, guid: 2102ad9bd24838c4cabd4b3cd4bd9f9d, type: 3}
+      propertyPath: m_outputRightObject
+      value: 
+      objectReference: {fileID: 3967417363219180068}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2102ad9bd24838c4cabd4b3cd4bd9f9d, type: 3}
 --- !u!114 &1948561981935979090 stripped
