@@ -5,22 +5,14 @@ using UnityEngine;
 public class CinematicTrigger : MonoBehaviour
 {
     PlayerController m_pc;
+    public ParticleSystem m_endParticles;
     void Start()
     {
         m_pc = gameObject.GetComponentInParent<PlayerController>();
     }
 
-    public void MiddleCinematic()
+    public void EndParticles()
     {
-        
-    }
-
-    public void FinishCinematic()
-    {
-        m_pc.FinishCinematic();
-    }
-    public void ResetCollider()
-    {
-        m_pc.ResetCollider();
+        m_endParticles.Play();
     }
 }

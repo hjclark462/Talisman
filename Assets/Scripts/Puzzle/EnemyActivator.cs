@@ -20,8 +20,7 @@ public class EnemyActivator : Puzzle
         {
             GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOn, transform.position);
             m_updateMana = false;
-            m_enemy.SetStatue(false);
-            UnityEngine.Debug.Log("This is the fucked point");
+            m_enemy.SetStatue(false);            
         }       
     }
 
