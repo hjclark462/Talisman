@@ -73415,6 +73415,10 @@ PrefabInstance:
       propertyPath: m_puzzleList.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7376433436739488546, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7940341656691113699, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
