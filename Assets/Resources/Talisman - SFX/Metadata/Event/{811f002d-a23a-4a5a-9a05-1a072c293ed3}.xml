@@ -40,6 +40,8 @@
 	<object class="MasterTrack" id="{5aad0fc9-7b74-48c3-989c-f3bf3abe2dec}">
 		<relationship name="modules">
 			<destination>{a236390f-fcd3-498d-8b74-dedcc4d5ffdb}</destination>
+			<destination>{1eb7aa55-029e-4c6f-89c8-232ab86d11d5}</destination>
+			<destination>{c03c586f-d37a-4031-8459-fdb00a476137}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{83c5f603-1d95-4f2d-a2c0-20f1fd1d543d}</destination>
@@ -61,6 +63,8 @@
 	<object class="Timeline" id="{13aca878-bd04-44e3-bfbb-2c0b011deaff}">
 		<relationship name="modules">
 			<destination>{a236390f-fcd3-498d-8b74-dedcc4d5ffdb}</destination>
+			<destination>{1eb7aa55-029e-4c6f-89c8-232ab86d11d5}</destination>
+			<destination>{c03c586f-d37a-4031-8459-fdb00a476137}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{83c5f603-1d95-4f2d-a2c0-20f1fd1d543d}">
@@ -79,7 +83,35 @@
 			<value>0.30000000000000004</value>
 		</property>
 		<property name="length">
-			<value>4.9859375000000004</value>
+			<value>2.5500000000000003</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{59299b9b-2e33-46c6-9cdb-ceed27a67203}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{1eb7aa55-029e-4c6f-89c8-232ab86d11d5}">
+		<property name="start">
+			<value>3.689272212194894</value>
+		</property>
+		<property name="length">
+			<value>1.0306553391830855</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>3.9552821608169149</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{59299b9b-2e33-46c6-9cdb-ceed27a67203}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{c03c586f-d37a-4031-8459-fdb00a476137}">
+		<property name="start">
+			<value>2.8500000000000001</value>
+		</property>
+		<property name="length">
+			<value>0.8392722121948939</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>2.5735129459772601</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{59299b9b-2e33-46c6-9cdb-ceed27a67203}</destination>
