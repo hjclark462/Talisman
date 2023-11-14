@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Rubble_Trim_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94713bb28d3802f4ca689e70235bbfef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94713bb28d3802f4ca689e70235bbfef, type: 3}
 --- !u!4 &6943256073173096497 stripped
