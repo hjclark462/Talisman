@@ -89,13 +89,13 @@
 	</object>
 	<object class="SingleSound" id="{59f1b0a2-ded5-4aab-88b0-63b6f28d0869}">
 		<property name="start">
-			<value>3.1000000000000001</value>
+			<value>2.9000000000000004</value>
 		</property>
 		<property name="length">
-			<value>0.97167487684729048</value>
+			<value>0.87167487684729039</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>3.3999999999999999</value>
+			<value>3.5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{c21371d1-fbf9-4e6f-a914-47c2956dfbb4}</destination>
@@ -103,21 +103,18 @@
 	</object>
 	<object class="SingleSound" id="{27198f9e-f0f5-4598-827f-fbede79f0cfb}">
 		<property name="start">
-			<value>5.0706622536945813</value>
+			<value>4.766967672413795</value>
 		</property>
 		<property name="length">
-			<value>0.57268749999999979</value>
+			<value>0.62176181224570737</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{eeef95e8-a520-42ed-9042-238d90aeba6b}">
 		<property name="start">
 			<value>1.4000000000000001</value>
 		</property>
-		<property name="length">
-			<value>1.0999999999999992</value>
-		</property>
 		<property name="timelockedOffset">
-			<value>1.6000000000000001</value>
+			<value>1.7</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{c21371d1-fbf9-4e6f-a914-47c2956dfbb4}</destination>
@@ -125,7 +122,7 @@
 	</object>
 	<object class="SingleSound" id="{0ca381a3-4403-4c9d-b4e2-49edddf1de48}">
 		<property name="start">
-			<value>4.0716748768472906</value>
+			<value>3.7716748768472907</value>
 		</property>
 		<property name="length">
 			<value>0.99529279556650829</value>
@@ -147,10 +144,10 @@
 	</object>
 	<object class="SingleSound" id="{184eb140-5264-4d78-bd36-82d4e5bf7171}">
 		<property name="start">
-			<value>2.4999999999999991</value>
+			<value>2.3999999999999995</value>
 		</property>
 		<property name="length">
-			<value>0.60000000000000098</value>
+			<value>0.50000000000000089</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{530b7268-3d50-4d93-aaf2-07b1dbf3437b}">
