@@ -331,6 +331,7 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.release();
         m_talismanState = m_healing;
         m_talismanState.StartState(0);
+        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", 1);
     }
     private void StopHealing(InputAction.CallbackContext obj)
     {
@@ -342,6 +343,8 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         m_talismanState = m_idle;
         m_talismanState.StartState(0);
+        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", 0);
+
     }
 
     public void Heal()

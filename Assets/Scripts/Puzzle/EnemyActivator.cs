@@ -20,9 +20,13 @@ public class EnemyActivator : Puzzle
         {
             GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOn, transform.position);
             m_updateMana = false;
-            m_enemy.SetStatue(false);
-            UnityEngine.Debug.Log("This is the fucked point");
-        }       
+            m_enemy.SetStatue(false);            
+        }     
+        else if (m_updateMana && m_enemy == null)
+        {
+            m_updateMana = false;
+            EnemyDead();
+        }
     }
 
     public override void RotatePuzzle() { }
