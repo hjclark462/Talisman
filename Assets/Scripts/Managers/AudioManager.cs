@@ -384,6 +384,6 @@ public class AudioManager : MonoBehaviour
     }
     public void StopCombatMusic()
     {
-        Debug.Log(m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Exploring"));
+        m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Exploring");
     }
 }
