@@ -185,6 +185,7 @@ namespace AISystem
         protected async UniTask Die()
         {            
             m_activator.EnemyDead();
+            GameManager.Instance.DeactivateEnemy(this);
             m_swordCollider.enabled = false;
             if (m_deathParticle != null)
             {                
@@ -200,7 +201,6 @@ namespace AISystem
             {
                 await UniTask.Yield();
             }
-            GameManager.Instance.DeactivateEnemy(this);
             Destroy(gameObject);
         }
 

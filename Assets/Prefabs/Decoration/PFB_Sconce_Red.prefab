@@ -203,7 +203,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3c7947ba4f8a78c4bbb816ba60c3e643, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80483284988a09a4a9ad9b229e6b3fb8, type: 2}
+      objectReference: {fileID: 2100000, guid: d41771cba7729f24892e27db508568c4, type: 2}
     - target: {fileID: 919132149155446097, guid: 3c7947ba4f8a78c4bbb816ba60c3e643, type: 3}
       propertyPath: m_Name
       value: SM_SconseBase_01
@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 285617159566704091, guid: a9613ce2fa39f43498d193ae90596138, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d41771cba7729f24892e27db508568c4, type: 2}
     - target: {fileID: 285617159871049345, guid: a9613ce2fa39f43498d193ae90596138, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647

@@ -24,7 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Enemy_Armour
-  m_Shader: {fileID: -6465566751694194690, guid: b042c033b71d3cd4491893dc452119ff, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: db84dc68d2810444e94d4c8f501fee5b, type: 3}
   m_ValidKeywords:
   - _ALPHATEST_ON
   - _SPECULAR_SETUP
@@ -33,7 +33,7 @@ Material:
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
@@ -180,7 +180,7 @@ Material:
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
     - _Anisotropy: 0
-    - _ArmorFade: 0
+    - _ArmorFade: 1
     - _Blend: 0
     - _BlendMode: 0
     - _BlendOp: 0
@@ -192,7 +192,7 @@ Material:
     - _CheeseHoles: 60
     - _CoatMask: 0
     - _ColorMode: 0
-    - _Cull: 2
+    - _Cull: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5

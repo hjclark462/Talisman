@@ -21,12 +21,8 @@ public class EnemyActivator : Puzzle
             GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOn, transform.position);
             m_updateMana = false;
             m_enemy.SetStatue(false);
-        }    
-        if(m_updateMana && m_enemy == null && m_puzzle is EnemyActivator)
-        {
-            m_updateMana = false;
-            EnemyDead();
-        }
+            UnityEngine.Debug.Log("This is the fucked point");
+        }       
     }
 
     public override void RotatePuzzle() { }
