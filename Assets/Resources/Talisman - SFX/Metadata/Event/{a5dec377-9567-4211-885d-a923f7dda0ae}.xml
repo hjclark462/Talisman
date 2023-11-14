@@ -41,6 +41,8 @@
 		<relationship name="modules">
 			<destination>{5e787b94-7353-4cda-a8f8-73452624c631}</destination>
 			<destination>{e16b4b35-a64f-4dab-83a3-ad52692f8c80}</destination>
+			<destination>{29ed309d-7b86-4820-990a-994c571941c3}</destination>
+			<destination>{5b1939a7-5965-47ad-8df7-27d0cf8322ed}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{d0c50a4a-c597-4da9-82b5-83a24f223272}</destination>
@@ -63,6 +65,8 @@
 		<relationship name="modules">
 			<destination>{5e787b94-7353-4cda-a8f8-73452624c631}</destination>
 			<destination>{e16b4b35-a64f-4dab-83a3-ad52692f8c80}</destination>
+			<destination>{29ed309d-7b86-4820-990a-994c571941c3}</destination>
+			<destination>{5b1939a7-5965-47ad-8df7-27d0cf8322ed}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{d0c50a4a-c597-4da9-82b5-83a24f223272}">
@@ -89,10 +93,38 @@
 	</object>
 	<object class="SingleSound" id="{e16b4b35-a64f-4dab-83a3-ad52692f8c80}">
 		<property name="length">
-			<value>1.9784751642036134</value>
+			<value>0.82733070763432215</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>0.29556650246305338</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{c4264644-f4e1-4384-ac1b-be6661f53334}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{29ed309d-7b86-4820-990a-994c571941c3}">
+		<property name="start">
+			<value>1.1756776662696395</value>
+		</property>
+		<property name="length">
+			<value>0.73166408409132655</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>1.5423775825753403</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{c4264644-f4e1-4384-ac1b-be6661f53334}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{5b1939a7-5965-47ad-8df7-27d0cf8322ed}">
+		<property name="start">
+			<value>0.82733070763432215</value>
+		</property>
+		<property name="length">
+			<value>0.34834695863531739</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>1.1961556628086225</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{c4264644-f4e1-4384-ac1b-be6661f53334}</destination>

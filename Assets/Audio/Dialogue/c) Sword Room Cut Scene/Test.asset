@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8d0748d35f9bc34f9c203e145f0b9a8, type: 3}
-  m_Name: P_Page04Line02
+  m_Name: Test
   m_EditorClassIdentifier: 
   m_eventReference:
     Guid:
-      Data1: 869908502
-      Data2: 1219981154
-      Data3: 2026335361
-      Data4: -1926322986
-    Path: event:/Dialogue/c) Sword Room Cutscene/03_Player_Page04_Line02
-  m_subtitle: What?... Who said that?
-  m_isPlayer: 1
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  m_subtitle: 
+  m_isPlayer: 0
