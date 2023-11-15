@@ -119,6 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c567fd68832d0ff438f2bb7c860317eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_emission: 0.408
+  m_emission: 0.04
   m_smoothness: 0
-  m_opacity: 0
+  m_opacity: 0.5

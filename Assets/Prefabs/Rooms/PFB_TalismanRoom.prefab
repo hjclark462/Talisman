@@ -989,6 +989,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7166979079334265521, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
+      propertyPath: m_emission
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
 --- !u!4 &1233375135769217684 stripped
@@ -1140,6 +1144,14 @@ PrefabInstance:
     - target: {fileID: 4979030914544642441, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215361481409665068, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
+      propertyPath: m_opacity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215361481409665068, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
+      propertyPath: m_emission
+      value: 0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
@@ -1696,6 +1708,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.156
       objectReference: {fileID: 0}
+    - target: {fileID: 7166979079334265521, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
+      propertyPath: m_emission
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
 --- !u!4 &14208252908789134 stripped
@@ -1832,6 +1848,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7166979079334265521, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
+      propertyPath: m_emission
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
 --- !u!4 &53785419206824685 stripped
@@ -1909,6 +1929,14 @@ PrefabInstance:
     - target: {fileID: 4979030914544642441, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215361481409665068, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
+      propertyPath: m_opacity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215361481409665068, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
+      propertyPath: m_emission
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a144f0e8d1f144291408c3871e8025, type: 3}
@@ -2038,6 +2066,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6314344283219330449, guid: ca7b732aae4101a488a03e961fa167ab, type: 3}
+      propertyPath: m_emission
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6620030332626767510, guid: ca7b732aae4101a488a03e961fa167ab, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_Tulip_01
@@ -2056,6 +2088,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9217508241490624734}
     m_Modifications:
+    - target: {fileID: 2652578185206436492, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_opacity
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652578185206436492, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_emission
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4401008512375809216, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_SmallChickWeed_01
@@ -2133,6 +2173,14 @@ PrefabInstance:
     - target: {fileID: 165079154856350894, guid: 3e3ebd7a307221640b4228bed6c3d18e, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_ChickWeed_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314006244308054415, guid: 3e3ebd7a307221640b4228bed6c3d18e, type: 3}
+      propertyPath: m_opacity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3314006244308054415, guid: 3e3ebd7a307221640b4228bed6c3d18e, type: 3}
+      propertyPath: m_emission
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4164029891332232754, guid: 3e3ebd7a307221640b4228bed6c3d18e, type: 3}
       propertyPath: m_RootOrder
@@ -2587,6 +2635,10 @@ PrefabInstance:
     - target: {fileID: 1878929644949587612, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.215
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166979079334265521, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
+      propertyPath: m_emission
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
@@ -3600,6 +3652,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -24.642
       objectReference: {fileID: 0}
+    - target: {fileID: 6314344283219330449, guid: ca7b732aae4101a488a03e961fa167ab, type: 3}
+      propertyPath: m_emission
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 6620030332626767510, guid: ca7b732aae4101a488a03e961fa167ab, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_Tulip_01 (1)
@@ -3879,6 +3935,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.0016
       objectReference: {fileID: 0}
+    - target: {fileID: 6314344283219330449, guid: ca7b732aae4101a488a03e961fa167ab, type: 3}
+      propertyPath: m_emission
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 6620030332626767510, guid: ca7b732aae4101a488a03e961fa167ab, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_Tulip_01
@@ -3956,6 +4016,10 @@ PrefabInstance:
     - target: {fileID: 1878929644949587612, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 9.624
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166979079334265521, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
+      propertyPath: m_emission
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
@@ -4471,6 +4535,10 @@ PrefabInstance:
     - target: {fileID: 1878929644949587612, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 5.656
+      objectReference: {fileID: 0}
+    - target: {fileID: 7166979079334265521, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
+      propertyPath: m_emission
+      value: 0.45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6df18a455330b4419a4982c9932d4de, type: 3}
