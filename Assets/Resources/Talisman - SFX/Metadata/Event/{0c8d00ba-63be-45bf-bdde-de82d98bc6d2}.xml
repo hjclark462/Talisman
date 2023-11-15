@@ -88,7 +88,7 @@
 	</object>
 	<object class="SingleSound" id="{9c6ecb29-5240-4067-80bb-3efcda8b86f7}">
 		<property name="start">
-			<value>1.5</value>
+			<value>1.4500000000000002</value>
 		</property>
 		<property name="length">
 			<value>1.05</value>
@@ -105,7 +105,7 @@
 			<value>1.1500000000000001</value>
 		</property>
 		<property name="length">
-			<value>0.34999999999999992</value>
+			<value>0.3000000000000001</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{f1126598-c381-4c4e-8657-3408efc2b856}">

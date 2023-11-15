@@ -80,10 +80,10 @@
 	</object>
 	<object class="SingleSound" id="{71d4889f-3f58-4087-aa2e-0ebb5725ced1}">
 		<property name="start">
-			<value>1.3500000000000001</value>
+			<value>1.25</value>
 		</property>
 		<property name="length">
-			<value>1.1500000000000008</value>
+			<value>1.1015168308702799</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>1.6999999999999997</value>
@@ -108,13 +108,13 @@
 	</object>
 	<object class="SingleSound" id="{53ce56a9-b96b-42f8-adda-9539820fed5a}">
 		<property name="start">
-			<value>2.5000000000000009</value>
+			<value>2.3515168308702799</value>
 		</property>
 		<property name="length">
-			<value>1.4499999999999997</value>
+			<value>1.4984831691297202</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>2.9999999999999987</value>
+			<value>3.0223768472906389</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{063a4f4f-c9c1-4983-b489-51c42de863f6}</destination>
@@ -165,7 +165,7 @@
 	<object class="SpatialiserEffect" id="{3dc18b36-342c-4344-8062-800e4756a3e2}" />
 	<object class="AutomationPoint" id="{7a2d8b91-c7d2-482d-9b3b-759ec03b3da3}">
 		<property name="position">
-			<value>1.3500000000000001</value>
+			<value>1.25</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -176,7 +176,7 @@
 	</object>
 	<object class="AutomationPoint" id="{08da92be-7a40-41ad-bc3c-e780d06b3dcd}">
 		<property name="position">
-			<value>1.6438541666666677</value>
+			<value>1.5438541666666676</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -203,7 +203,7 @@
 	</object>
 	<object class="AutomationPoint" id="{9da6e5fe-f36a-4e32-8e75-65bf40c70efb}">
 		<property name="position">
-			<value>2.5000000000000009</value>
+			<value>2.3515168308702799</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -214,7 +214,7 @@
 	</object>
 	<object class="AutomationPoint" id="{06e0180d-ee32-41b2-9e37-8507a3029ead}">
 		<property name="position">
-			<value>2.7938541666666676</value>
+			<value>2.6453709975369466</value>
 		</property>
 		<property name="value">
 			<value>1</value>

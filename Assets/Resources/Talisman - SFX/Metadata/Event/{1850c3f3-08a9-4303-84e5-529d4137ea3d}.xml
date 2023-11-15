@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{cc1615e3-de9a-4b29-9863-38d24e17bc77}</destination>
+			<destination>{59663aee-8f7b-426d-bd99-87d84ca8ca6b}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{86406178-17b3-48a9-8c72-84ac6aa30b35}</destination>
@@ -64,6 +64,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{da0a2943-17ee-4cbb-8586-9a2e44b489bb}">
+		<property name="volume">
+			<value>-3.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{1afd3d09-14b6-4b6f-88d1-85009bba8b08}</destination>
 		</relationship>
@@ -76,7 +79,10 @@
 	</object>
 	<object class="SingleSound" id="{83a80c43-2b4f-4e79-af2e-ca4a150c73e3}">
 		<property name="length">
-			<value>3.5054375000000002</value>
+			<value>3.4554375000000004</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.050000000000000003</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{56396c38-43f4-47cf-a52a-f1e4b3593909}</destination>
