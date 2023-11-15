@@ -135,6 +135,8 @@ MonoBehaviour:
   m_deathParticle: {fileID: 2426454919650779768}
   m_deathTime: 6
   m_swordTrailParticle: {fileID: 0}
+  m_stoneSpeed: 5
+  m_armourDelay: 1
   m_armourSpeed: 5
 --- !u!195 &4667414372420083824
 NavMeshAgent:
@@ -145,7 +147,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8326103737644685129}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50

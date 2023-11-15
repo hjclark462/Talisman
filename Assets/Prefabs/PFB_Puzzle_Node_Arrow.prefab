@@ -28,9 +28,41 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 3007501603315528757}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7571788961303812323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3007501603315528757}
+  m_Layer: 0
+  m_Name: SizingObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3007501603315528757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571788961303812323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
+  m_Children:
   - {fileID: 5546084639286569549}
   - {fileID: 8540290671076486174}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 81183987715919113}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2653218717629719261
@@ -38,7 +70,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 81183987715919113}
+    m_TransformParent: {fileID: 3007501603315528757}
     m_Modifications:
     - target: {fileID: 504269292015832671, guid: 5d011aabeeb9c4247bc893cc53cf66cc, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -78,15 +110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504552537254627472, guid: 5d011aabeeb9c4247bc893cc53cf66cc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.373598
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 7504552537254627472, guid: 5d011aabeeb9c4247bc893cc53cf66cc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2763213
+      value: 0.28845254
       objectReference: {fileID: 0}
     - target: {fileID: 7504552537254627472, guid: 5d011aabeeb9c4247bc893cc53cf66cc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.26638
+      value: 0.2780748
       objectReference: {fileID: 0}
     - target: {fileID: 7504552537254627472, guid: 5d011aabeeb9c4247bc893cc53cf66cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -128,6 +160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 108.063
       objectReference: {fileID: 0}
+    - target: {fileID: 7504552537254627472, guid: 5d011aabeeb9c4247bc893cc53cf66cc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8871237828158609044, guid: 5d011aabeeb9c4247bc893cc53cf66cc, type: 3}
       propertyPath: m_Name
       value: PFB_TutorialRoom_PuzzleLight_01
@@ -148,7 +184,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 81183987715919113}
+    m_TransformParent: {fileID: 3007501603315528757}
     m_Modifications:
     - target: {fileID: 213769597514160104, guid: 94547e5aff22e254ebc11c16a1a3447a, type: 3}
       propertyPath: m_RootOrder
