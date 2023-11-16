@@ -1407,7 +1407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5806399339684050319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3043,7 +3043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5520375922890396650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3092,8 +3092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <mark=#000000B4 padding="2,2,15,12">the brown fox jumps over the lazy dog
-    the brown fox jumps over the lazy dog </mark>
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 210bbc9e83795ec4b803efb891b87322, type: 2}
   m_sharedMaterial: {fileID: -4477019994033991456, guid: 210bbc9e83795ec4b803efb891b87322, type: 2}
@@ -3102,8 +3101,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283939837
-  m_fontColor: {r: 0.99215686, g: 0.73333335, b: 0.34117648, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3132,7 +3131,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 26
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -9796,8 +9795,8 @@ MonoBehaviour:
   m_controlsMain: {fileID: 6528843275141030689}
   m_quit: {fileID: 6408217582561603033}
   m_subtitles: {fileID: 8996121688656819825}
-  m_playerColour: {r: 0.34117648, g: 0.6, b: 0.99215686, a: 1}
-  m_swordColour: {r: 0.99215686, g: 0.73333335, b: 0.34117648, a: 1}
+  m_playerColour: {r: 0.4224813, g: 0.4224813, b: 0.8867924, a: 1}
+  m_swordColour: {r: 0.8490566, g: 0.18823424, b: 0.18823424, a: 1}
   m_health: {fileID: 5738702264856308868}
   m_mana: {fileID: 6693074865266019478}
   m_tutorial: {fileID: 2869942065449170089}
