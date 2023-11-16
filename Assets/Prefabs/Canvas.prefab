@@ -3093,7 +3093,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: <mark=#000000B4 padding="2,2,15,12">the brown fox jumps over the lazy dog
-    </mark>
+    the brown fox jumps over the lazy dog </mark>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 210bbc9e83795ec4b803efb891b87322, type: 2}
   m_sharedMaterial: {fileID: -4477019994033991456, guid: 210bbc9e83795ec4b803efb891b87322, type: 2}
@@ -3132,7 +3132,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 26
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
