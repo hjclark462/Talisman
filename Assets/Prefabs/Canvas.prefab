@@ -9806,10 +9806,10 @@ MonoBehaviour:
   m_reticleHit: {fileID: 4728877302123025170}
   m_reticleHitTime: 0.5
   m_damageVignette: {fileID: 2425252529354740466}
-  m_damageAlphaMax: 0.27
-  m_damageUpSpeed: 1
+  m_damageAlphaMax: 0.08
+  m_damageUpSpeed: 0.3
   m_damageWaitSpeed: 0
-  m_damageDownSpeed: 1
+  m_damageDownSpeed: 0.3
   m_topBlackBar: {fileID: 2283653589445396962}
   m_bottomBlackBar: {fileID: 4899269226077620064}
   m_fadeBlack: {fileID: 3123551918927218219}
@@ -9866,7 +9866,6 @@ MonoBehaviour:
   m_initialSpawn: {fileID: 0}
   m_respawnHealth: 30
   m_respawnMana: 30
-  m_activeEnemies: []
   m_isEnd: 0
 --- !u!114 &1791306105140475677
 MonoBehaviour:
