@@ -655,7 +655,7 @@ public class MenuManager : MonoBehaviour
         {
             m_subtitles.color = m_swordColour;
         }
-        m_subtitles.text = subtitile;        
+        m_subtitles.text = "<mark=#000000B4 padding=\"2,2,15,12\">" + subtitile + "</mark>";        
     }    
 
     public async UniTask HitReticle()
