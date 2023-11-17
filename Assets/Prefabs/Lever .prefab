@@ -120,9 +120,8 @@ MonoBehaviour:
   m_rewindMana: 0
   m_spritesFirst: 1
   m_interactStrings:
-  - '/ '
   - ' Interact'
-  m_interactSprites: 0600000007000000
+  m_interactSprites: 07000000
   m_interact:
     Guid:
       Data1: -1235246256

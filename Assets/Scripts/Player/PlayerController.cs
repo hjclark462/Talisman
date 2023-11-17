@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour, IBeing
     public GameManager m_game;
     public FPControls m_inputControl;
 
-    public Enemy m_enemy;
     #region Movement Fields
     [Header("Camera and Movement"), Space(5)]
     public CameraControls m_camera;
@@ -47,7 +46,7 @@ public class PlayerController : MonoBehaviour, IBeing
     public float m_healRate;
     public ParticleSystem m_healParticles;
     HealingState m_healing;
-    Dictionary<string, float> m_enemiesHaveHit = new Dictionary<string, float>();
+    Dictionary<string, float> m_enemiesHaveHit = new Dictionary<string, float>();    
     #endregion
 
     #region Mana Fields    
@@ -128,8 +127,7 @@ public class PlayerController : MonoBehaviour, IBeing
         m_inputControl.Player_Map.Heal.performed += StartHealing;
         m_inputControl.Player_Map.Heal.canceled += StopHealing;
         m_inputControl.Player_Map.MeleeAttack.performed += MeleeAttack;
-        m_inputControl.Player_Map.Interact.performed += Interact;
-        //m_inputControl.Player_Map.Interact.performed += EnemyStart;
+        m_inputControl.Player_Map.Interact.performed += Interact;        
 
         m_inputControl.Player_Map.BlockParry.performed += BlockParry;
         m_inputControl.Player_Map.BlockParry.canceled += StopBlockParry;
@@ -145,13 +143,6 @@ public class PlayerController : MonoBehaviour, IBeing
         m_game.m_menuManager.UpdateMana();
 
         m_game.m_aiManager.RegisterBeing(this);
-    }
-
-    private void EnemyStart(InputAction.CallbackContext obj)
-    {
-        if (m_enemy != null)
-            m_enemy.SetStatue(false);
-        m_skinnedMeshRenderer.enabled = (true);
     }
 
     private void PauseGame(InputAction.CallbackContext obj)
@@ -340,6 +331,7 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.release();
         m_talismanState = m_healing;
         m_talismanState.StartState(0);
+        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", 1);
     }
     private void StopHealing(InputAction.CallbackContext obj)
     {
@@ -351,6 +343,8 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         m_talismanState = m_idle;
         m_talismanState.StartState(0);
+        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", 0);
+
     }
 
     public void Heal()
@@ -546,7 +540,7 @@ public class PlayerController : MonoBehaviour, IBeing
 
     public void FinishCinematic()
     {
-        m_swordCollider.gameObject.transform.localPosition = new Vector3(0, 0.001446927f, 0);
+     //   m_swordCollider.gameObject.transform.localPosition = new Vector3(0, 0.001446927f, 0);
         m_game.UpdateGameState(GameState.GAME);
     }
     #endregion

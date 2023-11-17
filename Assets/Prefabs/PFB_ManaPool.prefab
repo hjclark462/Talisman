@@ -217,9 +217,8 @@ MonoBehaviour:
   m_manaRing: {fileID: 3511136183315219026}
   m_spritesFirst: 1
   m_interactStrings:
-  - '/ '
   - ' Interact'
-  m_interactSprites: 0600000007000000
+  m_interactSprites: 07000000
   m_isEnd: 0
   m_doorList:
   - {fileID: 0}

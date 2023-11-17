@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4979030914544642441}
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
+  - component: {fileID: 7215361481409665068}
   m_Layer: 0
   m_Name: PFB_LilyLeaf_01
   m_TagString: Untagged
@@ -83,3 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7215361481409665068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722456269350999003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c567fd68832d0ff438f2bb7c860317eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_emission: 0.06
+  m_smoothness: 0
+  m_opacity: 1

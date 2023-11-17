@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using AISystem.Systems;
-using UnityEngine.UIElements;
+using AISystem;
+using AISystem.Contracts;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,11 +20,16 @@ public class GameManager : MonoBehaviour
 
     public List<Interactable> m_cinematicTriggers;
     public List<Transform> m_cinematicPoints;
+    float m_meshActivationTime;
     public float m_talismanFadeWhite = 1f;
     public float m_talismanFadeBlack = 1f;
     public float m_talismanFadeClear = 1f;
     public float m_moveToCinematicSpeed = 1f;
     public float m_rotateToCinematicSpeed = 1f;
+
+    public Collider m_combatTutorial;
+    [HideInInspector]
+    public bool m_firstEnemy;
 
     [HideInInspector]
     public Transform m_respawnPoint;
@@ -31,6 +37,8 @@ public class GameManager : MonoBehaviour
     public Transform m_initialSpawn;
     public float m_respawnHealth;
     public float m_respawnMana;
+    
+    public List<IBeing> m_activeBeings = new();   
 
     public static GameManager Instance
     {
@@ -49,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         m_aiManager = new AIManager();
         OnGameStateChanged += GameStateChanged;
+        m_firstEnemy = true;
     }
 
     private void Start()
@@ -166,16 +175,15 @@ public class GameManager : MonoBehaviour
             }
             await UniTask.Yield();
         }
-        TurnOnPlayer();
+        TurnOnPlayer().Forget();
         m_player.m_animator.SetTrigger("TalismanCinematic");
         m_audioManager.PlayCinematic().Forget();
     }
 
-    float meshTime;
     async UniTask TurnOnPlayer()
     {
-        meshTime = Time.time;
-        while (Time.time <= meshTime + 0.1f)
+        m_meshActivationTime = Time.time;
+        while (Time.time <= m_meshActivationTime + 0.1f)
         {
             await UniTask.Yield();
         }
@@ -276,8 +284,12 @@ public class GameManager : MonoBehaviour
     {
         if (!m_isEnd)
         {
-            m_player.m_animator.SetTrigger("Die");
+            m_player.m_animator.SetTrigger("Die");           
             m_audioManager.PlayDeathDialogue();
+            if (m_firstEnemy)
+            {
+                m_combatTutorial.gameObject.SetActive(false);
+            }
         }
         m_menuManager.FadeDeathScreen(m_isEnd).Forget();
     }
@@ -290,9 +302,33 @@ public class GameManager : MonoBehaviour
         m_player.m_camera.SetRotation(m_respawnPoint.rotation.eulerAngles);
         m_player.m_currentHealth = m_player.m_health;
         m_player.m_currentMana = m_player.m_startMana;
+        if (m_firstEnemy)
+        {
+            m_combatTutorial.gameObject.SetActive(true);
+        }
         m_menuManager.UpdateHealth();
         m_menuManager.UpdateMana();
         m_aiManager.ResetEnemies();
+        m_activeBeings.Clear();
+        m_audioManager.StopCombatMusic();
+    }
+
+    public void ActivateEnemy(IBeing being)
+    {
+        m_activeBeings.Add(being);        
+        if(m_activeBeings.Count == 1)
+        {
+            m_audioManager.StartCombatMusic();
+        }
+    }
+
+    public void DeactivateEnemy(IBeing being)
+    {
+        m_activeBeings.Remove(being);        
+        if (m_activeBeings.Count == 0)
+        {
+            m_audioManager.StopCombatMusic();
+        }
     }
 }
 

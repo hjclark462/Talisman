@@ -20,9 +20,9 @@ public class EnemyActivator : Puzzle
         {
             GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOn, transform.position);
             m_updateMana = false;
-            m_enemy.SetStatue(false);
-        }    
-        if(m_updateMana && m_enemy == null && m_puzzle is EnemyActivator)
+            m_enemy.SetStatue(false);            
+        }     
+        else if (m_updateMana && m_enemy == null)
         {
             m_updateMana = false;
             EnemyDead();
@@ -50,6 +50,10 @@ public class EnemyActivator : Puzzle
         if(m_isLastSwordInRoom)
         {
             GameManager.Instance.m_audioManager.PlaySwordRoomEndDialogue();
+        }
+        if(m_bridge != null)
+        {
+            m_bridge.SetBridgeState(true);
         }
     }
 }

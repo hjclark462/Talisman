@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {    
-    public Drawbridge m_bridge;
+    public Bridge m_bridge;
     public Transform m_respawnPosition;
     public List<Door> m_door;    
     public ManaPool m_manaPool;
@@ -18,7 +18,7 @@ public class Checkpoint : MonoBehaviour
             pc.m_game.SetCheckPoint(m_respawnPosition);
             if (m_bridge != null)
             {
-                m_bridge.m_draw = true;
+                m_bridge.SetBridgeState(false);
             }
             if(m_door.Count > 0)
             {

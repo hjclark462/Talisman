@@ -24,6 +24,7 @@ public class ManaPool : MonoBehaviour
     bool m_isFirst = true;
 
     public List<Door> m_doorList = new List<Door>();
+    public List<Bridge> m_bridges = new List<Bridge>();
 
     public FMODUnity.EventReference m_loopSound;
     public FMODUnity.EventReference m_interactSound;
@@ -39,8 +40,7 @@ public class ManaPool : MonoBehaviour
             m_currentEmissive = m_emissiveMax;            
             m_loopInstance = RuntimeManager.CreateInstance(m_loopSound);
             RuntimeManager.AttachInstanceToGameObject(m_loopInstance, gameObject.transform);
-            m_loopInstance.start();
-            m_loopInstance.release();
+            m_loopInstance.start();           
         }
     }
 
@@ -88,6 +88,7 @@ public class ManaPool : MonoBehaviour
         {
             m_isActive = false;
             GameManager.Instance.m_audioManager.PlayOneShot(m_interactSound, transform.position);
+            m_loopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             pc.AddMana(m_manaAmount);
             if (m_isFirst)
             {
@@ -95,6 +96,10 @@ public class ManaPool : MonoBehaviour
                 foreach (Door door in m_doorList)
                 {
                     door.OpenDoor();
+                }
+                foreach(Bridge bridge in m_bridges)
+                {
+                    bridge.SetBridgeState(true);
                 }
             }
         }
@@ -104,7 +109,8 @@ public class ManaPool : MonoBehaviour
 
     public void ResetPool()
     {
-        m_isActive = true;        
+        m_isActive = true;
+        m_loopInstance.start();
     }
 
     public bool IsActive()

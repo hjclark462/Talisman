@@ -76,7 +76,7 @@
 	</object>
 	<object class="SingleSound" id="{1bf960e2-150d-4118-bbf0-f5c0815a1f7c}">
 		<property name="length">
-			<value>1.6000000000000001</value>
+			<value>1.52</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{0981ae7b-da0b-4645-bf04-ba8b4337d4da}</destination>

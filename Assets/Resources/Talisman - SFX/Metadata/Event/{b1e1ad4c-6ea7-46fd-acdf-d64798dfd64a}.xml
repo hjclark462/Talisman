@@ -81,7 +81,10 @@
 	</object>
 	<object class="SingleSound" id="{f63b7049-f6f4-4327-a9e0-5c38cad826b8}">
 		<property name="length">
-			<value>2.7657083333333334</value>
+			<value>2.7157083333333336</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.050000000000000003</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{4c8f1356-31a7-4eeb-a30d-f52c861d8033}</destination>
@@ -89,10 +92,10 @@
 	</object>
 	<object class="SingleSound" id="{ac5204e5-de77-4d80-9f09-01a08ebb5362}">
 		<property name="start">
-			<value>2.7657083333333334</value>
+			<value>2.7157083333333336</value>
 		</property>
 		<property name="length">
-			<value>1.2842916666666664</value>
+			<value>1.4842916666666666</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{1afbe198-dc1f-4f59-8155-452f372bc518}">

@@ -11,7 +11,7 @@ namespace AISystem.Systems
     {
         List<IBeing> m_beings = new();
         NavMeshPath m_navMeshPath = new();
-        Vector3[] m_navMeshCorners = new Vector3[64];       
+        Vector3[] m_navMeshCorners = new Vector3[64];
 
         public void ResetEnemies()
         {            
@@ -28,7 +28,7 @@ namespace AISystem.Systems
         public void RegisterBeing(IBeing being) => m_beings.Add(being);
 
         public void DeregisterBeing(IBeing being) => m_beings.Remove(being);
-
+        
         public IBeing[] GetCloseBeings(float distance, Vector3 position)
         {
             float sqrDist = distance * distance;

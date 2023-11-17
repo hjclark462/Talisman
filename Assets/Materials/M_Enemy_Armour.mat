@@ -24,7 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Enemy_Armour
-  m_Shader: {fileID: -6465566751694194690, guid: b042c033b71d3cd4491893dc452119ff, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: db84dc68d2810444e94d4c8f501fee5b, type: 3}
   m_ValidKeywords:
   - _ALPHATEST_ON
   - _SPECULAR_SETUP
@@ -192,7 +192,7 @@ Material:
     - _CheeseHoles: 60
     - _CoatMask: 0
     - _ColorMode: 0
-    - _Cull: 2
+    - _Cull: 0
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5

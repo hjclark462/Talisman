@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_eventReference:
     Guid:
-      Data1: 85423909
-      Data2: 1106398475
-      Data3: 108066212
-      Data4: 1363177856
-    Path: event:/Dialogue/v) player to enemies/Player_to_Enemy01
-  m_subtitle: 'Player: Ahh... Seriously?'
+      Data1: 590575886
+      Data2: 1338200390
+      Data3: -1292050815
+      Data4: 184440179
+    Path: event:/Dialogue/v) player to enemies/Player to enemy
+  m_subtitle: Ahh... Seriously?
+  m_isPlayer: 1

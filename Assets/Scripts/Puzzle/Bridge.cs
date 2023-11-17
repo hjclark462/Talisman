@@ -9,7 +9,7 @@ public class Bridge : MonoBehaviour
     public float m_speed;
     MeshRenderer m_mesh;
     float m_alpha;
-    public GameObject m_colliders;
+    public Collider m_colliders;
     public FMODUnity.EventReference m_appearing;
     public FMODUnity.EventReference m_disappearing;
 
@@ -51,7 +51,7 @@ public class Bridge : MonoBehaviour
     public void SetBridgeState(bool state)
     {
         m_unlocked = state;
-        m_colliders.SetActive(state);
+        m_colliders.enabled = state;
     }
 
     private void Update()
