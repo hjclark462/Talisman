@@ -21915,6 +21915,22 @@ PrefabInstance:
       propertyPath: m_endParticles
       value: 
       objectReference: {fileID: 356394492}
+    - target: {fileID: 8890782633654939190, guid: 71953d5618182c146aff20f2fd606adf, type: 3}
+      propertyPath: m_endPPs.Array.data[0]
+      value: 
+      objectReference: {fileID: 33657642}
+    - target: {fileID: 8890782633654939190, guid: 71953d5618182c146aff20f2fd606adf, type: 3}
+      propertyPath: m_endPPs.Array.data[1]
+      value: 
+      objectReference: {fileID: 949835213}
+    - target: {fileID: 8890782633654939190, guid: 71953d5618182c146aff20f2fd606adf, type: 3}
+      propertyPath: m_endSconces.Array.data[0]
+      value: 
+      objectReference: {fileID: 1431290311}
+    - target: {fileID: 8890782633654939190, guid: 71953d5618182c146aff20f2fd606adf, type: 3}
+      propertyPath: m_endSconces.Array.data[1]
+      value: 
+      objectReference: {fileID: 1500637739}
     - target: {fileID: 8932362284934164280, guid: 71953d5618182c146aff20f2fd606adf, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -78398,6 +78414,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df5f87c349d41d4c9f0dba2296d65cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &1431290311 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 445252171082543047, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
+  m_PrefabInstance: {fileID: 1431290305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1461189211
 GameObject:
   m_ObjectHideFlags: 0
@@ -78471,6 +78492,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1500637739 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6282224286982055131, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
+  m_PrefabInstance: {fileID: 1431290305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1502612608
 GameObject:
   m_ObjectHideFlags: 0

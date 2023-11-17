@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public float m_respawnHealth;
     public float m_respawnMana;
     
-    public List<IBeing> m_activeBeings = new();   
+    public List<IBeing> m_activeBeings = new();
 
     public static GameManager Instance
     {

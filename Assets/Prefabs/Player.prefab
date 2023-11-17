@@ -1829,6 +1829,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_endParticles: {fileID: 0}
+  m_endSconces:
+  - {fileID: 0}
+  - {fileID: 0}
+  m_endPPs:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &7627042877158400974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
