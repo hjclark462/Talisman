@@ -3092,7 +3092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<mark=#000000B4 padding=\"2,2,15,12\">the quick brown fox jumps over the
+  m_text: "<mark=#000000E6 padding=\"2,2,15,12\">the quick brown fox jumps over the
     lazy dog the quick brown fox jumps over the lazy dog the quick brown fox jumps
     over the lazy dog\r</mark>"
   m_isRightToLeft: 0
@@ -9797,8 +9797,8 @@ MonoBehaviour:
   m_controlsMain: {fileID: 6528843275141030689}
   m_quit: {fileID: 6408217582561603033}
   m_subtitles: {fileID: 8996121688656819825}
-  m_playerColour: {r: 0.34117648, g: 0.6, b: 0.99215686, a: 1}
-  m_swordColour: {r: 0.99215686, g: 0.73333335, b: 0.34117648, a: 1}
+  m_playerColour: {r: 1, g: 1, b: 1, a: 1}
+  m_swordColour: {r: 0.99215686, g: 0.80784315, b: 0.34117648, a: 1}
   m_health: {fileID: 5738702264856308868}
   m_mana: {fileID: 6693074865266019478}
   m_tutorial: {fileID: 2869942065449170089}
