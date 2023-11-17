@@ -403,7 +403,7 @@ MonoBehaviour:
       Data2: 1315661121
       Data3: -1660358753
       Data4: 806415626
-    Path: event:/SFX/Player/SFX_Player_Sword_Hit_Enemy_01
+    Path: event:/SFX/Player/SFX_Player_Sword_Hit_Enemy
   m_playerGrunts:
   - Guid:
       Data1: 1359669497
@@ -417,21 +417,21 @@ MonoBehaviour:
       Data2: 1245012901
       Data3: 451577735
       Data4: 1833246102
-    Path: event:/SFX/Player/SFX_Player_Talisman_Heal_Pulse_01
+    Path: event:/SFX/Player/SFX_Player_Talisman_Heal_Pulse
   m_attackSwing:
     Guid:
       Data1: -1015476465
       Data2: 1085865819
       Data3: 46807727
       Data4: 1447708569
-    Path: event:/SFX/Player/SFX_Player_Melee_Attack_01
+    Path: event:/SFX/Player/SFX_Player_Melee_Attack
   m_blockedSound:
     Guid:
       Data1: 1550459524
       Data2: 1280568255
       Data3: -1214372216
       Data4: 915826069
-    Path: event:/SFX/Player/SFX_Player_Block_Successful_01
+    Path: event:/SFX/Player/SFX_Player_Block_Successful
   m_deathSound:
     Guid:
       Data1: 1359669497

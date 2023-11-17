@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
     bool m_playLines = true;
     [HideInInspector]
     public bool m_stopInteractions = false;
-
+    FMOD.Studio.Bank m_bank;
 
     bool isBothSolved;
     public Dialogue m_allPuzzlesSolved;
@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Awake()
-    {
+    {        
         m_music = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
         m_sFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         m_master = FMODUnity.RuntimeManager.GetBus("bus:/Master");

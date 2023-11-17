@@ -92,14 +92,14 @@ MonoBehaviour:
       Data2: 1196834084
       Data3: -943899496
       Data4: 127377692
-    Path: event:/SFX/Enemy/SFX_Enemy_Shed_Stone_01
+    Path: event:/SFX/Enemy/SFX_Enemy_Shed_Stone
   m_armourAwake:
     Guid:
       Data1: -1895842062
       Data2: 1074816115
       Data3: 1056224673
       Data4: -361895092
-    Path: event:/SFX/Enemy/SFX_Enemy_Mana_Armour_Activate_01
+    Path: event:/SFX/Enemy/SFX_Enemy_Mana_Armour_Activate
   m_gruntsAwake:
   - Guid:
       Data1: 1359669497
@@ -120,7 +120,7 @@ MonoBehaviour:
       Data2: 1146310693
       Data3: 994617020
       Data4: -1652581132
-    Path: event:/SFX/Enemy/SFX_Enemy_Death_01
+    Path: event:/SFX/Enemy/SFX_Enemy_Death
   m_playerHitEnemySound:
     Guid:
       Data1: 1359669497
