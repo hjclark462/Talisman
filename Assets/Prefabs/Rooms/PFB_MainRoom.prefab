@@ -20316,7 +20316,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4640524301574606940
 Transform:
@@ -24084,6 +24084,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4640524301574606940}
     m_Modifications:
+    - target: {fileID: 1027884144192044297, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584959100919703872, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776181472188200843, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 8606442884718606434, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -24143,6 +24155,10 @@ PrefabInstance:
     - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_Name
       value: GiantStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
@@ -24608,6 +24624,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4640524301574606940}
     m_Modifications:
+    - target: {fileID: 1027884144192044297, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584959100919703872, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776181472188200843, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 8606442884718606434, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -24667,6 +24695,10 @@ PrefabInstance:
     - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_Name
       value: GiantStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
@@ -25012,6 +25044,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4640524301574606940}
     m_Modifications:
+    - target: {fileID: 1027884144192044297, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584959100919703872, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776181472188200843, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 8606442884718606434, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -25071,6 +25115,10 @@ PrefabInstance:
     - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_Name
       value: GiantStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
@@ -33911,6 +33959,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4640524301574606940}
     m_Modifications:
+    - target: {fileID: 1027884144192044297, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584959100919703872, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 7776181472188200843, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     - target: {fileID: 8606442884718606434, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -33970,6 +34030,10 @@ PrefabInstance:
     - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
       propertyPath: m_Name
       value: GiantStatue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952006626943394520, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665d087caebf0e24ba726416b7422c4b, type: 3}
