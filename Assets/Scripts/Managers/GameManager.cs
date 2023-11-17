@@ -282,6 +282,7 @@ public class GameManager : MonoBehaviour
         if (!m_isEnd)
         {
             m_player.m_animator.SetTrigger("Die");
+            m_player.m_collider.enabled = false;
             m_audioManager.PlayDeathDialogue();
         }
         m_menuManager.FadeDeathScreen(m_isEnd).Forget();
@@ -295,6 +296,7 @@ public class GameManager : MonoBehaviour
         m_player.m_camera.SetRotation(m_respawnPoint.rotation.eulerAngles);
         m_player.m_currentHealth = m_player.m_health;
         m_player.m_currentMana = m_player.m_startMana;
+        m_player.m_collider.enabled = true;
         m_menuManager.UpdateHealth();
         m_menuManager.UpdateMana();
         m_aiManager.ResetEnemies();
