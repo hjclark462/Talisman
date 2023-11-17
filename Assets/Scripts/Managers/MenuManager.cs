@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
     public ControllerImages m_genericImages;
     ControllerImages m_currentImages;
     bool m_tutorialSpriteFirst = false;
-    List<string> m_currentTutorialStrings = new List<String>();
+    List<string> m_currentTutorialStrings = new List<string>();
     List<ControlSprites> m_currentTutorialSprites = new List<ControlSprites>();
     bool m_interactSpriteFirst = false;
     List<string> m_currentInteractStrings = new List<string>();

@@ -46,8 +46,7 @@ public class PlayerController : MonoBehaviour, IBeing
     public float m_healRate;
     public ParticleSystem m_healParticles;
     HealingState m_healing;
-    Dictionary<string, float> m_enemiesHaveHit = new Dictionary<string, float>();
-    public Collider m_collider;
+    Dictionary<string, float> m_enemiesHaveHit = new Dictionary<string, float>();    
     #endregion
 
     #region Mana Fields    

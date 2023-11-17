@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public float m_rotateToCinematicSpeed = 1f;
 
     public Collider m_combatTutorial;
+    [HideInInspector]
+    public bool m_firstEnemy;
 
     [HideInInspector]
     public Transform m_respawnPoint;
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     {
         m_aiManager = new AIManager();
         OnGameStateChanged += GameStateChanged;
+        m_firstEnemy = true;
     }
 
     private void Start()
@@ -281,9 +284,12 @@ public class GameManager : MonoBehaviour
     {
         if (!m_isEnd)
         {
-            m_player.m_animator.SetTrigger("Die");
-            m_player.m_collider.enabled = false;
+            m_player.m_animator.SetTrigger("Die");           
             m_audioManager.PlayDeathDialogue();
+            if (m_firstEnemy)
+            {
+                m_combatTutorial.gameObject.SetActive(false);
+            }
         }
         m_menuManager.FadeDeathScreen(m_isEnd).Forget();
     }
@@ -296,7 +302,10 @@ public class GameManager : MonoBehaviour
         m_player.m_camera.SetRotation(m_respawnPoint.rotation.eulerAngles);
         m_player.m_currentHealth = m_player.m_health;
         m_player.m_currentMana = m_player.m_startMana;
-        m_player.m_collider.enabled = true;
+        if (m_firstEnemy)
+        {
+            m_combatTutorial.gameObject.SetActive(true);
+        }
         m_menuManager.UpdateHealth();
         m_menuManager.UpdateMana();
         m_aiManager.ResetEnemies();
@@ -306,8 +315,7 @@ public class GameManager : MonoBehaviour
 
     public void ActivateEnemy(IBeing being)
     {
-        m_activeBeings.Add(being);
-        Debug.Log(m_activeBeings.Count + " upon activation");
+        m_activeBeings.Add(being);        
         if(m_activeBeings.Count == 1)
         {
             m_audioManager.StartCombatMusic();
@@ -316,8 +324,7 @@ public class GameManager : MonoBehaviour
 
     public void DeactivateEnemy(IBeing being)
     {
-        m_activeBeings.Remove(being);
-        Debug.Log(m_activeBeings.Count + " upon deactivation");
+        m_activeBeings.Remove(being);        
         if (m_activeBeings.Count == 0)
         {
             m_audioManager.StopCombatMusic();

@@ -159,6 +159,7 @@ namespace AISystem.Systems
             m_animator.enabled = true;
             float alpha = 0;
             GameManager.Instance.m_audioManager.PlayOneShot(grunt, m_mesh.gameObject.transform.position);
+            GameManager.Instance.m_audioManager.PlayOneShot(stoneAwake, m_mesh.gameObject.transform.position);
             while (alpha < 1f)
             {
                 alpha += Time.deltaTime * m_stoneSpeed;
@@ -171,14 +172,13 @@ namespace AISystem.Systems
                 await UniTask.Yield();
             }
             alpha = 0;
+            GameManager.Instance.m_audioManager.PlayOneShot(armour, m_mesh.gameObject.transform.position);
             while (alpha < 1f)
             {
                 alpha += Time.deltaTime * m_armourSpeed;                
                 m_mesh.materials[1].SetFloat("_ArmorFade", alpha);
                 await UniTask.Yield();
             }
-            GameManager.Instance.m_audioManager.PlayOneShot(stoneAwake, m_mesh.gameObject.transform.position);
-            GameManager.Instance.m_audioManager.PlayOneShot(armour, m_mesh.gameObject.transform.position);
             Enemy e = m_attachedBeing as Enemy;
             m_mesh.materials[0].SetFloat("_Manual", 1);
             m_mesh.materials[1].SetFloat("_ArmorFade", e.m_currentHP / e.m_startingHP);

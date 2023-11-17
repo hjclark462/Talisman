@@ -43,6 +43,7 @@ public class TutorialTrigger : MonoBehaviour
     {
         m_secondText.gameObject.SetActive(true);      
         m_manager.ClearTutorial();
+        GameManager.Instance.m_firstEnemy = false;
         Destroy(this);
     }
 }
