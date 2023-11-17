@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e78e0a86-f9b4-47d2-b8d9-cc20d8ad3756}">
 		<property name="name">
-			<value>SFX_Enemy_Footsteps_01</value>
+			<value>SFX_Enemy_Footsteps</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{221894a8-7b01-42fc-98f7-533aa457e3d4}</destination>
+			<destination>{9ac13fbb-80ac-4365-bd3f-b540e78df108}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{d7e50d0e-33f2-47fe-8802-26cc61ab1f9b}</destination>

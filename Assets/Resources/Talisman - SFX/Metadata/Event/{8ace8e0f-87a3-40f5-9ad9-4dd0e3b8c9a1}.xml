@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8ace8e0f-87a3-40f5-9ad9-4dd0e3b8c9a1}">
 		<property name="name">
-			<value>SFX_Player_Jump_Landing_01</value>
+			<value>SFX_Player_Jump_Landing</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{5b8a9588-d32c-4791-a9e1-b02f4b990c70}</destination>
+			<destination>{9ac13fbb-80ac-4365-bd3f-b540e78df108}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{5ff6caa8-6048-461f-b2f9-3f0fd7d14c53}</destination>

@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{928e477d-7a94-4574-809c-1dcffd5e921d}">
 		<property name="name">
-			<value>SFX_Player_Footstep_Ground_01</value>
+			<value>SFX_Player_Footstep_Ground</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{5b8a9588-d32c-4791-a9e1-b02f4b990c70}</destination>
+			<destination>{9ac13fbb-80ac-4365-bd3f-b540e78df108}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{a675856a-275c-4121-b295-12a1e7984dea}</destination>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{5c6a2284-ebbf-4c53-8826-9eb795659636}">
 		<property name="name">
-			<value>SFX_Player_Block_Successful_01</value>
+			<value>SFX_Player_Block_Successful</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -704,7 +704,7 @@
 	</object>
 	<object class="ThreeEQEffect" id="{5a258a34-0c7c-4d7d-96e8-fe24c97ad833}">
 		<property name="lowGain">
-			<value>-1</value>
+			<value>-10</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{a7890b3c-3624-4baf-8f6d-16aecc4f2bfe}" />
@@ -748,7 +748,7 @@
 	</object>
 	<object class="ThreeEQEffect" id="{d862c615-b067-4b9f-bcc4-6aacce05729b}">
 		<property name="lowGain">
-			<value>-2</value>
+			<value>-11.5</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{138629fc-eec5-4747-85d7-a7effba2c0a3}" />

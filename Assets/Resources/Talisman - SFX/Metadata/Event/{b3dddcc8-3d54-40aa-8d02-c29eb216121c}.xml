@@ -92,6 +92,9 @@
 		<property name="length">
 			<value>1.25</value>
 		</property>
+		<property name="volume">
+			<value>-12</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{6db2cb6a-3c1b-494f-9b9e-52a0bc315c0c}</destination>
 		</relationship>
@@ -115,7 +118,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{60f2d8ca-5358-4d94-856e-6032377f24eb}">
 		<relationship name="effects">
-			<destination>{c8182f75-5018-4daf-9d76-5b7985dad53b}</destination>
+			<destination>{c8af3fa3-075d-4fdd-af20-933bff0a5ef6}</destination>
 			<destination>{de3d1cd5-c630-4084-b013-2ee66cf8cbf4}</destination>
 			<destination>{64457adb-2297-4e4c-ac0a-8ce968ac4383}</destination>
 		</relationship>
@@ -136,19 +139,22 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{dcee77ec-760a-47e1-b16a-f29b3809c686}" />
-	<object class="SFXReverbEffect" id="{c8182f75-5018-4daf-9d76-5b7985dad53b}">
+	<object class="SFXReverbEffect" id="{c8af3fa3-075d-4fdd-af20-933bff0a5ef6}">
 		<property name="decayTime">
-			<value>2300</value>
-		</property>
-		<property name="lowShelfGain">
-			<value>-24</value>
-		</property>
-		<property name="wetLevel">
-			<value>-8</value>
+			<value>4700</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{de3d1cd5-c630-4084-b013-2ee66cf8cbf4}" />
 	<object class="SpatialiserEffect" id="{64457adb-2297-4e4c-ac0a-8ce968ac4383}">
+		<property name="minimumDistance">
+			<value>6</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
 		<property name="extentMode">
 			<value>1</value>
 		</property>
