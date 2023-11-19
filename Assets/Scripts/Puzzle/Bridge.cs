@@ -10,21 +10,35 @@ public class Bridge : MonoBehaviour
     MeshRenderer m_mesh;
     float m_alpha;
     public Collider m_colliders;
+    public List<MeshRenderer> m_manaPipes;
+    Color m_pipe = Color.clear;
     public FMODUnity.EventReference m_appearing;
     public FMODUnity.EventReference m_disappearing;
 
     private void Start()
     {
+        m_alpha = 0.0f;
+        m_mesh = GetComponentInChildren<MeshRenderer>();
         foreach (Puzzle p in m_puzzleList)
         {
             p.m_bridge = this;
         }
-        m_mesh = GetComponentInChildren<MeshRenderer>();
         foreach (Material m in m_mesh.materials)
         {
             m.SetFloat("_ArmorFade", 0);
         }
-        m_alpha = 0.0f;
+        if (m_manaPipes.Count > 0)
+        {
+            m_pipe = m_manaPipes[0].material.GetColor("_BaseColour");
+            m_pipe.a = m_alpha;
+        }
+        foreach (MeshRenderer mr in m_manaPipes)
+        {
+            foreach (Material m in mr.materials)
+            {
+                m.SetColor("_BaseColour", m_pipe);
+            }
+        }
     }
 
     public void CheckState()
@@ -51,7 +65,7 @@ public class Bridge : MonoBehaviour
     public void SetBridgeState(bool state)
     {
         m_unlocked = state;
-        m_colliders.enabled = state;
+        m_colliders.enabled = state;        
     }
 
     private void Update()
@@ -65,9 +79,17 @@ public class Bridge : MonoBehaviour
         {
             m_alpha -= step;
         }
+        m_pipe.a = m_alpha;
         foreach (Material m in m_mesh.materials)
         {
             m.SetFloat("_ArmorFade", m_alpha);
+        }
+        foreach (MeshRenderer mr in m_manaPipes)
+        {
+            foreach (Material m in mr.materials)
+            {
+                m.SetColor("_BaseColour", m_pipe);
+            }
         }
     }
 }

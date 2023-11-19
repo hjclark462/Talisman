@@ -51,6 +51,8 @@ public class MenuManager : MonoBehaviour
     public Button m_credits;
     public Button m_controlsMain;
     public Button m_quit;
+    public ParticleSystem m_menuParticles;
+    public Camera m_menuCamera;
     #endregion
 
     #region HUD Fields
@@ -285,6 +287,15 @@ public class MenuManager : MonoBehaviour
     void UpdateUI(GameState state)
     {
         m_mainMenu.SetActive(state == GameState.MENU);
+        m_menuCamera.gameObject.SetActive(state == GameState.MENU);
+        if(state == GameState.MENU)
+        {
+            m_menuParticles.Play();
+        }
+        else
+        {
+            m_menuParticles.Stop();
+        }
         m_hud.SetActive(state == GameState.GAME);
         m_cinematics.SetActive(state == GameState.CINEMATIC);
         m_pauseMenu.SetActive(state == GameState.PAUSE);
