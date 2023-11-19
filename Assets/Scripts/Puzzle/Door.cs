@@ -30,20 +30,11 @@ public class Door : MonoBehaviour
         {
             if (p.m_unlocked == false)
             {
-                if(m_unlocked == true)
-                {
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_closeSound, gameObject.transform.position);
-                }
-                m_unlocked = false;
+                CloseDoor();
                 return;
             }
         }
-        GameManager.Instance.m_audioManager.PlayOneShot(m_openSound, gameObject.transform.position);
-        m_unlocked = true;
-        foreach(ParticleSystem p in m_doorParticles)
-        {
-            p.Play();
-        }
+        OpenDoor();
         if(m_outputPuzzles.Count > 0 && m_manaContinue)
         {
             m_manaContinue = false;
@@ -69,13 +60,23 @@ public class Door : MonoBehaviour
 
     public void CloseDoor()
     {
-        GameManager.Instance.m_audioManager.PlayOneShot(m_closeSound, gameObject.transform.position);
+        if (m_unlocked)
+        {
+            GameManager.Instance.m_audioManager.PlayOneShot(m_closeSound, gameObject.transform.position);
+        }
         m_unlocked = false;
     }
 
     public void OpenDoor()
     {
-        GameManager.Instance.m_audioManager.PlayOneShot(m_openSound, gameObject.transform.position);
+        if (!m_unlocked)
+        {
+            GameManager.Instance.m_audioManager.PlayOneShot(m_openSound, gameObject.transform.position);
+            foreach (ParticleSystem p in m_doorParticles)
+            {
+                p.Play();
+            }
+        }
         m_unlocked = true;
     }
 }
