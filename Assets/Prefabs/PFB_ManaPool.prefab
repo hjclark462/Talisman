@@ -225,6 +225,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_bridges: []
   m_loopSound:
     Guid:
       Data1: 234067196
@@ -485,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: abc74dd3300734f49ab463ad078f668f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 1184419161057208811, guid: abc74dd3300734f49ab463ad078f668f, type: 3}
       propertyPath: m_Materials.Array.data[0]
