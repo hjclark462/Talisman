@@ -96,13 +96,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _AlphaStrength: 0.229
+    - _AlphaStrength: 1
     - _Blend: 0
     - _BlendAmount: 0
     - _BumpScale: 1
     - _CastShadows: 1
     - _CausticDensity: 11.8
-    - _CausticSoftness: 6.4
+    - _CausticSoftness: 2.13
     - _CausticSpeed: 49.98
     - _CausticThiccness: 1.35
     - _CircleCutout: 0.975
@@ -119,7 +119,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DrawOrder: 0
     - _DstBlend: 0
-    - _EmissiveStrength: 3.25
+    - _EmissiveStrength: 0.2
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -159,4 +159,5 @@ Material:
     - _ReflectedColor: {r: 0.060653225, g: 0.20719507, b: 0.27358484, a: 0}
     - _ShallowWater: {r: 0, g: 0.6536091, b: 0.7075471, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _TileFix: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
