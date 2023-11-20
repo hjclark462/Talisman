@@ -46,8 +46,8 @@ Material:
     - _Blend: 0
     - _BlendAmount: 0.472
     - _CastShadows: 0
-    - _CausticDensity: 40
-    - _CausticSoftness: -1
+    - _CausticDensity: 24.32
+    - _CausticSoftness: 0.02
     - _CausticSpeed: 250
     - _CausticThiccness: 1.37
     - _Cull: 2
