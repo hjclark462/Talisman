@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
     async UniTask TurnOnPlayer()
     {
         m_meshActivationTime = Time.time;
-        while (Time.time <= m_meshActivationTime + 0.1f)
+        while (Time.time <= m_meshActivationTime + 0.6f)
         {
             await UniTask.Yield();
         }
