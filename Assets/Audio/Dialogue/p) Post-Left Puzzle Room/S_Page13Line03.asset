@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0748d35f9bc34f9c203e145f0b9a8, type: 3}
+  m_Name: S_Page13Line03
+  m_EditorClassIdentifier: 
+  m_eventReference:
+    Guid:
+      Data1: -87674653
+      Data2: 1202736502
+      Data3: 480657576
+      Data4: 1274753065
+    Path: event:/Dialogue/q) Statue Hallway #1/02_Sword_Page13_Line02
+  m_subtitle: Just keep moving...
+  m_isPlayer: 0
