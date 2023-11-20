@@ -225,6 +225,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  m_bridges: []
   m_loopSound:
     Guid:
       Data1: 234067196
@@ -435,6 +436,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7910250100172549180, guid: abc74dd3300734f49ab463ad078f668f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a90a79924cb87ee4fa75bca30302f2a3, type: 2}
     - target: {fileID: -7456644657366768674, guid: abc74dd3300734f49ab463ad078f668f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
