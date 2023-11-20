@@ -1,0 +1,270 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b494ccb1938774445ae84d09e491cce6, type: 3}
+  m_Name: NewEnemy
+  m_EditorClassIdentifier: 
+  m_behaviourTree:
+    m_parent:
+      rid: 4230295579194294274
+    m_nodes:
+    - rid: 4230295579194294274
+    - rid: 4230295579194294275
+    - rid: 4230295579194294276
+    - rid: 4230295579194294277
+    - rid: 4230295579194294278
+    - rid: 4230295579194294279
+    - rid: 4230295579194294280
+    - rid: 4230295579194294281
+    - rid: 4230295579194294282
+    - rid: 4230295579194294284
+    - rid: 4230295579194294285
+    - rid: 4230295579194294283
+    - rid: 4230295579194294286
+    - rid: 4230295579194294293
+    - rid: 4230295579194294294
+    - rid: 4230295579194294295
+    - rid: 4230295579194294287
+    - rid: 4230295579194294288
+    - rid: 4230295579194294289
+    - rid: 4230295579194294290
+    - rid: 4230295579194294291
+    - rid: 4230295579194294292
+  m_nodeData:
+  - m_position:
+      serializedVersion: 2
+      x: 8
+      y: -17
+      width: 134
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 152
+      y: -17
+      width: 131
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 336
+      y: -401
+      width: 93
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 336
+      y: -286
+      width: 134
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 518
+      y: -363
+      width: 119
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 518
+      y: -286
+      width: 131
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 668
+      y: -286
+      width: 93
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 518
+      y: -209
+      width: 96
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 351
+      y: -159
+      width: 134
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 614
+      y: -159
+      width: 131
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 805
+      y: -197
+      width: 93
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 614
+      y: -82
+      width: 72
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 614
+      y: -5
+      width: 112
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 351
+      y: 163
+      width: 134
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 607
+      y: 137
+      width: 123
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 607
+      y: 216
+      width: 127
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 336
+      y: 357
+      width: 134
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 521
+      y: 293
+      width: 128
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 522
+      y: 370
+      width: 115
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 522
+      y: 457
+      width: 133
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 525
+      y: 534
+      width: 124
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 522
+      y: 611
+      width: 72
+      height: 77
+  references:
+    version: 2
+    RefIds:
+    - rid: 4230295579194294274
+      type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_children>k__BackingField:
+        - rid: 4230295579194294275
+    - rid: 4230295579194294275
+      type: {class: SelectorNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_children>k__BackingField:
+        - rid: 4230295579194294276
+        - rid: 4230295579194294277
+        - rid: 4230295579194294282
+        - rid: 4230295579194294293
+        - rid: 4230295579194294287
+    - rid: 4230295579194294276
+      type: {class: IsStatue, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295579194294277
+      type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_children>k__BackingField:
+        - rid: 4230295579194294278
+        - rid: 4230295579194294279
+        - rid: 4230295579194294281
+    - rid: 4230295579194294278
+      type: {class: IsInterrupted, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295579194294279
+      type: {class: InverterNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_child>k__BackingField:
+          rid: 4230295579194294280
+    - rid: 4230295579194294280
+      type: {class: IsStatue, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295579194294281
+      type: {class: Interrupt, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+      data:
+        m_duration: 0.1
+    - rid: 4230295579194294282
+      type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_children>k__BackingField:
+        - rid: 4230295579194294284
+        - rid: 4230295579194294283
+        - rid: 4230295579194294286
+    - rid: 4230295579194294283
+      type: {class: IsHit, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295579194294284
+      type: {class: InverterNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_child>k__BackingField:
+          rid: 4230295579194294285
+    - rid: 4230295579194294285
+      type: {class: IsStatue, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295579194294286
+      type: {class: HitReaction, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+      data:
+        m_duration: 0.1
+    - rid: 4230295579194294287
+      type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_children>k__BackingField:
+        - rid: 4230295579194294288
+        - rid: 4230295579194294289
+        - rid: 4230295579194294290
+        - rid: 4230295579194294291
+        - rid: 4230295579194294292
+    - rid: 4230295579194294288
+      type: {class: CanSeeTarget, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295579194294289
+      type: {class: GoToTarget, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+      data:
+        m_attack: {fileID: 11400000, guid: a5108cbd74b7e424e8e4af9176b8e579, type: 2}
+        m_playerHeight: {x: 0, y: 1.8, z: 0}
+    - rid: 4230295579194294290
+      type: {class: StopMovement, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295579194294291
+      type: {class: TriggerAttack, ns: Behaviours, asm: Assembly-CSharp}
+      data:
+        m_attack: {fileID: 11400000, guid: a5108cbd74b7e424e8e4af9176b8e579, type: 2}
+    - rid: 4230295579194294292
+      type: {class: Wait, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+      data:
+        m_duration: 0.25
+    - rid: 4230295579194294293
+      type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_children>k__BackingField:
+        - rid: 4230295579194294294
+        - rid: 4230295579194294295
+    - rid: 4230295579194294294
+      type: {class: IsTargetDead, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+      data:
+        soIcanfind: 0
+    - rid: 4230295579194294295
+      type: {class: ReturnToBase, ns: AISystem.Behaviours, asm: Assembly-CSharp}

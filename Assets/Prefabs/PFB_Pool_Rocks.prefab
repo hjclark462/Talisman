@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7694239962112258920}
-  - component: {fileID: 5611465169166742884}
-  - component: {fileID: 8294408997398256937}
   m_Layer: 0
   m_Name: PFB_Pool_Rocks
   m_TagString: Untagged
@@ -34,62 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5611465169166742884
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7600936027668321668}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 5, z: 2.5}
-  m_Center: {x: 0, y: 2, z: 0}
---- !u!114 &8294408997398256937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7600936027668321668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ded9ad54409b14342ad2b1afc42a0593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_manaAmount: 30
-  m_light: {fileID: 0}
-  m_lightDimSpeed: 10
-  m_waterDimSpeed: 10
-  m_waterMesh: {fileID: 0}
-  m_manaRing: {fileID: 0}
-  m_spritesFirst: 1
-  m_interactStrings:
-  - ' Interact'
-  m_interactSprites: 07000000
-  m_isEnd: 0
-  m_doorList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_bridges: []
-  m_loopSound:
-    Guid:
-      Data1: 234067196
-      Data2: 1242615783
-      Data3: -2003200883
-      Data4: 1965781961
-    Path: event:/SFX/Environment/SFX_Environment_ManaPool_Ambience_01
-  m_interactSound:
-    Guid:
-      Data1: 1273359246
-      Data2: 1241487726
-      Data3: 1724594094
-      Data4: 2059593423
-    Path: event:/SFX/Environment/SFX_Environment_ManaPool_Use_01
 --- !u!1001 &6395747752667812313
 PrefabInstance:
   m_ObjectHideFlags: 0

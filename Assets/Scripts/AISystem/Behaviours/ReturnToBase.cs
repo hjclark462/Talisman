@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.AI;
 using AISystem.BehaviourTrees;
 
@@ -23,7 +23,7 @@ namespace AISystem.Behaviours
         protected override NodeState Update(float dt)
         {
             if (m_input.m_aIMovement == null)
-            {               
+            {
                 Debug.LogError("Could not find AIMovement on behaviour! Cannot set destination!");
                 return NodeState.FAILURE;
             }

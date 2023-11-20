@@ -36,8 +36,8 @@ MonoBehaviour:
     - rid: 1235179561357148179
     - rid: 1235179561357148180
     - rid: 4230295573928869891
-    - rid: 4230295573928869892
-    - rid: 4230295573928869893
+    - rid: 4230295579194294272
+    - rid: 4230295579194294273
   m_nodeData:
   - m_position:
       serializedVersion: 2
@@ -162,13 +162,13 @@ MonoBehaviour:
   - m_position:
       serializedVersion: 2
       x: 542
-      y: -38
+      y: -67
       width: 123
       height: 77
   - m_position:
       serializedVersion: 2
-      x: 538
-      y: 39
+      x: 542
+      y: 10
       width: 127
       height: 77
   references:
@@ -240,13 +240,13 @@ MonoBehaviour:
       type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
       data:
         <m_children>k__BackingField:
-        - rid: 4230295573928869892
-        - rid: 4230295573928869893
-    - rid: 4230295573928869892
+        - rid: 4230295579194294272
+        - rid: 4230295579194294273
+    - rid: 4230295579194294272
       type: {class: IsTargetDead, ns: AISystem.Behaviours, asm: Assembly-CSharp}
       data:
         soIcanfind: 0
-    - rid: 4230295573928869893
+    - rid: 4230295579194294273
       type: {class: ReturnToBase, ns: AISystem.Behaviours, asm: Assembly-CSharp}
     - rid: 8272514889055469585
       type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
