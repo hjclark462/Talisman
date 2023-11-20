@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ManaWater Rework
+  m_Name: ManaPool Rework Shallow
   m_Shader: {fileID: -6465566751694194690, guid: 36586fa7d8bc1ee4da0958b551410d9a, type: 3}
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
@@ -46,15 +46,15 @@ Material:
     - _Blend: 0
     - _BlendAmount: 0.472
     - _CastShadows: 0
-    - _CausticDensity: 24.32
+    - _CausticDensity: 120
     - _CausticSoftness: 0.02
-    - _CausticSpeed: 250
+    - _CausticSpeed: 310
     - _CausticThiccness: 1.37
     - _Cull: 2
     - _Depth: 0
     - _DstBlend: 10
-    - _EmissivStrength: 3.45
-    - _EmissiveStrength: 3.06
+    - _EmissivStrength: 10
+    - _EmissiveStrength: 10
     - _Float: -0.002
     - _Float_1: 100.02
     - _Float_2: 1.1
@@ -80,7 +80,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _Dampen: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
     - _DeepWater: {r: 0, g: 0.37645918, b: 0.6886792, a: 0.43137255}
-    - _ShallowWater: {r: 0.3632075, g: 0.9640607, b: 1, a: 0.11372549}
+    - _ShallowWater: {r: 0.09019608, g: 0.66153145, b: 0.7254902, a: 0.11372549}
     - _WaterColor: {r: 0, g: 0.6536091, b: 0.7075471, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2947525985670455387
