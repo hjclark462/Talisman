@@ -50,6 +50,9 @@ MonoBehaviour:
   m_unlocked: 0
   m_speed: 0.5
   m_colliders: {fileID: 3579856999135650500}
+  m_manaPipes:
+  - {fileID: 8126590903071412395}
+  - {fileID: 1021157044287884955}
   m_appearing:
     Guid:
       Data1: 0
@@ -137,6 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0e7118bd029de80458d0a13f4321d782, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
+--- !u!23 &1021157044287884955 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7916989211453724754, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
+  m_PrefabInstance: {fileID: 2020661209373190453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1689046674538319638 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8396284577165810141, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
@@ -278,6 +286,11 @@ MonoBehaviour:
   m_manaColour: {r: 0, g: 0, b: 0, a: 0}
   m_emission: 0
   m_isMurrayCircle: 0
+--- !u!23 &8126590903071412395 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7840107206969637278, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
+  m_PrefabInstance: {fileID: 2020661209373190453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2182804595709842636
 PrefabInstance:
   m_ObjectHideFlags: 0

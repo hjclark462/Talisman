@@ -9,12 +9,12 @@ public class ManaPool : MonoBehaviour
     public Light m_light;
     float m_intensity;
     public float m_lightDimSpeed = 1f;
-    public float m_waterDimSpeed = 1f;    
+    public float m_waterDimSpeed = 1f;
     float m_emissiveMax;
     float m_currentEmissive;
     public MeshRenderer m_waterMesh;
     public ParticleSystem m_manaRing;
-    
+
 
     public bool m_spritesFirst;
     public List<string> m_interactStrings = new List<string>();
@@ -33,27 +33,33 @@ public class ManaPool : MonoBehaviour
 
     private void Start()
     {
-        m_intensity = m_light.intensity;
+        if (m_light != null)
+        {
+            m_intensity = m_light.intensity;
+        }
         if (!m_isEnd)
         {
             m_emissiveMax = m_waterMesh.material.GetFloat("_EmissiveStrength");
-            m_currentEmissive = m_emissiveMax;            
+            m_currentEmissive = m_emissiveMax;
             m_loopInstance = RuntimeManager.CreateInstance(m_loopSound);
             RuntimeManager.AttachInstanceToGameObject(m_loopInstance, gameObject.transform);
-            m_loopInstance.start();           
+            m_loopInstance.start();
         }
     }
 
     void Update()
     {
-        float lightStep = m_lightDimSpeed * Time.deltaTime;
-        if (m_isActive && m_light.intensity <= m_intensity)
+        if (m_light != null)
         {
-            m_light.intensity += lightStep;
-        }
-        else if (!m_isActive && m_light.intensity >= 0)
-        {
-            m_light.intensity -= lightStep;
+            float lightStep = m_lightDimSpeed * Time.deltaTime;
+            if (m_isActive && m_light.intensity <= m_intensity)
+            {
+                m_light.intensity += lightStep;
+            }
+            else if (!m_isActive && m_light.intensity >= 0)
+            {
+                m_light.intensity -= lightStep;
+            }
         }
         if (!m_isEnd)
         {
@@ -97,7 +103,7 @@ public class ManaPool : MonoBehaviour
                 {
                     door.OpenDoor();
                 }
-                foreach(Bridge bridge in m_bridges)
+                foreach (Bridge bridge in m_bridges)
                 {
                     bridge.SetBridgeState(true);
                 }

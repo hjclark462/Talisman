@@ -35,6 +35,9 @@ MonoBehaviour:
     - rid: 1235179561357148178
     - rid: 1235179561357148179
     - rid: 1235179561357148180
+    - rid: 4230295573928869891
+    - rid: 4230295579194294272
+    - rid: 4230295579194294273
   m_nodeData:
   - m_position:
       serializedVersion: 2
@@ -117,38 +120,56 @@ MonoBehaviour:
   - m_position:
       serializedVersion: 2
       x: 342
-      y: 0
+      y: 161
       width: 134
       height: 77
   - m_position:
       serializedVersion: 2
       x: 503
-      y: -38
+      y: 123
       width: 128
       height: 77
   - m_position:
       serializedVersion: 2
       x: 503
-      y: 39
+      y: 200
       width: 115
       height: 77
   - m_position:
       serializedVersion: 2
       x: 503
-      y: 115
+      y: 276
       width: 133
       height: 77
   - m_position:
       serializedVersion: 2
       x: 503
-      y: 192
+      y: 353
       width: 124
       height: 77
   - m_position:
       serializedVersion: 2
       x: 503
-      y: 269
+      y: 430
       width: 72
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 369
+      y: 0
+      width: 134
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 542
+      y: -67
+      width: 123
+      height: 77
+  - m_position:
+      serializedVersion: 2
+      x: 542
+      y: 10
+      width: 127
       height: 77
   references:
     version: 2
@@ -166,6 +187,7 @@ MonoBehaviour:
         - rid: 1235179561357148181
         - rid: 8272514889055469585
         - rid: 1235179561357148175
+        - rid: 4230295573928869891
     - rid: 1235179561357148173
       type: {class: IsStatue, ns: AISystem.Behaviours, asm: Assembly-CSharp}
     - rid: 1235179561357148174
@@ -214,6 +236,18 @@ MonoBehaviour:
           rid: 1235179561357148184
     - rid: 1235179561357148184
       type: {class: IsStatue, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+    - rid: 4230295573928869891
+      type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
+      data:
+        <m_children>k__BackingField:
+        - rid: 4230295579194294272
+        - rid: 4230295579194294273
+    - rid: 4230295579194294272
+      type: {class: IsTargetDead, ns: AISystem.Behaviours, asm: Assembly-CSharp}
+      data:
+        soIcanfind: 0
+    - rid: 4230295579194294273
+      type: {class: ReturnToBase, ns: AISystem.Behaviours, asm: Assembly-CSharp}
     - rid: 8272514889055469585
       type: {class: SequenceNode, ns: AISystem.Behaviours.StandardNodes, asm: Assembly-CSharp}
       data:
