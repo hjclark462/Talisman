@@ -90,7 +90,10 @@
 	<object class="MixerBusPanner" id="{e8f24a33-ded9-4bac-9326-6c6d89561cf0}" />
 	<object class="SingleSound" id="{03311f47-259f-4be4-bc87-627eae8c73dd}">
 		<property name="length">
-			<value>6.8410000000000002</value>
+			<value>3.136612329781578</value>
+		</property>
+		<property name="volume">
+			<value>6</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{e78f459a-752a-4b48-a182-8b2ac96ae40c}</destination>
@@ -107,7 +110,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{d2e15bc7-2d85-4f62-bbe8-5d518d8210be}">
 		<property name="volume">
-			<value>8.5</value>
+			<value>10</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -164,6 +167,12 @@
 	<object class="MixerBusPanner" id="{70bb10a4-41e6-44f1-8d47-81c453b87958}" />
 	<object class="MixerBusFader" id="{4f9a96f1-189f-4657-97ed-32a0a2e8716d}" />
 	<object class="SpatialiserEffect" id="{3605d388-977f-4e52-a9f3-542e720395f9}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<property name="minimumDistance">
+			<value>5</value>
+		</property>
 		<property name="maximumDistance">
 			<value>30</value>
 		</property>
@@ -174,7 +183,7 @@
 			<value>1</value>
 		</property>
 		<property name="minimumExtent">
-			<value>180</value>
+			<value>116</value>
 		</property>
 		<property name="userLFELevel">
 			<value>-30</value>
@@ -196,7 +205,7 @@
 	</object>
 	<object class="AutomationPoint" id="{3df85e58-2099-4ead-92dd-c26fa0a9ff88}">
 		<property name="position">
-			<value>0.5</value>
+			<value>0.30000000000000004</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -204,7 +213,7 @@
 	</object>
 	<object class="AutomationPoint" id="{1874c02f-1beb-4be7-b020-d18dab52b297}">
 		<property name="position">
-			<value>1.4000000000000001</value>
+			<value>1.8</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -215,7 +224,7 @@
 	</object>
 	<object class="AutomationPoint" id="{31b83590-b062-4c79-bad5-f9754d402e2b}">
 		<property name="position">
-			<value>6.8410000000000002</value>
+			<value>3.136612329781578</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -235,7 +244,7 @@
 	<object class="MixerBusFader" id="{b0fc9071-0566-431e-9046-efe2ff593f25}" />
 	<object class="SFXReverbEffect" id="{54e9ea31-4ebd-4224-b9ea-8399cc21b860}">
 		<property name="decayTime">
-			<value>2300</value>
+			<value>4600</value>
 		</property>
 		<property name="lowShelfGain">
 			<value>-24</value>
