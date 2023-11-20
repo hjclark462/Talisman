@@ -7,11 +7,12 @@ namespace AISystem.Behaviours
     {
         protected override bool Compare(float dt)
         {
+            UnityEngine.Debug.Log("Can see target node");
             if (m_input.m_aIKnowledge.CanSeeBeing(out BeingKnowledge info))
             {
-                m_input.m_blackboard.m_target = info.m_being;                
+                m_input.m_blackboard.m_target = info.m_being;
                 return true;
-            }            
+            }
             return false;
         }
     }

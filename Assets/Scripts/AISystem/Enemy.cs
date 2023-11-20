@@ -36,7 +36,8 @@ namespace AISystem
         public CapsuleCollider m_swordCollider;
         PlayerController m_playerController;
         int m_playerMask;
-        Vector3 m_startPosition;
+        [HideInInspector]
+        public Vector3 m_startPosition;
         Quaternion m_startRotation;
 
         SkinnedMeshRenderer m_mesh;

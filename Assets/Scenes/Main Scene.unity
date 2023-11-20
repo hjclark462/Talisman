@@ -61968,6 +61968,14 @@ PrefabInstance:
       propertyPath: m_BounceIntensity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2361769463282178087, guid: d5166c45cc15432438c2b9f8466850ca, type: 3}
+      propertyPath: m_ImportantGI
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2361769463282178087, guid: d5166c45cc15432438c2b9f8466850ca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a5b56fb7be604e46864fe9ae01b714b, type: 2}
     - target: {fileID: 3064049680735101528, guid: d5166c45cc15432438c2b9f8466850ca, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
