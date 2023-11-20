@@ -369,11 +369,11 @@ MonoBehaviour:
   m_FadeScale: 0.9
   m_StartAngleFade: 180
   m_EndAngleFade: 180
-  m_UVScale: {x: 1, y: 1}
+  m_UVScale: {x: 1.037673, y: 1}
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
-  m_Offset: {x: -0.17951202, y: 0.08808708, z: -0.8196049}
-  m_Size: {x: 12.5580635, y: 6.8060617, z: 13.380396}
+  m_Offset: {x: 0.057040215, y: 0.08808708, z: -1.3835778}
+  m_Size: {x: 13.031168, y: 6.8060617, z: 12.25245}
   m_FadeFactor: 1
 --- !u!1 &3166071043877807571
 GameObject:
@@ -700,11 +700,11 @@ MonoBehaviour:
   m_FadeScale: 0.9
   m_StartAngleFade: 180
   m_EndAngleFade: 180
-  m_UVScale: {x: 1, y: 1}
-  m_UVBias: {x: 0, y: 0}
+  m_UVScale: {x: 1, y: 0.7762309}
+  m_UVBias: {x: 0, y: 0.22376932}
   m_ScaleMode: 0
-  m_Offset: {x: 0.15197372, y: -1.1455464, z: 0.2291021}
-  m_Size: {x: 12.441116, y: 15.789958, z: 0.59335464}
+  m_Offset: {x: 0.15197372, y: 0.62110686, z: 0.2291021}
+  m_Size: {x: 12.441116, y: 12.256651, z: 0.59335464}
   m_FadeFactor: 1
 --- !u!1 &8339174799465395534
 GameObject:
