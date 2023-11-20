@@ -48,7 +48,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2987
+  m_CustomRenderQueue: 2982
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
@@ -291,7 +291,7 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _Parallax: 0.005
-    - _QueueOffset: -13
+    - _QueueOffset: -18
     - _RayTracing: 0
     - _ReceiveShadows: 0
     - _ReceivesSSR: 1
