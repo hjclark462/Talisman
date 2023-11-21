@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &3094624183189764113
 Transform:
@@ -114,7 +114,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &3731354971803948156
 Transform:
@@ -227,7 +227,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &3027509344994182793
 Transform:
@@ -264,7 +264,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &5404386590753556829
 Transform:
@@ -417,6 +417,14 @@ PrefabInstance:
     - target: {fileID: 6254424918225196584, guid: 4e8ca910f6dcf7f4c8636b85f6be65cd, type: 3}
       propertyPath: m_Name
       value: PFB_Skylight_Dais
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254424918225196584, guid: 4e8ca910f6dcf7f4c8636b85f6be65cd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409554331726948463, guid: 4e8ca910f6dcf7f4c8636b85f6be65cd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e8ca910f6dcf7f4c8636b85f6be65cd, type: 3}

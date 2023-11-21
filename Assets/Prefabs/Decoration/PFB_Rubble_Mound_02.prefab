@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 109
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &1354475163009755557
 Transform:
@@ -83,13 +83,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 83b7da6c5b6c7a9458f3fca39cc2684a, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 83b7da6c5b6c7a9458f3fca39cc2684a, type: 3}
       propertyPath: m_Name
       value: SM_Rubble_Mound_02
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 83b7da6c5b6c7a9458f3fca39cc2684a, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 109
+      value: 69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83b7da6c5b6c7a9458f3fca39cc2684a, type: 3}

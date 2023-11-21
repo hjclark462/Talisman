@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Rubble_Brick_01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6a622f439c046ac42a63ba4702517579, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a622f439c046ac42a63ba4702517579, type: 3}
 --- !u!4 &8559700268091819675 stripped

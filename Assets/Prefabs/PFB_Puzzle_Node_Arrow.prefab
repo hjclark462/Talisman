@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &81183987715919113
 Transform:
@@ -47,7 +47,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &3007501603315528757
 Transform:
@@ -119,6 +119,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 02b50efe9b89d664a816e57cfc93a91b, type: 2}
+    - target: {fileID: -1317027643892755663, guid: 1d8e732b276d0fc40bf8290e022501dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 71
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1d8e732b276d0fc40bf8290e022501dd, type: 3}
       propertyPath: m_Name
       value: SM_PuzzleArrow_01
@@ -127,6 +131,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 69
       objectReference: {fileID: 0}
+    - target: {fileID: 7212048343872189179, guid: 1d8e732b276d0fc40bf8290e022501dd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db408cc5057f0cc44b556b12ea1ee38d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d8e732b276d0fc40bf8290e022501dd, type: 3}
 --- !u!4 &3013001235093725448 stripped

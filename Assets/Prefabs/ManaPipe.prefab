@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 109
   m_IsActive: 1
 --- !u!4 &7726403850210400960
 Transform:
@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e2eef288b95fd9e48a338706c5fda86a, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 109
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2eef288b95fd9e48a338706c5fda86a, type: 3}
@@ -177,10 +177,6 @@ MonoBehaviour:
   m_direction: 0
   m_murrayPuzzleOut: 0
   m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0.15686275, g: 0.3647059, b: 0.7647059, a: 1}
-  m_emission: 0
-  m_isMurrayCircle: 0
 --- !u!4 &2037118866631186103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e2eef288b95fd9e48a338706c5fda86a, type: 3}

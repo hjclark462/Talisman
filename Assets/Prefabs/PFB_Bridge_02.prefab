@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8396284577165810141, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: -7916989211453724754, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
       propertyPath: m_CastShadows
@@ -132,11 +132,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0e7118bd029de80458d0a13f4321d782, type: 2}
     - target: {fileID: -2830828589268942031, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
       propertyPath: m_Name
       value: SM_Bridge_ManaChannels_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 7840107206969637278, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
       propertyPath: m_CastShadows
@@ -404,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 602703f1781604c4c9e33e1afc771ac7, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 73
       objectReference: {fileID: 0}
     - target: {fileID: 1729451357756786247, guid: 602703f1781604c4c9e33e1afc771ac7, type: 3}
       propertyPath: m_Materials.Array.data[0]
