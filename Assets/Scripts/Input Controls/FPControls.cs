@@ -289,7 +289,7 @@ public partial class @FPControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6727718a-cd28-457c-af3f-81e06bdc31a8"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
