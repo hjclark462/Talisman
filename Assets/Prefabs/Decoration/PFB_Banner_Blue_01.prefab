@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5039874695228567585}
   m_Layer: 0
-  m_Name: PFB_Banner_01
+  m_Name: PFB_Banner_Blue_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c21ae03571d0a904088ddf4f2ef7d062, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1a5b56fb7be604e46864fe9ae01b714b, type: 2}
+      objectReference: {fileID: 2100000, guid: 9ae84259c83a3fd4592c648e3d2db58f, type: 2}
     - target: {fileID: -7511558181221131132, guid: c21ae03571d0a904088ddf4f2ef7d062, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
