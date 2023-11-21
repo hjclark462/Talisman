@@ -11908,6 +11908,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8905676315366799388}
     m_Modifications:
+    - target: {fileID: 1659204239206607576, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1910163346137811108, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
       propertyPath: m_Name
       value: PFB_Puzzle_Roof_Light Dim
@@ -11955,6 +11959,10 @@ PrefabInstance:
     - target: {fileID: 3027509344994182793, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950328712416974137, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
@@ -22281,6 +22289,10 @@ PrefabInstance:
     - target: {fileID: 1659204239206607576, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_Intensity
       value: 123.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1910163346137811108, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_Name

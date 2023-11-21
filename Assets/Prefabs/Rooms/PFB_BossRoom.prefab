@@ -579,7 +579,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -870,7 +870,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -1076,7 +1076,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1191,7 +1191,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1575,6 +1575,10 @@ PrefabInstance:
     - target: {fileID: 73443648786560341, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Name
       value: PFB_Sconce_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
@@ -2856,6 +2860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Sconce_Red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3524,6 +3532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Sconce_Red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3585,6 +3597,10 @@ PrefabInstance:
     - target: {fileID: 73443648786560341, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Name
       value: PFB_Sconce_Red (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
@@ -4428,6 +4444,10 @@ PrefabInstance:
     - target: {fileID: 73443648786560341, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Name
       value: PFB_Sconce_Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
@@ -5459,6 +5479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Sconce_Red (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6155,6 +6179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Sconce_Red (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6340,6 +6368,10 @@ PrefabInstance:
     - target: {fileID: 73443648786560341, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Name
       value: PFB_Sconce_Red (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5390694569649816025, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_RootOrder
@@ -7064,6 +7096,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1424517903205781915, guid: 31ecfbbcf96200c41bff6894658ca8b4, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3053407597616872613, guid: 31ecfbbcf96200c41bff6894658ca8b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.50000423
@@ -7080,6 +7116,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.129
       objectReference: {fileID: 0}
+    - target: {fileID: 3607428392151641722, guid: 31ecfbbcf96200c41bff6894658ca8b4, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3883023595260164020, guid: 31ecfbbcf96200c41bff6894658ca8b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7087,6 +7127,10 @@ PrefabInstance:
     - target: {fileID: 3883023595260164020, guid: 31ecfbbcf96200c41bff6894658ca8b4, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540501887789792072, guid: 31ecfbbcf96200c41bff6894658ca8b4, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4674204840661208592, guid: 31ecfbbcf96200c41bff6894658ca8b4, type: 3}
       propertyPath: m_LocalPosition.x

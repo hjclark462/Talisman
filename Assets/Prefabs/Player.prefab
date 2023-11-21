@@ -704,6 +704,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -9074496916333402230, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9074496916333402230, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 0f06c487acc7b6947a62f1bc9456e7db, type: 2}
@@ -1835,6 +1839,8 @@ MonoBehaviour:
   m_endPPs:
   - {fileID: 0}
   - {fileID: 0}
+  m_endLights: []
+  m_lightOffSpeed: 2
 --- !u!4 &7627042877158400974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
