@@ -83769,6 +83769,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 5320874107891321680, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320874107891321680, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320874107891321680, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5322753903385453614, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -83940,6 +83952,10 @@ PrefabInstance:
     - target: {fileID: 6465515160934265086, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504017947893747516, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6513072596745612098, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_RootOrder

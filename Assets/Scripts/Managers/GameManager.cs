@@ -308,8 +308,6 @@ public class GameManager : MonoBehaviour
         }
         m_menuManager.UpdateHealth();
         m_menuManager.UpdateMana();
-        m_aiManager.ResetEnemies();
-        m_activeBeings.Clear();
         m_audioManager.StopCombatMusic();
     }
 
