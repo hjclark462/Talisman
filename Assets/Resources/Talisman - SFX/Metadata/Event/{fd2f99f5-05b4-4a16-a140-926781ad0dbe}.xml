@@ -102,6 +102,9 @@
 		<property name="length">
 			<value>2.7343333333333333</value>
 		</property>
+		<property name="pitch">
+			<value>-2</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{0facbba1-f4c5-4219-be36-4edc3e1c0c51}</destination>
 		</relationship>
@@ -129,6 +132,9 @@
 		</property>
 		<property name="timelockedOffset">
 			<value>0.625</value>
+		</property>
+		<property name="pitch">
+			<value>-2</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{e06e3a2f-8050-4f4f-8359-8cdefc2d44fd}</destination>

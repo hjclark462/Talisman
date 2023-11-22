@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &2096959813305475988
 Transform:
@@ -51,7 +51,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &5650229151453664476
 Transform:
@@ -125,9 +125,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096959813305475988}
     m_Modifications:
+    - target: {fileID: 956765427861584346, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 4401008512375809216, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_SmallChickWeed_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401008512375809216, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 8208397769269142295, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
       propertyPath: m_RootOrder
@@ -199,9 +207,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096959813305475988}
     m_Modifications:
+    - target: {fileID: 956765427861584346, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 4401008512375809216, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_SmallChickWeed_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401008512375809216, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 8208397769269142295, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
       propertyPath: m_RootOrder
@@ -273,9 +289,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2096959813305475988}
     m_Modifications:
+    - target: {fileID: 956765427861584346, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 4401008512375809216, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
       propertyPath: m_Name
       value: PFB_Foliage_SmallChickWeed_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4401008512375809216, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 8208397769269142295, guid: a6c64a461a34046479ebe8f511f8c1a8, type: 3}
       propertyPath: m_RootOrder

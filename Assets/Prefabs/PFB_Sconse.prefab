@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &7419081004510016908
 Transform:
@@ -98,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 994949378c1a93344b6f58692acf909d, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 994949378c1a93344b6f58692acf909d, type: 3}
@@ -116,7 +116,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 285617159484884351, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 285617159566704088, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_RootOrder
@@ -172,19 +172,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285617159566704089, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 285617159871049345, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 285617160366608539, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 285617160577343161, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2528246521297451180, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_IsActive
@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2528246521297451180, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 6591010014168429065, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
       propertyPath: m_light

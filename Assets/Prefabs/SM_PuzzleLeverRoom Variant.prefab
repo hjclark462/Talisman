@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9018585770090059214, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_RootOrder
@@ -89,11 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bac248aaac2d3f840b084fd366e05a6a, type: 2}
     - target: {fileID: -2923049617929947210, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: -1867912983539876961, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: -1317204941701222124, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bac248aaac2d3f840b084fd366e05a6a, type: 2}
     - target: {fileID: 508907569071286709, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_Name
@@ -117,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1624743837467690256, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bac248aaac2d3f840b084fd366e05a6a, type: 2}
     - target: {fileID: 6228920507690179318, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 6682782910026890091, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -221,10 +221,6 @@ MonoBehaviour:
   m_direction: 1
   m_murrayPuzzleOut: 0
   m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0
 --- !u!1 &537947467216032246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 508907569071286709, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
@@ -283,152 +279,12 @@ MonoBehaviour:
   m_bridge: {fileID: 0}
   m_speed: 0.25
   m_rewindSpeed: 0.25
-  m_outputLeftObject: {fileID: 2143194097576820002}
-  m_outputRightObject: {fileID: 6968969748087054055}
+  m_outputLeftObject: {fileID: 0}
+  m_outputRightObject: {fileID: 0}
   m_channel: 0
   m_direction: 1
   m_murrayPuzzleOut: 1
   m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0
---- !u!1 &1647263244465088491 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1638023641090088872, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
-  m_PrefabInstance: {fileID: 29041279647873091}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6968969748087054055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1647263244465088491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a83a1bc08711f4b921716e9dd0ef27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlocked: 0
-  m_doors: []
-  m_updateMana: 0
-  m_manaValue: 0
-  m_input: 0
-  m_output: 0
-  m_rewindMana: 0
-  m_spritesFirst: 1
-  m_interactStrings: []
-  m_interactSprites: 
-  m_interact:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOn:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOff:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowFail:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_bridge: {fileID: 0}
-  m_speed: 9999999
-  m_rewindSpeed: 9999999
-  m_outputLeftObject: {fileID: 0}
-  m_outputRightObject: {fileID: 0}
-  m_channel: 0
-  m_direction: 0
-  m_murrayPuzzleOut: 0
-  m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0
---- !u!1 &2419812875942761600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -6776850780972913469, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
-  m_PrefabInstance: {fileID: 29041279647873091}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4363616519171097674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2419812875942761600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a83a1bc08711f4b921716e9dd0ef27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlocked: 0
-  m_doors: []
-  m_updateMana: 0
-  m_manaValue: 0
-  m_input: 0
-  m_output: 0
-  m_rewindMana: 0
-  m_spritesFirst: 1
-  m_interactStrings: []
-  m_interactSprites: 
-  m_interact:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOn:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOff:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowFail:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_bridge: {fileID: 0}
-  m_speed: 9999999
-  m_rewindSpeed: 9999999
-  m_outputLeftObject: {fileID: 0}
-  m_outputRightObject: {fileID: 0}
-  m_channel: 0
-  m_direction: 0
-  m_murrayPuzzleOut: 0
-  m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0
 --- !u!1 &6271281446938890229 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2923049617929947210, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
@@ -493,10 +349,6 @@ MonoBehaviour:
   m_direction: 1
   m_murrayPuzzleOut: 0
   m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0
 --- !u!1 &7382802671976580060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1867912983539876961, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
@@ -555,149 +407,9 @@ MonoBehaviour:
   m_bridge: {fileID: 0}
   m_speed: 0.25
   m_rewindSpeed: 0.25
-  m_outputLeftObject: {fileID: 3321918330096788526}
-  m_outputRightObject: {fileID: 4363616519171097674}
+  m_outputLeftObject: {fileID: 0}
+  m_outputRightObject: {fileID: 0}
   m_channel: 1
   m_direction: 1
   m_murrayPuzzleOut: 1
   m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0
---- !u!1 &7935959577113099821 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7945789911998957166, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
-  m_PrefabInstance: {fileID: 29041279647873091}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3321918330096788526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7935959577113099821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a83a1bc08711f4b921716e9dd0ef27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlocked: 0
-  m_doors: []
-  m_updateMana: 0
-  m_manaValue: 0
-  m_input: 0
-  m_output: 0
-  m_rewindMana: 0
-  m_spritesFirst: 1
-  m_interactStrings: []
-  m_interactSprites: 
-  m_interact:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOn:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOff:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowFail:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_bridge: {fileID: 0}
-  m_speed: 9999999
-  m_rewindSpeed: 9999999
-  m_outputLeftObject: {fileID: 0}
-  m_outputRightObject: {fileID: 0}
-  m_channel: 0
-  m_direction: 0
-  m_murrayPuzzleOut: 0
-  m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0
---- !u!1 &8262157875505726704 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -950760676235871053, guid: 2b5700f0230ac6c40bc1169a271c2862, type: 3}
-  m_PrefabInstance: {fileID: 29041279647873091}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2143194097576820002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8262157875505726704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51a83a1bc08711f4b921716e9dd0ef27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_unlocked: 0
-  m_doors: []
-  m_updateMana: 0
-  m_manaValue: 0
-  m_input: 0
-  m_output: 0
-  m_rewindMana: 0
-  m_spritesFirst: 1
-  m_interactStrings: []
-  m_interactSprites: 
-  m_interact:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOn:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowOff:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_manaFlowFail:
-    Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
-  m_bridge: {fileID: 0}
-  m_speed: 9999999
-  m_rewindSpeed: 9999999
-  m_outputLeftObject: {fileID: 0}
-  m_outputRightObject: {fileID: 0}
-  m_channel: 0
-  m_direction: 0
-  m_murrayPuzzleOut: 0
-  m_rotationPuzzleOut: 0
-  m_offColour: {r: 0, g: 0, b: 0, a: 0}
-  m_manaColour: {r: 0, g: 0, b: 0, a: 0}
-  m_emission: 0
-  m_isMurrayCircle: 0

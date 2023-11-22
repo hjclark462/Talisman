@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 65
   m_IsActive: 1
 --- !u!4 &7694239962112258920
 Transform:
@@ -39,6 +39,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7694239962112258920}
     m_Modifications:
+    - target: {fileID: -9100861040499965059, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -8910206525661896443, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -83,9 +91,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8606734205112132602, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -8448448307050481018, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -7933317608187815547, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -6769888505861575630, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -3732745998507892433, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -3319108844288860608, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -2721540964408960930, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -1756988346971498226, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -952212051706524598, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 619124683003264750, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
       propertyPath: m_Name
       value: SM_PoolRocks_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777668144604960376, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785377373836041753, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502643335822971502, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 8683704038752264178, guid: 174512f8567ea8542a56c0fa950f6cba, type: 3}
       propertyPath: m_Materials.Array.data[0]

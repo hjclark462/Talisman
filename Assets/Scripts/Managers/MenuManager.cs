@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks.Triggers;
 using System.Threading;
+using AISystem.Systems;
 
 public class MenuManager : MonoBehaviour
 {
@@ -124,7 +125,7 @@ public class MenuManager : MonoBehaviour
     GameManager m_game;
     public PlayerController m_player;
     public EventSystem m_eventSystem;
-    
+
     private void Start()
     {
         m_game = GameManager.Instance;
@@ -288,7 +289,7 @@ public class MenuManager : MonoBehaviour
     {
         m_mainMenu.SetActive(state == GameState.MENU);
         m_menuCamera.gameObject.SetActive(state == GameState.MENU);
-        if(state == GameState.MENU)
+        if (state == GameState.MENU)
         {
             m_menuParticles.Play();
         }
@@ -609,6 +610,8 @@ public class MenuManager : MonoBehaviour
             alpha += Time.deltaTime * (isEnd ? m_endFade : m_deathFade);
             await UniTask.Yield();
         }
+        m_game.m_aiManager.ResetEnemies();
+        m_game.m_activeBeings.Clear();
         m_deathImage.color = Color.black;
         SetDeathScreen();
     }
@@ -656,9 +659,9 @@ public class MenuManager : MonoBehaviour
 
     public bool m_stopSubtitle = false;
     public void SetSubtitle(string subtitile, bool isPlayer)
-    {       
+    {
         m_subtitles.gameObject.SetActive(m_showSubtitle);
-        if (isPlayer) 
+        if (isPlayer)
         {
             m_subtitles.color = m_playerColour;
         }
@@ -666,8 +669,8 @@ public class MenuManager : MonoBehaviour
         {
             m_subtitles.color = m_swordColour;
         }
-        m_subtitles.text = "<mark=#000000C8 padding=\"2,2,15,12\">" + subtitile + "</mark>";        
-    }    
+        m_subtitles.text = "<mark=#000000C8 padding=\"2,2,15,12\">" + subtitile + "</mark>";
+    }
 
     public async UniTask HitReticle()
     {

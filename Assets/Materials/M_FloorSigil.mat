@@ -21,21 +21,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_FloorSigil
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ValidKeywords:
-  - _ALPHATEST_ON
-  - _EMISSION
-  - _SURFACE_TYPE_TRANSPARENT
+  m_Shader: {fileID: -6465566751694194690, guid: 804fecbc91700864b9ff2f2a1fb2c4c8, type: 3}
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2999
-  stringTagMap:
-    RenderType: Transparent
-  disabledShaderPasses:
-  - DepthOnly
-  - SHADOWCASTER
+  m_CustomRenderQueue: 3006
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -77,6 +71,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_23cba4a719dd43b6a1720fdbda33e118_Texture_1:
+        m_Texture: {fileID: 2800000, guid: b7202199b2919c742847bdd8261b8d92, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3c45d26b872a4eb9a305b26d27e701e9_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a7676f903b7dbf243b627dee00e11b0b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a55f74d702e5423da1b53fb79c028c61_Texture_1:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b43aae7806014faea88b326840da3e72_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 062995c4e274621429daf468f1c29585, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Sigil:
+        m_Texture: {fileID: 2800000, guid: 33cebfd4b46b1ea49973fa83c31053dc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -127,7 +141,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _QueueOffset: -1
+    - _QueueControl: 0
+    - _QueueOffset: 6
     - _ReceiveShadows: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
@@ -142,9 +157,13 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1.8634343, g: 3.9930737, b: 16.94838, a: 1}
     - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
+    - _ColourAlpha: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColour: {r: 15.06367, g: 6.3213615, b: 1.6139647, a: 0}
     - _EmissionColor: {r: 0.4198113, g: 0.9026637, b: 1, a: 1}
+    - _PortalColour: {r: 4.077188, g: 33.025223, b: 77.87429, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _StarColour: {r: 0.2113047, g: 0, b: 1, a: 0}
   m_BuildTextureStacks: []
