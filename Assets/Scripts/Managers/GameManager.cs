@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     public List<Interactable> m_cinematicTriggers;
     public List<Transform> m_cinematicPoints;
+    public MeshRenderer m_sigilMesh;
+    Material m_sigil;
+    public float m_sigilSpeed;
     float m_meshActivationTime;
     public float m_talismanFadeWhite = 1f;
     public float m_talismanFadeBlack = 1f;
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        m_sigil = m_sigilMesh.material;
         UpdateGameState(GameState.MENU);
     }
 
@@ -235,6 +239,17 @@ public class GameManager : MonoBehaviour
         m_menuManager.m_fadeWhite.color = b;
         m_menuManager.m_fadeWhite.gameObject.SetActive(false);
         m_menuManager.m_fadeBlack.gameObject.SetActive(false);
+        FadeSigil().Forget();
+    }
+
+    async UniTask FadeSigil()
+    {
+        while (m_sigil.GetColor("_ColourAlpha") != Color.black)
+        {
+            float step = Time.deltaTime * m_sigilSpeed;
+            m_sigil.SetColor("_ColourAlpha", Color.Lerp(m_sigil.GetColor("_ColourAlpha"), Color.black, step));
+            await UniTask.Yield();
+        }
     }
 
     public async UniTask LastCinematic()
