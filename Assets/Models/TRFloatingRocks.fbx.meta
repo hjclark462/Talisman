@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 511f0bc866d31494ab721fc7e645d2a7
+guid: 7d0bb3fe85ad89642ba2d926a4cc076a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: TalismanRocks_Skeleton|TalismanRocksFloaty
-      takeName: TalismanRocks_Skeleton|TalismanRocksFloaty
-      internalID: -1690349890757540425
+      name: Arm_PoolRocks|TalismanRocksFloaty
+      takeName: Arm_PoolRocks|TalismanRocksFloaty
+      internalID: -5774618520213975908
       firstFrame: 0
-      lastFrame: 160
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
