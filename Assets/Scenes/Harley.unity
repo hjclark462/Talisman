@@ -186,5 +186,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_TutorialRoom_Hallway_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5343666835114088419, guid: d5166c45cc15432438c2b9f8466850ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343666835114088419, guid: d5166c45cc15432438c2b9f8466850ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.683
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343666835114088419, guid: d5166c45cc15432438c2b9f8466850ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5166c45cc15432438c2b9f8466850ca, type: 3}
