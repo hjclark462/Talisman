@@ -125,6 +125,7 @@ namespace AISystem
 
         public void ResetToPosition()
         {
+            m_intelligience.SetStatue(true, m_stoneAwake, m_armourAwake, m_gruntsAwake[0]);
             m_swordCollider.enabled = false;
             transform.SetPositionAndRotation(m_startPosition, m_startRotation);
             m_animator.rootPosition = m_startPosition;
@@ -133,7 +134,6 @@ namespace AISystem
             m_animator.enabled = false;
             m_mesh.materials[0].SetFloat("_Manual", 0);
             m_mesh.materials[1].SetFloat("_ArmorFade", 0);
-            m_intelligience.SetStatue(true, m_stoneAwake, m_armourAwake, m_gruntsAwake[0]);
         }
 
         public bool IsStatue()
