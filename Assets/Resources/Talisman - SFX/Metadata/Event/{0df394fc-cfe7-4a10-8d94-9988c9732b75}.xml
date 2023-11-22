@@ -293,13 +293,16 @@
 	<object class="MixerBusFader" id="{77031d49-b15f-46f5-8bd9-b3d36fb2ee14}" />
 	<object class="SFXReverbEffect" id="{2f0a5fbf-061d-4085-b6fa-4d657b2ba5ac}">
 		<property name="decayTime">
-			<value>4000</value>
+			<value>11000</value>
 		</property>
 		<property name="lowShelfGain">
 			<value>-18.5</value>
 		</property>
 		<property name="wetLevel">
-			<value>-16.5</value>
+			<value>0</value>
+		</property>
+		<property name="dryLevel">
+			<value>-6</value>
 		</property>
 	</object>
 </objects>
