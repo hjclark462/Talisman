@@ -110,11 +110,11 @@ MonoBehaviour:
     Path: event:/TempSFX
   m_takeDamageSound:
     Guid:
-      Data1: 1359669497
-      Data2: 1296283916
-      Data3: 1178622085
-      Data4: -636398506
-    Path: event:/TempSFX
+      Data1: -1862813711
+      Data2: 1247791161
+      Data3: -1155046778
+      Data4: -273249790
+    Path: event:/SFX/Enemy/SFX_Enemy_Take_Damage
   m_deathSound:
     Guid:
       Data1: -598068260
