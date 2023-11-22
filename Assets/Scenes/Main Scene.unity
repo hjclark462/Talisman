@@ -24053,6 +24053,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.018369205
       objectReference: {fileID: 0}
+    - target: {fileID: 3663401119307775867, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
+      propertyPath: m_RootOrder
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 3673639775107116539, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 109
@@ -83691,7 +83695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1101118467751625593, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1101596651199269028, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_IsActive
