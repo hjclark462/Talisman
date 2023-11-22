@@ -82963,6 +82963,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6207564187084454239, guid: e4ba81b041bacb44fb2bd3547bb95437, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6328782585974567414, guid: e4ba81b041bacb44fb2bd3547bb95437, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
