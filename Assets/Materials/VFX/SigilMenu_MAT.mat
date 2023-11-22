@@ -73,6 +73,18 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_23cba4a719dd43b6a1720fdbda33e118_Texture_1:
+        m_Texture: {fileID: 2800000, guid: b7202199b2919c742847bdd8261b8d92, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3c45d26b872a4eb9a305b26d27e701e9_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a7676f903b7dbf243b627dee00e11b0b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b43aae7806014faea88b326840da3e72_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 062995c4e274621429daf468f1c29585, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Sigil:
         m_Texture: {fileID: 2800000, guid: 33cebfd4b46b1ea49973fa83c31053dc, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -125,6 +137,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.4009434, g: 0.9102986, b: 1, a: 1}
+    - _ColourAlpha: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColour: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _PortalColour: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

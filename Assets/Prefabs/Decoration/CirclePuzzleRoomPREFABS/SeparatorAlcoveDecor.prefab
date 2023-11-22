@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 69
   m_IsActive: 1
 --- !u!4 &6101613162278318119
 Transform:
@@ -56,6 +56,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 560273385449820167, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 1775275001949631850, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -116,6 +120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Corner_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4834558310306043586, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
 --- !u!4 &1790919390509424259 stripped
@@ -130,6 +138,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 835788375932657952, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 2881602284962898392, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -189,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_Name
       value: PFB_Rubble_Brick_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
@@ -264,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_DaisHalf
       objectReference: {fileID: 0}
+    - target: {fileID: 883911985932950094, guid: dcb428f4c07caca4799b0e225459a5bc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb428f4c07caca4799b0e225459a5bc, type: 3}
 --- !u!4 &109255936716060803 stripped
@@ -278,6 +298,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 560273385449820167, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 1775275001949631850, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -338,6 +362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Corner_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4834558310306043586, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
 --- !u!4 &1015194850985362435 stripped
@@ -352,6 +380,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 560273385449820167, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 1775275001949631850, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -412,6 +444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Corner_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4834558310306043586, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
 --- !u!4 &93007541356355354 stripped
@@ -426,6 +462,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 835788375932657952, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 2881602284962898392, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -486,6 +526,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Brick_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
 --- !u!4 &688142817967063145 stripped
@@ -507,6 +551,10 @@ PrefabInstance:
     - target: {fileID: 59252359975254938, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 835788375932657952, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2881602284962898392, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_RootOrder
@@ -568,6 +616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Brick_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
 --- !u!4 &638331698351144140 stripped
@@ -582,9 +634,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 55143468601458461, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 132111478122744338, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
       propertyPath: m_Name
       value: PFB_Rubble_Trim_Disk_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 132111478122744338, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 7229277389522817247, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
       propertyPath: m_RootOrder
@@ -660,6 +720,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Brick_01
       objectReference: {fileID: 0}
+    - target: {fileID: 711462571850562671, guid: e801f8f8137c3bf48a7298260b2dc76c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043785119719857185, guid: e801f8f8137c3bf48a7298260b2dc76c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 9155146753614964935, guid: e801f8f8137c3bf48a7298260b2dc76c, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -730,9 +798,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 55143468601458461, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 132111478122744338, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
       propertyPath: m_Name
       value: PFB_Rubble_Trim_Disk_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 132111478122744338, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 7229277389522817247, guid: f63c9b0374228ca4eb7db61a6644761e, type: 3}
       propertyPath: m_RootOrder
@@ -808,6 +884,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Brick_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 711462571850562671, guid: e801f8f8137c3bf48a7298260b2dc76c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043785119719857185, guid: e801f8f8137c3bf48a7298260b2dc76c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 9155146753614964935, guid: e801f8f8137c3bf48a7298260b2dc76c, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -882,6 +966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_TrimCorner
       objectReference: {fileID: 0}
+    - target: {fileID: 2407598205397233669, guid: 4b48eb44e9fbfea479e17b8bb356033d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 7636172106047233192, guid: 4b48eb44e9fbfea479e17b8bb356033d, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -938,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7766886343891334076, guid: 4b48eb44e9fbfea479e17b8bb356033d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b48eb44e9fbfea479e17b8bb356033d, type: 3}
 --- !u!4 &2525458905109259842 stripped
@@ -952,6 +1044,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 835788375932657952, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 2881602284962898392, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1011,6 +1107,10 @@ PrefabInstance:
     - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_Name
       value: PFB_Rubble_Brick_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
@@ -1086,6 +1186,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Mod_Pillar_Middle_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5737774206079072964, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753945145006025810, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114103047256368298, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
 --- !u!4 &4616184714499967176 stripped
@@ -1160,6 +1272,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Mod_Pillar_Middle_01
       objectReference: {fileID: 0}
+    - target: {fileID: 5737774206079072964, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753945145006025810, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114103047256368298, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a07d0daa386b05c4aa3504bdf954cb0d, type: 3}
 --- !u!4 &7523563529731091052 stripped
@@ -1174,6 +1298,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 560273385449820167, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 1775275001949631850, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1234,6 +1362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Corner_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4834558310306043586, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c6aeea20e8e6f4d997fa5f79b65a77, type: 3}
 --- !u!4 &8384060548723976485 stripped
@@ -1248,6 +1380,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 835788375932657952, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 2881602284962898392, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1308,6 +1444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Brick_02
       objectReference: {fileID: 0}
+    - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
 --- !u!4 &5974643519536821265 stripped
@@ -1322,6 +1462,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6101613162278318119}
     m_Modifications:
+    - target: {fileID: 835788375932657952, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
+      objectReference: {fileID: 0}
     - target: {fileID: 2881602284962898392, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1381,6 +1525,10 @@ PrefabInstance:
     - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
       propertyPath: m_Name
       value: PFB_Rubble_Brick_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372424354909485190, guid: 15c0b387ffb4ca04994016f986052245, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c0b387ffb4ca04994016f986052245, type: 3}

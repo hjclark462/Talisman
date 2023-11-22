@@ -35,7 +35,7 @@ namespace Behaviours
             {
                 return NodeState.RUNNING;
             }
-
+            m_input.m_aIMovement.m_swordCollider.enabled = false;
             m_input.m_aIMovement.SetWarp(true);
             return NodeState.SUCCESS;
         }

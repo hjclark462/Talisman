@@ -51,7 +51,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 109
   m_IsActive: 1
 --- !u!4 &4638997618923143707
 Transform:
@@ -704,10 +704,6 @@ PrefabInstance:
     - target: {fileID: 8326103737644685129, guid: 10a1bad4729673143b68549285064faa, type: 3}
       propertyPath: m_Name
       value: PFB_Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8326103737644685129, guid: 10a1bad4729673143b68549285064faa, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8415461207779171526, guid: 10a1bad4729673143b68549285064faa, type: 3}
       propertyPath: m_StaticEditorFlags

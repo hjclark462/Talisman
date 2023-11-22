@@ -156,15 +156,21 @@ public class ManaPipe : Puzzle
             if (m_outputLeftObject.m_input == Positions.ONE || m_outputLeftObject.m_output == Positions.ONE)
             {
                 m_outputLeftObject.m_updateMana = true;
-                GameManager.Instance.m_audioManager.PlayOneShot(m_outputLeftObject.m_manaFlowOn, m_outputLeftObject.gameObject.transform.position);
+                if (!m_outputLeftObject is SolvedFlare)
+                {
+                    GameManager.Instance.m_audioManager.PlayOneShot(m_outputLeftObject.m_manaFlowOn, m_outputLeftObject.gameObject.transform.position);
+                }
             }
         }
         if (m_outputRightObject != null)
         {
             if (m_outputRightObject.m_input == Positions.ONE || m_outputRightObject.m_output == Positions.ONE)
             {
-                GameManager.Instance.m_audioManager.PlayOneShot(m_outputRightObject.m_manaFlowOn, m_outputRightObject.gameObject.transform.position);
                 m_outputRightObject.m_updateMana = true;
+                if (!m_outputLeftObject is SolvedFlare)
+                {
+                    GameManager.Instance.m_audioManager.PlayOneShot(m_outputRightObject.m_manaFlowOn, m_outputRightObject.gameObject.transform.position);
+                }
             }
         }
         else
