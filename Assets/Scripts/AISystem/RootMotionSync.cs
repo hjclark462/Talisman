@@ -56,6 +56,11 @@ namespace AISystem
                 {                  
                     deltaRotation = Quaternion.Euler(0f, m_angle * 0.05f, 0f);                  
                 }               
+                if(Vector3.Distance(deltaMove, Vector3.zero) > 1)
+                {
+                    Debug.Log(Vector3.Distance(deltaMove, Vector3.zero) + " Was the distance");
+                }
+                
 
                 m_transform.position += deltaMove;
                 m_transform.rotation *= deltaRotation;

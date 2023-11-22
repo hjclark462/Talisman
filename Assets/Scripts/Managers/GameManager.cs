@@ -309,6 +309,7 @@ public class GameManager : MonoBehaviour
         m_menuManager.UpdateHealth();
         m_menuManager.UpdateMana();
         m_audioManager.StopCombatMusic();
+        m_aiManager.ResetEnemies();
     }
 
     public void ActivateEnemy(IBeing being)

@@ -35,9 +35,7 @@ namespace AISystem
         public float m_damage;
         public CapsuleCollider m_swordCollider;
         PlayerController m_playerController;
-        int m_playerMask;
-        [HideInInspector]
-        public Vector3 m_startPosition;
+        int m_playerMask;                
         Quaternion m_startRotation;
 
         SkinnedMeshRenderer m_mesh;
@@ -89,8 +87,7 @@ namespace AISystem
 
             m_playerController = FindObjectOfType<PlayerController>();
             m_playerMask = (int)Mathf.Log(LayerMask.GetMask("Sword"), 2);
-
-            m_startPosition = transform.position;
+           
             m_startRotation = transform.rotation;
 
             m_animator.enabled = false;
@@ -127,11 +124,12 @@ namespace AISystem
         {
             m_intelligience.SetStatue(true, m_stoneAwake, m_armourAwake, m_gruntsAwake[0]);
             m_swordCollider.enabled = false;
-            transform.SetPositionAndRotation(m_startPosition, m_startRotation);
-            m_animator.rootPosition = m_startPosition;
-            m_animator.Rebind();
-            m_animator.Update(0);
+            m_animator.rootPosition = m_activator.gameObject.transform.position;                       
             m_animator.enabled = false;
+            m_animator.SetFloat("ForwardsBackwards", 0);
+            m_animator.SetFloat("Sideways", 0);
+            m_animator.Rebind();
+            transform.SetPositionAndRotation(m_activator.gameObject.transform.position, m_startRotation);
             m_mesh.materials[0].SetFloat("_Manual", 0);
             m_mesh.materials[1].SetFloat("_ArmorFade", 0);
         }

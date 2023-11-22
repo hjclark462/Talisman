@@ -17,7 +17,7 @@ namespace AISystem.Behaviours
                 m_agent = m_input.m_go.GetComponent<NavMeshAgent>();
             }
             Enemy e = m_input.m_go.GetComponent<Enemy>();
-            m_target = e.m_startPosition;
+            m_target = e.m_activator.gameObject.transform.position;
         }
 
         protected override NodeState Update(float dt)
