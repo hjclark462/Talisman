@@ -469,7 +469,7 @@ MonoBehaviour:
   m_walkSpeed: 4.5
   m_runSpeed: 10
   m_jumpSpeed: 5
-  m_skinnedMeshRenderer: {fileID: 7801047407761793967}
+  m_skinnedMeshRenderer: {fileID: 6563270942802778274}
   m_animator: {fileID: 4555566681993181620}
   m_health: 30
   m_currentHealth: 0
@@ -1569,15 +1569,15 @@ PrefabInstance:
     - target: {fileID: -5384222347871298425, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8a1a5316d203cbc4fb209435c5f02fba, type: 2}
+      objectReference: {fileID: -5574668489927664926, guid: db3f383c55c11a441b45042bb67d41f3, type: 3}
     - target: {fileID: -5384222347871298425, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: -5574668489927664926, guid: db3f383c55c11a441b45042bb67d41f3, type: 3}
+      objectReference: {fileID: 2100000, guid: 14ce67d6582050f43b0ddf2882cfc08d, type: 2}
     - target: {fileID: -5384222347871298425, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 0f06c487acc7b6947a62f1bc9456e7db, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a1a5316d203cbc4fb209435c5f02fba, type: 2}
     - target: {fileID: -5228871810155075798, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2429,6 +2429,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e9a0fbb3aa67b4ab2b98a215d53d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!137 &6563270942802778274 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5384222347871298425, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
+  m_PrefabInstance: {fileID: 7949427747964470309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7103130691449354612 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
@@ -2471,11 +2476,6 @@ MonoBehaviour:
 --- !u!4 &7627042877158400974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
-  m_PrefabInstance: {fileID: 7949427747964470309}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &7801047407761793967 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -9074496916333402230, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}
   m_PrefabInstance: {fileID: 7949427747964470309}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9071735230676744477
