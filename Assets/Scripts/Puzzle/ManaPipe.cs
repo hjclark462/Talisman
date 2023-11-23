@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks.Triggers;
+using FMODUnity;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -22,6 +23,12 @@ public class ManaPipe : Puzzle
     public bool m_rotationPuzzleOut;        
 
     MeshRenderer m_pipe;
+    public Transform m_posFail;
+    public Transform m_negFail;
+    public ParticleSystem m_failParticles;
+
+    FMOD.Studio.EventInstance m_manaOn;
+    FMOD.Studio.EventInstance m_manaFail;
 
     private new void Start()
     {
@@ -54,7 +61,10 @@ public class ManaPipe : Puzzle
         else if (m_channel == ManaChannel.FOUR)
         {
             m_shader = "_ManaChannel4";
-        }      
+        }
+
+        m_manaOn = RuntimeManager.CreateInstance(m_manaFlowOn);
+        m_manaFail = RuntimeManager.CreateInstance(m_manaFlowFail);
     }
 
     private void Update()
@@ -70,7 +80,10 @@ public class ManaPipe : Puzzle
         if (m_rewindMana)
         {
             m_manaValue -= Time.deltaTime * m_rewindSpeed;
-
+            if(m_failParticles.isPlaying)
+            {
+                m_failParticles.Stop();
+            }
             if (m_direction == ManaDirection.POS)
             {
                 m_pipe.material.SetFloat(m_shader, math.remap(1, 0, 0, 1, m_manaValue));
@@ -98,8 +111,6 @@ public class ManaPipe : Puzzle
                     m_pipe.material.SetFloat(m_shader, math.remap(1, 0, 0, -1, m_manaValue));
                 }
 
-
-                //STOP DELETE
                 if (m_inputObject != null && !(m_inputObject is Lever))
                 {
                     m_inputObject.RewindPuzzle();
@@ -109,8 +120,7 @@ public class ManaPipe : Puzzle
         else
         {
             m_manaValue += Time.deltaTime * m_speed;
-            //Update material
-            //DELETE THIS
+            //Update material            
 
             if (m_direction == ManaDirection.POS)
             {
@@ -142,7 +152,6 @@ public class ManaPipe : Puzzle
                 else if (m_rotationPuzzleOut)
                 {
                     GameManager.Instance.m_audioManager.PlayRoationPuzzleRoom();
-
                 }
 
                 StartNextSequence();
@@ -160,7 +169,20 @@ public class ManaPipe : Puzzle
                 {
                     GameManager.Instance.m_audioManager.PlayOneShot(m_outputLeftObject.m_manaFlowOn, m_outputLeftObject.gameObject.transform.position);
                 }
+            } else
+        {
+            GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+            // Activate futz graphic
+            if(m_direction == ManaDirection.POS)
+            {
+                m_failParticles.gameObject.transform.position = m_posFail.position;
             }
+            else
+            {
+                m_failParticles.gameObject.transform.position = m_negFail.position;
+            }
+            m_failParticles.Play();
+        }
         }
         if (m_outputRightObject != null)
         {
@@ -172,12 +194,22 @@ public class ManaPipe : Puzzle
                     GameManager.Instance.m_audioManager.PlayOneShot(m_outputRightObject.m_manaFlowOn, m_outputRightObject.gameObject.transform.position);
                 }
             }
+            else
+            {
+                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+                // Activate futz graphic
+                if (m_direction == ManaDirection.POS)
+                {
+                    m_failParticles.gameObject.transform.position = m_posFail.position;
+                }
+                else
+                {
+                    m_failParticles.gameObject.transform.position = m_negFail.position;
+                }
+                m_failParticles.Play();
+            }
         }
-        else
-        {
-            GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
-            // Activate futz graphic
-        }
+       
     }
 
     public override void RotatePuzzle()
