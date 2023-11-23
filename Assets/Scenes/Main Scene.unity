@@ -11624,6 +11624,26 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.00000030231456
       objectReference: {fileID: 0}
+    - target: {fileID: 4899984756633379662, guid: 0d16a930b3e7f2b438dfc88dba3cff75, type: 3}
+      propertyPath: m_secondOnSound.Path
+      value: event:/TempSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899984756633379662, guid: 0d16a930b3e7f2b438dfc88dba3cff75, type: 3}
+      propertyPath: m_secondOnSound.Guid.Data1
+      value: 1359669497
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899984756633379662, guid: 0d16a930b3e7f2b438dfc88dba3cff75, type: 3}
+      propertyPath: m_secondOnSound.Guid.Data2
+      value: 1296283916
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899984756633379662, guid: 0d16a930b3e7f2b438dfc88dba3cff75, type: 3}
+      propertyPath: m_secondOnSound.Guid.Data3
+      value: 1178622085
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899984756633379662, guid: 0d16a930b3e7f2b438dfc88dba3cff75, type: 3}
+      propertyPath: m_secondOnSound.Guid.Data4
+      value: -636398506
+      objectReference: {fileID: 0}
     - target: {fileID: 4907559453419746984, guid: 0d16a930b3e7f2b438dfc88dba3cff75, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
@@ -82893,6 +82913,10 @@ PrefabInstance:
     - target: {fileID: 4209067099915040412, guid: e4ba81b041bacb44fb2bd3547bb95437, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212957834862854093, guid: e4ba81b041bacb44fb2bd3547bb95437, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4212957834862854093, guid: e4ba81b041bacb44fb2bd3547bb95437, type: 3}
       propertyPath: m_StaticEditorFlags

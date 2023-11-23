@@ -29,6 +29,14 @@ public class RotateCircularMana : Puzzle
     string m_shaderOut;
     string m_shaderInOut;
 
+    public Transform m_posOneFail;
+    public Transform m_posTwoFail;
+    public Transform m_posThreeFail;
+    Transform m_failParticlesPos;
+    Transform m_failParticlesNeg;
+    public ParticleSystem m_failParticlesOne;
+    public ParticleSystem m_failParticlesTwo;
+
     bool m_flipMana;
 
     private new void Start()
@@ -84,7 +92,6 @@ public class RotateCircularMana : Puzzle
             }
         }
         base.Start();
-        //DELETE Sort THIS
         List<Material> materials = new List<Material>();
         materials.Add(m_one.material);
 
@@ -110,36 +117,42 @@ public class RotateCircularMana : Puzzle
                 m_in = m_one;
                 m_in.materials = materials.ToArray();
                 m_shaderIn = "_ManaChannel1";
+                m_failParticlesNeg = m_posOneFail;
             }
             else if (m_input == Positions.TWO)
             {
                 m_in = m_two;
                 m_in.materials = materials.ToArray();
                 m_shaderIn = "_ManaChannel2";
+                m_failParticlesNeg = m_posTwoFail;
             }
             else
             {
                 m_in = m_three;
                 m_in.materials = materials.ToArray();
                 m_shaderIn = "_ManaChannel3";
+                m_failParticlesNeg = m_posThreeFail;
             }
             if (m_output == Positions.ONE)
             {
                 m_out = m_one;
                 m_out.materials = materials.ToArray();
                 m_shaderOut = "_ManaChannel1";
+                m_failParticlesPos = m_posOneFail;
             }
             else if (m_output == Positions.TWO)
             {
                 m_out = m_two;
                 m_out.materials = materials.ToArray();
                 m_shaderOut = "_ManaChannel2";
+                m_failParticlesPos = m_posTwoFail;
             }
             else
             {
                 m_out = m_three;
                 m_out.materials = materials.ToArray();
                 m_shaderOut = "_ManaChannel3";
+                m_failParticlesPos = m_posThreeFail;
             }
         }
         m_in.enabled = true;
@@ -161,7 +174,7 @@ public class RotateCircularMana : Puzzle
             base.RotatePuzzle();
         }
     }
-
+    bool m_firstOfTwo = true;
     public override void StopRotation()
     {
         m_canInteract = !m_canInteract;
@@ -172,7 +185,15 @@ public class RotateCircularMana : Puzzle
             {
                 if (m_outputLeftObject != null)
                 {
-                    m_outputLeftObject.StopRotation();
+                    if (m_firstOfTwo)
+                    {
+                        m_firstOfTwo = false;
+                    }
+                    else
+                    {
+                        m_firstOfTwo = true;
+                        m_outputLeftObject.StopRotation();
+                    }
                 }
             }
             else
@@ -252,6 +273,14 @@ public class RotateCircularMana : Puzzle
     {
         if (m_rewindMana)
         {
+            if (m_failParticlesOne.isPlaying)
+            {
+                m_failParticlesOne.Stop();
+            }
+            if (m_failParticlesTwo.isPlaying)
+            {
+                m_failParticlesTwo.Stop();
+            }
             m_manaValue -= Time.deltaTime * m_speed;
 
             if (m_isThreeWay)
@@ -428,9 +457,10 @@ public class RotateCircularMana : Puzzle
                 }
                 else
                 {
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
-
                     //Activate futz graphic
+                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+                    m_failParticlesOne.gameObject.transform.position = m_posTwoFail.position;
+                    m_failParticlesOne.Play();
                 }
                 if (m_outputRightObject != null && (m_outputRightObject.m_input == Positions.ONE || m_outputRightObject.m_output == Positions.ONE))
                 {
@@ -439,9 +469,10 @@ public class RotateCircularMana : Puzzle
                 }
                 else
                 {
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
-
                     //Activate futz graphic                    
+                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+                    m_failParticlesTwo.gameObject.transform.position = m_posThreeFail.position;
+                    m_failParticlesTwo.Play();
                 }
             }
         }
@@ -456,9 +487,10 @@ public class RotateCircularMana : Puzzle
                 }
                 else
                 {
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
-
                     //Activate futz graphic
+                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+                    m_failParticlesOne.gameObject.transform.position = m_failParticlesPos.position;
+                    m_failParticlesOne.Play();
                 }
             }
             else
@@ -473,6 +505,8 @@ public class RotateCircularMana : Puzzle
                     GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
 
                     //Activate futz graphic                    
+                    m_failParticlesOne.gameObject.transform.position = m_failParticlesPos.position;
+                    m_failParticlesOne.Play();
                 }
             }
         }
@@ -490,6 +524,8 @@ public class RotateCircularMana : Puzzle
                     GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
 
                     //Activate futz graphic                    
+                    m_failParticlesOne.gameObject.transform.position = m_failParticlesNeg.position;
+                    m_failParticlesOne.Play();
                 }
             }
             else
@@ -504,6 +540,8 @@ public class RotateCircularMana : Puzzle
                     GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
 
                     //Activate futz graphic                    
+                    m_failParticlesOne.gameObject.transform.position = m_failParticlesNeg.position;
+                    m_failParticlesOne.Play();
                 }
             }
         }
@@ -529,22 +567,21 @@ public class RotateCircularMana : Puzzle
                 }
                 else
                 {
-                    if (m_outputLeftObject != null && m_outputLeftObject.m_manaValue <= 0 &&
-                        m_outputRightObject != null && m_outputRightObject.m_manaValue <= 0)
+                    if (m_outputLeftObject != null && m_outputRightObject != null && (m_outputLeftObject.m_manaValue > 0 || m_outputRightObject.m_manaValue > 0))
                     {
-                        m_rewindMana = true;
-                        m_updateMana = true;
-                    }
-                    else
-                    {
-                        if (m_outputLeftObject != null && m_outputLeftObject.m_manaValue > 0)
+                        if (m_outputLeftObject.m_manaValue > 0)
                         {
                             m_outputLeftObject.RewindPuzzle();
                         }
-                        if (m_outputRightObject != null && m_outputRightObject.m_manaValue > 0)
+                        if (m_outputRightObject.m_manaValue > 0)
                         {
                             m_outputRightObject.RewindPuzzle();
                         }
+                    }
+                    else
+                    {
+                        m_rewindMana = true;
+                        m_updateMana = true;
                     }
                 }
             }
@@ -584,7 +621,7 @@ public class RotateCircularMana : Puzzle
                         m_outputRightObject.RewindPuzzle();
                     }
                     else
-                    {                        
+                    {
                         m_rewindMana = true;
                         m_updateMana = true;
                     }

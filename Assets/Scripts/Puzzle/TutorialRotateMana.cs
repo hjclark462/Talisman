@@ -115,6 +115,7 @@ public class TutorialRotateMana : Puzzle
         if (m_rewindMana)
         {
             m_manaValue -= Time.deltaTime * m_speed;
+           
             if (m_flipMana)
             {
                 if (m_manaValue > 0.5f)
@@ -202,11 +203,6 @@ public class TutorialRotateMana : Puzzle
                 GameManager.Instance.m_audioManager.PlayOneShot(m_outputObject.m_manaFlowOn, m_outputObject.gameObject.transform.position);
                 m_outputObject.m_updateMana = true;
             }
-            else
-            {
-                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
-                //Activate futz graphic
-            }
         }
         else if (m_tutOutput == TutPositions.ONE)
         {
@@ -214,12 +210,7 @@ public class TutorialRotateMana : Puzzle
             {
                 GameManager.Instance.m_audioManager.PlayOneShot(m_outputObject.m_manaFlowOn, m_outputObject.gameObject.transform.position);
                 m_outputObject.m_updateMana = true;
-            }
-            else
-            {
-                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
-                //Activate futz graphic                    
-            }
+            }          
         }
     }
 

@@ -32310,6 +32310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Rubble_Mound_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4445738285232378047, guid: d028ee85e0d268649811086fcdd86263, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d028ee85e0d268649811086fcdd86263, type: 3}
 --- !u!4 &8335093096776550925 stripped
