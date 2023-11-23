@@ -37,7 +37,7 @@ namespace AISystem.Systems
 
         public bool CanSeeBeing(IBeing being, Vector3 origin, Vector3 direction, float viewDistance, LayerMask opticMask)
         {
-            if (Physics.Raycast(origin, direction, out RaycastHit hit, viewDistance, opticMask))
+            if (Physics.Raycast(origin, direction, out RaycastHit hit, viewDistance, opticMask, QueryTriggerInteraction.Ignore))
             {
                 var hitPlayer = hit.collider.GetComponentInParent<IBeing>();
                 if (hitPlayer == being)
