@@ -523,7 +523,6 @@ public class RotateCircularMana : Puzzle
                     }
                     else
                     {
-                        GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
                         m_rewindMana = true;
                         m_updateMana = true;
                     }
@@ -533,7 +532,6 @@ public class RotateCircularMana : Puzzle
                     if (m_outputLeftObject != null && m_outputLeftObject.m_manaValue <= 0 &&
                         m_outputRightObject != null && m_outputRightObject.m_manaValue <= 0)
                     {
-                        GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
                         m_rewindMana = true;
                         m_updateMana = true;
                     }
@@ -560,7 +558,6 @@ public class RotateCircularMana : Puzzle
                     }
                     else
                     {
-                        GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
                         m_rewindMana = true;
                         m_updateMana = true;
                     }
@@ -573,7 +570,6 @@ public class RotateCircularMana : Puzzle
                     }
                     else
                     {
-                        GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
                         m_rewindMana = true;
                         m_updateMana = true;
                     }
@@ -588,8 +584,7 @@ public class RotateCircularMana : Puzzle
                         m_outputRightObject.RewindPuzzle();
                     }
                     else
-                    {
-                        GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
+                    {                        
                         m_rewindMana = true;
                         m_updateMana = true;
                     }
@@ -602,7 +597,6 @@ public class RotateCircularMana : Puzzle
                     }
                     else
                     {
-                        GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
                         m_rewindMana = true;
                         m_updateMana = true;
                     }

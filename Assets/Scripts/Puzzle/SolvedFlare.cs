@@ -23,7 +23,7 @@ public class SolvedFlare : Puzzle
             {
                 m_first = false;
                 GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOn, gameObject.transform.position);
-                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, gameObject.transform.position);
+                GameManager.Instance.m_audioManager.PlayOneShot(m_secondOnSound, gameObject.transform.position);
             }
             foreach (Door door in m_doors)
             {

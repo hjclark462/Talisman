@@ -61,10 +61,7 @@ public class ManaPipe : Puzzle
         else if (m_channel == ManaChannel.FOUR)
         {
             m_shader = "_ManaChannel4";
-        }
-
-        m_manaOn = RuntimeManager.CreateInstance(m_manaFlowOn);
-        m_manaFail = RuntimeManager.CreateInstance(m_manaFlowFail);
+        }        
     }
 
     private void Update()
@@ -80,7 +77,7 @@ public class ManaPipe : Puzzle
         if (m_rewindMana)
         {
             m_manaValue -= Time.deltaTime * m_rewindSpeed;
-            if(m_failParticles.isPlaying)
+            if(m_failParticles != null && m_failParticles.isPlaying)
             {
                 m_failParticles.Stop();
             }
@@ -170,8 +167,7 @@ public class ManaPipe : Puzzle
                     GameManager.Instance.m_audioManager.PlayOneShot(m_outputLeftObject.m_manaFlowOn, m_outputLeftObject.gameObject.transform.position);
                 }
             } else
-        {
-            GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+        {            
             // Activate futz graphic
             if(m_direction == ManaDirection.POS)
             {
@@ -195,8 +191,7 @@ public class ManaPipe : Puzzle
                 }
             }
             else
-            {
-                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+            {               
                 // Activate futz graphic
                 if (m_direction == ManaDirection.POS)
                 {
@@ -240,7 +235,6 @@ public class ManaPipe : Puzzle
                 {
                     m_rewindMana = true;
                     m_updateMana = true;
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
                 }
                 else
                 {
@@ -260,14 +254,12 @@ public class ManaPipe : Puzzle
             }
             else
             {
-                GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
                 m_rewindMana = true;
                 m_updateMana = true;
             }
         }
         else
-        {
-            GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
+        {            
             m_rewindMana = true;
             m_updateMana = true;
         }

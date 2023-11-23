@@ -38,7 +38,7 @@ public class Puzzle : MonoBehaviour
     public FMODUnity.EventReference m_interact;
 
     public FMODUnity.EventReference m_manaFlowOn;
-    public FMODUnity.EventReference m_manaFlowOff;
+    public FMODUnity.EventReference m_secondOnSound;
     public FMODUnity.EventReference m_manaFlowFail;
 
 

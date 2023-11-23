@@ -234,8 +234,7 @@ public class TutorialRotateMana : Puzzle
                     m_outputObject.RewindPuzzle();
                 }
                 else
-                {
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
+                {                   
                     m_rewindMana = true;
                     m_updateMana = true;
                 }
@@ -247,8 +246,7 @@ public class TutorialRotateMana : Puzzle
                     m_outputObject.RewindPuzzle();
                 }
                 else
-                {
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowOff, transform.position);
+                {                    
                     m_rewindMana = true;
                     m_updateMana = true;
                 }
