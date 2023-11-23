@@ -7067,9 +7067,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: d12d6f4f992985d46a4da81adee060be, type: 3}
+    m_HighlightedSprite: {fileID: -1601634034, guid: d12d6f4f992985d46a4da81adee060be, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 21300000, guid: d12d6f4f992985d46a4da81adee060be, type: 3}
+    m_SelectedSprite: {fileID: -1601634034, guid: d12d6f4f992985d46a4da81adee060be, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -10011,6 +10011,8 @@ MonoBehaviour:
   m_audioManager: {fileID: 1791306105140475677}
   m_cinematicTriggers: []
   m_cinematicPoints: []
+  m_sigilMesh: {fileID: 0}
+  m_sigilSpeed: 0
   m_talismanFadeWhite: 1
   m_talismanFadeBlack: 1
   m_talismanFadeClear: 1
