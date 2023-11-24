@@ -56679,6 +56679,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01c81d782756434c9dc57072de01577, type: 3}
+--- !u!1 &420703727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3023922973327184076, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
+  m_PrefabInstance: {fileID: 291623527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &420703730
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420703727}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &438718137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2284140024978608593, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
@@ -61476,6 +61497,10 @@ PrefabInstance:
     - target: {fileID: 1474617976706572009, guid: df5ee97fca6733d4588bde839aa7f101, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491197106057121085, guid: df5ee97fca6733d4588bde839aa7f101, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 1492590482418004746, guid: df5ee97fca6733d4588bde839aa7f101, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -68564,6 +68589,10 @@ PrefabInstance:
     - target: {fileID: 4444196021869703472, guid: df5ee97fca6733d4588bde839aa7f101, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.00000007441117
+      objectReference: {fileID: 0}
+    - target: {fileID: 4447897963542304757, guid: df5ee97fca6733d4588bde839aa7f101, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 4454111346172087157, guid: df5ee97fca6733d4588bde839aa7f101, type: 3}
       propertyPath: m_LocalRotation.x
@@ -84081,7 +84110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7857524509150892954, guid: e4ba81b041bacb44fb2bd3547bb95437, type: 3}
       propertyPath: m_NavMeshLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7929478181687571749, guid: e4ba81b041bacb44fb2bd3547bb95437, type: 3}
       propertyPath: m_StaticEditorFlags

@@ -187,10 +187,16 @@ public class MenuManager : MonoBehaviour
 
     public void InputDeviceChanged(InputEventPtr eventPtr, InputDevice device)
     {
-        if (m_lastDevice == device) return;
+        if (m_lastDevice == device)
+        {
+            return;
+        }
 
-        if (eventPtr.type != StateEvent.Type) return;
-
+        if (eventPtr.type != StateEvent.Type)
+        {
+            return;
+        }
+        m_lastDevice = device;
         bool validPress = false;
         foreach (InputControl control in eventPtr.EnumerateChangedControls(device, 0.01F))
         {
@@ -201,6 +207,7 @@ public class MenuManager : MonoBehaviour
 
         if (device is Keyboard || device is Mouse)
         {
+            m_lastDevice = device;
             if (m_currentController == ControllerType.KEYBOARD) return;
             OnControllerChanged?.Invoke(ControllerType.KEYBOARD);
         }
@@ -293,12 +300,12 @@ public class MenuManager : MonoBehaviour
         m_mainMenu.SetActive(state == GameState.MENU);
         if (state == GameState.MENU || state == GameState.DEATH)
         {
-        m_menuCamera.gameObject.SetActive(true);
+            m_menuCamera.gameObject.SetActive(true);
             m_menuParticles.Play();
         }
         else
         {
-        m_menuCamera.gameObject.SetActive(false);
+            m_menuCamera.gameObject.SetActive(false);
             m_menuParticles.Stop();
         }
         m_hud.SetActive(state == GameState.GAME);
@@ -327,7 +334,10 @@ public class MenuManager : MonoBehaviour
     void MainMenu()
     {
         m_game.UpdateGameState(GameState.MENU);
-        m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);
+        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        {
+            m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);
+        }
         Cursor.lockState = CursorLockMode.Confined;
     }
     void StartGame()
@@ -354,7 +364,10 @@ public class MenuManager : MonoBehaviour
     void Options()
     {
         m_game.UpdateGameState(GameState.OPTIONS);
-        m_eventSystem.SetSelectedGameObject(m_camSensitivitySlider.gameObject);
+        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        {
+            m_eventSystem.SetSelectedGameObject(m_camSensitivitySlider.gameObject);
+        }
     }
 
     void OptionsBack()
@@ -372,7 +385,10 @@ public class MenuManager : MonoBehaviour
     void ControlScreen()
     {
         m_game.UpdateGameState(GameState.CONTROLS);
-        m_eventSystem.SetSelectedGameObject(m_controlsBackButton.gameObject);
+        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        {
+            m_eventSystem.SetSelectedGameObject(m_controlsBackButton.gameObject);
+        }
         m_controlsImage.sprite = m_currentImages.m_controlsDisplay;
     }
 
@@ -380,7 +396,10 @@ public class MenuManager : MonoBehaviour
     void Pause()
     {
         m_game.UpdateGameState(GameState.PAUSE);
-        m_eventSystem.SetSelectedGameObject(m_resume.gameObject);
+        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        {
+            m_eventSystem.SetSelectedGameObject(m_resume.gameObject);
+        }
         m_game.m_audioManager.m_dialogueInstance.setPaused(true);
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -411,7 +430,10 @@ public class MenuManager : MonoBehaviour
     void Credits()
     {
         m_game.UpdateGameState(GameState.CREDITS);
-        m_eventSystem.SetSelectedGameObject(m_creditsBack.gameObject);
+        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        {
+            m_eventSystem.SetSelectedGameObject(m_creditsBack.gameObject);
+        }
     }
 
     public void SetTutorial(List<string> text, List<ControlSprites> sprites, bool spriteFirst)
@@ -659,7 +681,10 @@ public class MenuManager : MonoBehaviour
             m_respawnButton.GetComponentInChildren<TextMeshProUGUI>().text = "Respawn";
         }
         m_deathQuit.gameObject.SetActive(true);
-        m_eventSystem.SetSelectedGameObject(m_respawnButton.gameObject);
+        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        {
+            m_eventSystem.SetSelectedGameObject(m_respawnButton.gameObject);
+        }
     }
 
 
