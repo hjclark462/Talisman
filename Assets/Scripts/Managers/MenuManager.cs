@@ -58,16 +58,16 @@ public class MenuManager : MonoBehaviour
 
     #region HUD Fields
     [Header("HUD"), Space(5)]
+    public TextMeshProUGUI m_subtitlesBackground;
     public TextMeshProUGUI m_subtitles;
     public Color m_playerColour = Color.blue;
     public Color m_swordColour = Color.red;
     public Slider m_health;
     public Slider m_mana;
+    public GameObject m_tutorialImages;
     public TextMeshProUGUI m_tutorial;
-    public Image m_interactImage;
     public TextMeshProUGUI m_interactText;
     [Space(5)]
-    public float m_subtitleTime = 2;
     bool m_showSubtitle = true;
     public Image m_reticleHit;
     public float m_reticleHitTime = 0.5f;
@@ -113,6 +113,9 @@ public class MenuManager : MonoBehaviour
 
     #region Death Fields
     public Image m_deathImage;
+    public RawImage m_deathParticles;
+    public Image m_endTitle;
+    public TextMeshProUGUI m_thanksMessage;
     public Button m_respawnButton;
     public Button m_deathQuit;
     public float m_deathFade = 0.33f;
@@ -147,7 +150,7 @@ public class MenuManager : MonoBehaviour
         m_mana.maxValue = m_player.m_maxMana;
 
         //Cinematic Setup
-        m_creditsBack.onClick.AddListener(delegate () { Options(); });
+        m_creditsBack.onClick.AddListener(delegate () { OptionsBack(); });
 
         //Pause Menu Setup
         m_resume.onClick.AddListener(delegate () { Resume(); });
@@ -173,7 +176,7 @@ public class MenuManager : MonoBehaviour
         m_optionsBack.onClick.AddListener(delegate () { OptionsBack(); });
 
         //Controls Screen Setup
-        m_controlsBackButton.onClick.AddListener(delegate () { Options(); });
+        m_controlsBackButton.onClick.AddListener(delegate () { OptionsBack(); });
 
         //Death Setup
         m_respawnButton.onClick.AddListener(delegate () { Respawn(); });
@@ -247,7 +250,7 @@ public class MenuManager : MonoBehaviour
     void UpdateUIImages(ControllerImages ci)
     {
         m_currentImages = ci;
-        if (m_tutorial.isActiveAndEnabled)
+        if (m_tutorialImages.activeSelf)
         {
             SetTutorial(m_currentTutorialStrings, m_currentTutorialSprites, m_tutorialSpriteFirst);
         }
@@ -288,13 +291,14 @@ public class MenuManager : MonoBehaviour
     void UpdateUI(GameState state)
     {
         m_mainMenu.SetActive(state == GameState.MENU);
-        m_menuCamera.gameObject.SetActive(state == GameState.MENU);
-        if (state == GameState.MENU)
+        if (state == GameState.MENU || state == GameState.DEATH)
         {
+        m_menuCamera.gameObject.SetActive(true);
             m_menuParticles.Play();
         }
         else
         {
+        m_menuCamera.gameObject.SetActive(false);
             m_menuParticles.Stop();
         }
         m_hud.SetActive(state == GameState.GAME);
@@ -307,10 +311,12 @@ public class MenuManager : MonoBehaviour
         if (state == GameState.CINEMATIC || state == GameState.GAME)
         {
             m_subtitles.gameObject.SetActive(true);
+            m_subtitlesBackground.gameObject.SetActive(true);
         }
         else
         {
             m_subtitles.gameObject.SetActive(false);
+            m_subtitlesBackground.gameObject.SetActive(false);
         }
     }
     void TitleScreen()
@@ -347,25 +353,17 @@ public class MenuManager : MonoBehaviour
     }
     void Options()
     {
-        if (m_game.m_gameState == GameState.PAUSE)
-        {
-            m_game.m_controlsLastState = GameState.PAUSE;
-        }
-        else if (m_game.m_gameState == GameState.MENU)
-        {
-            m_game.m_controlsLastState = GameState.MENU;
-        }
         m_game.UpdateGameState(GameState.OPTIONS);
         m_eventSystem.SetSelectedGameObject(m_camSensitivitySlider.gameObject);
     }
 
     void OptionsBack()
     {
-        if (m_game.m_controlsLastState == GameState.PAUSE)
+        if (m_game.m_lastState == GameState.PAUSE)
         {
             Pause();
         }
-        else if (m_game.m_controlsLastState == GameState.MENU)
+        else if (m_game.m_lastState == GameState.MENU)
         {
             MainMenu();
         }
@@ -391,6 +389,8 @@ public class MenuManager : MonoBehaviour
         switch (m_game.m_gameState)
         {
             case GameState.OPTIONS:
+            case GameState.CREDITS:
+            case GameState.CONTROLS:
                 if (m_game.m_lastState == GameState.PAUSE)
                 {
                     Pause();
@@ -423,7 +423,7 @@ public class MenuManager : MonoBehaviour
         m_currentTutorialStrings = text;
         m_currentTutorialSprites = sprites;
         m_tutorialSpriteFirst = spriteFirst;
-        m_tutorial.gameObject.SetActive(true);
+        m_tutorialImages.SetActive(true);
         string message = "";
         int index = 0;
         if (spriteFirst)
@@ -543,7 +543,7 @@ public class MenuManager : MonoBehaviour
 
     public void ClearTutorial()
     {
-        m_tutorial.gameObject.SetActive(false);
+        m_tutorialImages.SetActive(false);
     }
 
     public void SetInteract(RaycastHit hit)
@@ -602,17 +602,48 @@ public class MenuManager : MonoBehaviour
 
     public async UniTask FadeDeathScreen(bool isEnd)
     {
-        m_deathImage.color = Color.clear;
+        Color colourA = m_deathImage.color;
+        Color colourB = m_deathParticles.color;
+        Color colourC = m_endTitle.color;
+        Color colourD = m_thanksMessage.color;
         float alpha = 0;
+        colourA.a = alpha;
+        colourB.a = alpha;
+        colourC.a = alpha;
+        colourD.a = alpha;
+        m_deathImage.color = colourA;
+        m_deathParticles.color = colourB;
+        m_endTitle.color = colourC;
+        m_thanksMessage.color = colourD;
         while (alpha < 1)
         {
-            m_deathImage.color = new Color(0, 0, 0, alpha);
             alpha += Time.deltaTime * (isEnd ? m_endFade : m_deathFade);
+            colourA.a = alpha;
+            colourB.a = alpha;
+            colourC.a = alpha;
+            colourD.a = alpha;
+            m_deathImage.color = colourA;
+            m_deathParticles.color = colourB;
+            if (isEnd)
+            {
+                m_endTitle.color = colourC;
+                m_thanksMessage.color = colourD;
+            }
             await UniTask.Yield();
         }
         m_game.m_aiManager.ResetEnemies();
         m_game.m_activeBeings.Clear();
-        m_deathImage.color = Color.black;
+        colourA.a = 1;
+        colourB.a = 1;
+        colourC.a = 1;
+        colourD.a = 1;
+        m_deathImage.color = colourA;
+        m_deathParticles.color = colourB;
+        if (isEnd)
+        {
+            m_endTitle.color = colourC;
+            m_thanksMessage.color = colourD;
+        }
         SetDeathScreen();
     }
 
@@ -661,6 +692,7 @@ public class MenuManager : MonoBehaviour
     public void SetSubtitle(string subtitile, bool isPlayer)
     {
         m_subtitles.gameObject.SetActive(m_showSubtitle);
+        m_subtitlesBackground.gameObject.SetActive(m_showSubtitle);
         if (isPlayer)
         {
             m_subtitles.color = m_playerColour;
@@ -669,7 +701,8 @@ public class MenuManager : MonoBehaviour
         {
             m_subtitles.color = m_swordColour;
         }
-        m_subtitles.text = "<mark=#000000C8 padding=\"2,2,15,12\">" + subtitile + "</mark>";
+        m_subtitles.text = "<mark=#00000000 padding=\"2,2,15,12\">" + subtitile + "</mark>";
+        m_subtitlesBackground.text = "<mark=#000000C8 padding=\"2,2,15,12\">" + subtitile + "</mark>";
     }
 
     public async UniTask HitReticle()
