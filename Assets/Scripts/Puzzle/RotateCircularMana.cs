@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
+using FMODUnity;
 
 public class RotateCircularMana : Puzzle
 {
@@ -36,6 +37,9 @@ public class RotateCircularMana : Puzzle
     Transform m_failParticlesNeg;
     public ParticleSystem m_failParticlesOne;
     public ParticleSystem m_failParticlesTwo;
+
+    FMOD.Studio.EventInstance m_manaFailOne;
+    FMOD.Studio.EventInstance m_manaFailTwo;
 
     bool m_flipMana;
 
@@ -157,6 +161,8 @@ public class RotateCircularMana : Puzzle
         }
         m_in.enabled = true;
         m_out.enabled = true;
+        m_manaFailOne = RuntimeManager.CreateInstance(m_manaFlowFail);
+        m_manaFailTwo = RuntimeManager.CreateInstance(m_manaFlowFail);
     }
 
     private void Update()
@@ -276,10 +282,12 @@ public class RotateCircularMana : Puzzle
             if (m_failParticlesOne.isPlaying)
             {
                 m_failParticlesOne.Stop();
+                StopOneFailSounds();
             }
             if (m_failParticlesTwo.isPlaying)
             {
                 m_failParticlesTwo.Stop();
+                StopTwoFailSounds();
             }
             m_manaValue -= Time.deltaTime * m_speed;
 
@@ -457,10 +465,9 @@ public class RotateCircularMana : Puzzle
                 }
                 else
                 {
-                    //Activate futz graphic
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+                    //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_posTwoFail.position;
-                    m_failParticlesOne.Play();
+                    StartOneFailSounds(m_failParticlesOne.transform);
                 }
                 if (m_outputRightObject != null && (m_outputRightObject.m_input == Positions.ONE || m_outputRightObject.m_output == Positions.ONE))
                 {
@@ -469,10 +476,9 @@ public class RotateCircularMana : Puzzle
                 }
                 else
                 {
-                    //Activate futz graphic                    
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+                    //Activate futz graphic                                        
                     m_failParticlesTwo.gameObject.transform.position = m_posThreeFail.position;
-                    m_failParticlesTwo.Play();
+                    StartTwoFailSounds(m_failParticlesTwo.transform);
                 }
             }
         }
@@ -487,10 +493,9 @@ public class RotateCircularMana : Puzzle
                 }
                 else
                 {
-                    //Activate futz graphic
-                    GameManager.Instance.m_audioManager.PlayOneShot(m_manaFlowFail, transform.position);
+                    //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesPos.position;
-                    m_failParticlesOne.Play();
+                    StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
             else
@@ -506,7 +511,7 @@ public class RotateCircularMana : Puzzle
 
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesPos.position;
-                    m_failParticlesOne.Play();
+                    StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
         }
@@ -525,7 +530,7 @@ public class RotateCircularMana : Puzzle
 
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesNeg.position;
-                    m_failParticlesOne.Play();
+                    StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
             else
@@ -541,7 +546,7 @@ public class RotateCircularMana : Puzzle
 
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesNeg.position;
-                    m_failParticlesOne.Play();
+                    StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
         }
@@ -640,5 +645,25 @@ public class RotateCircularMana : Puzzle
                 }
             }
         }
+    }
+    void StartOneFailSounds(Transform position)
+    {
+        RuntimeManager.AttachInstanceToGameObject(m_manaFailOne, position);
+        m_manaFailOne.start();
+    }
+
+    void StopOneFailSounds()
+    {
+        m_manaFailOne.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+    void StartTwoFailSounds(Transform position)
+    {
+        RuntimeManager.AttachInstanceToGameObject(m_manaFailTwo, position);
+        m_manaFailTwo.start();
+    }
+
+    void StopTwoFailSounds()
+    {
+        m_manaFailTwo.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

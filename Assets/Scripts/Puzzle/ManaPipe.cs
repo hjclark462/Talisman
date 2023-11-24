@@ -1,6 +1,8 @@
+using Cysharp.Threading.Tasks;
 using Cysharp.Threading.Tasks.Triggers;
 using FMODUnity;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ManaPipe : Puzzle
@@ -20,14 +22,13 @@ public class ManaPipe : Puzzle
     string m_shader;
 
     public bool m_murrayPuzzleOut;
-    public bool m_rotationPuzzleOut;        
+    public bool m_rotationPuzzleOut;
 
     MeshRenderer m_pipe;
     public Transform m_posFail;
     public Transform m_negFail;
     public ParticleSystem m_failParticles;
 
-    FMOD.Studio.EventInstance m_manaOn;
     FMOD.Studio.EventInstance m_manaFail;
 
     private new void Start()
@@ -61,7 +62,8 @@ public class ManaPipe : Puzzle
         else if (m_channel == ManaChannel.FOUR)
         {
             m_shader = "_ManaChannel4";
-        }        
+        }
+        m_manaFail = RuntimeManager.CreateInstance(m_manaFlowFail);
     }
 
     private void Update()
@@ -77,9 +79,10 @@ public class ManaPipe : Puzzle
         if (m_rewindMana)
         {
             m_manaValue -= Time.deltaTime * m_rewindSpeed;
-            if(m_failParticles != null && m_failParticles.isPlaying)
+            if (m_failParticles != null && m_failParticles.isPlaying)
             {
                 m_failParticles.Stop();
+                StopFailSounds();
             }
             if (m_direction == ManaDirection.POS)
             {
@@ -166,19 +169,21 @@ public class ManaPipe : Puzzle
                 {
                     GameManager.Instance.m_audioManager.PlayOneShot(m_outputLeftObject.m_manaFlowOn, m_outputLeftObject.gameObject.transform.position);
                 }
-            } else
-        {            
-            // Activate futz graphic
-            if(m_direction == ManaDirection.POS)
-            {
-                m_failParticles.gameObject.transform.position = m_posFail.position;
             }
             else
             {
-                m_failParticles.gameObject.transform.position = m_negFail.position;
+                // Activate futz graphic
+                if (m_direction == ManaDirection.POS)
+                {
+                    m_failParticles.gameObject.transform.position = m_posFail.position;
+                }
+                else
+                {
+                    m_failParticles.gameObject.transform.position = m_negFail.position;
+                }
+                m_failParticles.Play();
+                StartFailSounds(m_failParticles.transform);
             }
-            m_failParticles.Play();
-        }
         }
         if (m_outputRightObject != null)
         {
@@ -191,7 +196,7 @@ public class ManaPipe : Puzzle
                 }
             }
             else
-            {               
+            {
                 // Activate futz graphic
                 if (m_direction == ManaDirection.POS)
                 {
@@ -202,9 +207,10 @@ public class ManaPipe : Puzzle
                     m_failParticles.gameObject.transform.position = m_negFail.position;
                 }
                 m_failParticles.Play();
+                StartFailSounds(m_failParticles.transform);
             }
         }
-       
+
     }
 
     public override void RotatePuzzle()
@@ -259,10 +265,21 @@ public class ManaPipe : Puzzle
             }
         }
         else
-        {            
+        {
             m_rewindMana = true;
             m_updateMana = true;
         }
+    }
+
+    void StartFailSounds(Transform position)
+    {
+        RuntimeManager.AttachInstanceToGameObject(m_manaFail, position);
+        m_manaFail.start();
+    }
+
+    void StopFailSounds()
+    {
+        m_manaFail.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
 

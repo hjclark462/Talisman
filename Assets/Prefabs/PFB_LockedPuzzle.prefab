@@ -169,18 +169,18 @@ MonoBehaviour:
     Path: event:/SFX/Puzzle/SFX_Puzzle_Mana_Flow_02
   m_secondOnSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  m_manaFlowFail:
-    Guid:
       Data1: 1359669497
       Data2: 1296283916
       Data3: 1178622085
       Data4: -636398506
     Path: event:/TempSFX
+  m_manaFlowFail:
+    Guid:
+      Data1: 770175070
+      Data2: 1228733009
+      Data3: -1787750267
+      Data4: 1291722021
+    Path: event:/SFX/Puzzle/SFX_Puzzle_Incomplete_Mana_Flow_01
   m_bridge: {fileID: 0}
   m_isThreeWay: 0
   m_twoInputs: 0

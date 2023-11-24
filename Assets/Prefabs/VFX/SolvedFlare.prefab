@@ -9660,18 +9660,18 @@ MonoBehaviour:
     Path: event:/TempSFX
   m_manaFlowOn:
     Guid:
-      Data1: -1277305656
-      Data2: 1084898644
-      Data3: -1631452531
-      Data4: 470947506
-    Path: event:/SFX/Environment/SFX_Environment_Fire_Igniting
-  m_manaFlowOff:
-    Guid:
       Data1: -1844389155
       Data2: 1293219659
       Data3: -1219436670
       Data4: -1495865791
     Path: event:/SFX/Environment/SFX_Environment_Fire_Crackle
+  m_secondOnSound:
+    Guid:
+      Data1: -1277305656
+      Data2: 1084898644
+      Data3: -1631452531
+      Data4: 470947506
+    Path: event:/SFX/Environment/SFX_Environment_Fire_Igniting
   m_manaFlowFail:
     Guid:
       Data1: 1359669497

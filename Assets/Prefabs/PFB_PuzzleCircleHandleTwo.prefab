@@ -84,13 +84,13 @@ MonoBehaviour:
       Data3: 1788500408
       Data4: 578767487
     Path: event:/SFX/Puzzle/SFX_Puzzle_Mana_Flow_02
-  m_manaFlowOff:
+  m_secondOnSound:
     Guid:
-      Data1: -1415141426
-      Data2: 1256974738
-      Data3: 1788500408
-      Data4: 578767487
-    Path: event:/SFX/Puzzle/SFX_Puzzle_Mana_Flow_02
+      Data1: 1359669497
+      Data2: 1296283916
+      Data3: 1178622085
+      Data4: -636398506
+    Path: event:/TempSFX
   m_manaFlowFail:
     Guid:
       Data1: 770175070

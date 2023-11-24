@@ -186,32 +186,32 @@ MonoBehaviour:
   m_interactSprites: 
   m_interact:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1359669497
+      Data2: 1296283916
+      Data3: 1178622085
+      Data4: -636398506
+    Path: event:/TempSFX
   m_manaFlowOn:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  m_manaFlowOff:
+      Data1: -1415141426
+      Data2: 1256974738
+      Data3: 1788500408
+      Data4: 578767487
+    Path: event:/SFX/Puzzle/SFX_Puzzle_Mana_Flow_02
+  m_secondOnSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1359669497
+      Data2: 1296283916
+      Data3: 1178622085
+      Data4: -636398506
+    Path: event:/TempSFX
   m_manaFlowFail:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1359669497
+      Data2: 1296283916
+      Data3: 1178622085
+      Data4: -636398506
+    Path: event:/TempSFX
   m_bridge: {fileID: 0}
   m_speed: 1
   m_rewindSpeed: 1
@@ -221,6 +221,9 @@ MonoBehaviour:
   m_direction: 0
   m_murrayPuzzleOut: 0
   m_rotationPuzzleOut: 0
+  m_posFail: {fileID: 0}
+  m_negFail: {fileID: 0}
+  m_failParticles: {fileID: 0}
 --- !u!4 &1981704595535351518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e16b36e9a54a1114f868a576467f95db, type: 3}
@@ -255,32 +258,32 @@ MonoBehaviour:
   m_interactSprites: 
   m_interact:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1359669497
+      Data2: 1296283916
+      Data3: 1178622085
+      Data4: -636398506
+    Path: event:/TempSFX
   m_manaFlowOn:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  m_manaFlowOff:
+      Data1: -1415141426
+      Data2: 1256974738
+      Data3: 1788500408
+      Data4: 578767487
+    Path: event:/SFX/Puzzle/SFX_Puzzle_Mana_Flow_02
+  m_secondOnSound:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1359669497
+      Data2: 1296283916
+      Data3: 1178622085
+      Data4: -636398506
+    Path: event:/TempSFX
   m_manaFlowFail:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1359669497
+      Data2: 1296283916
+      Data3: 1178622085
+      Data4: -636398506
+    Path: event:/TempSFX
   m_bridge: {fileID: 0}
   m_speed: 1
   m_rewindSpeed: 1
@@ -290,6 +293,9 @@ MonoBehaviour:
   m_direction: 0
   m_murrayPuzzleOut: 0
   m_rotationPuzzleOut: 0
+  m_posFail: {fileID: 0}
+  m_negFail: {fileID: 0}
+  m_failParticles: {fileID: 0}
 --- !u!23 &8126590903071412395 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7840107206969637278, guid: e16b36e9a54a1114f868a576467f95db, type: 3}

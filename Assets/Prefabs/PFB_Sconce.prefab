@@ -165,6 +165,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SolvedFlare
       objectReference: {fileID: 0}
+    - target: {fileID: 8754634387116636748, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0.000028990136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754634387116636748, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754634387116636748, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754634387116636748, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: Infinity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043d6aeea26867c4a8de95b865bd3988, type: 3}
 --- !u!4 &5582977671676937957 stripped
