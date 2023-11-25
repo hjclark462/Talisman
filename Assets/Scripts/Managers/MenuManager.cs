@@ -214,8 +214,7 @@ public class MenuManager : MonoBehaviour
         if (eventPtr.type != StateEvent.Type)
         {
             return;
-        }
-        m_lastDevice = device;
+        }      
         bool validPress = false;
         foreach (InputControl control in eventPtr.EnumerateChangedControls(device, 0.01F))
         {
@@ -232,18 +231,22 @@ public class MenuManager : MonoBehaviour
         }
         if (device is XInputController)
         {
+            m_lastDevice = device;
             OnControllerChanged?.Invoke(ControllerType.XBOX);
         }
         else if (device is DualShockGamepad)
         {
+            m_lastDevice = device;
             OnControllerChanged?.Invoke(ControllerType.PS);
         }
         else if (device is SwitchProControllerHID)
         {
+            m_lastDevice = device;
             OnControllerChanged?.Invoke(ControllerType.NINTENDO);
         }
         else if (device is Gamepad)
         {
+            m_lastDevice = device;
             OnControllerChanged?.Invoke(ControllerType.GENERIC);
         }
     }
