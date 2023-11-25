@@ -21,10 +21,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("FMOD Music Event References")]
     public FMODUnity.EventReference m_menuMusic;
-
-    [Space(5), Header("FMOD SFX Event References")]
-    public FMODUnity.EventReference m_talisman;
-    public FMODUnity.EventReference m_gameOver;
+    string m_currentZone;
 
     [Space(5), Header("UI SFX")]
     public FMODUnity.EventReference m_navigatingMenu;
@@ -60,6 +57,7 @@ public class AudioManager : MonoBehaviour
     public Dialogue m_talismanGrab;
     public Dialogue m_teleport;
     public Dialogue m_ending;
+    public FMODUnity.EventReference m_endSFX;
     int m_cinematics = 0;
     bool m_nextCinematic = false;
 
@@ -90,6 +88,7 @@ public class AudioManager : MonoBehaviour
         m_master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         m_dialogue = FMODUnity.RuntimeManager.GetBus("bus:/Master/Dialogue");
         LoadSettings();
+        m_currentZone = "Exploring";
     }
 
     void Start()
@@ -191,8 +190,7 @@ public class AudioManager : MonoBehaviour
         {            
             m_dialogueInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             m_game.m_menuManager.SetSubtitle(string.Empty, true);
-        }
-        m_game.m_menuManager.m_stopSubtitle = false;
+        }      
 
         int index = 0;
         m_playLines = true;
@@ -251,18 +249,6 @@ public class AudioManager : MonoBehaviour
             await UniTask.Yield();
         }
         m_game.m_menuManager.SetSubtitle(string.Empty, true);
-    }
-
-    public void PlayTalismanLoop()
-    {
-        m_talismanInstance = RuntimeManager.CreateInstance(m_talisman);
-        RuntimeManager.AttachInstanceToGameObject(m_talismanInstance, m_game.m_player.gameObject.transform);
-        m_talismanInstance.start();
-    }
-
-    public void GameOver()
-    {
-        PlayOneShot(m_gameOver, m_game.m_player.gameObject.transform.position);
     }
 
     async UniTask StopInteractions(FMOD.Studio.EventInstance instance)
@@ -370,8 +356,8 @@ public class AudioManager : MonoBehaviour
         }
         else if (m_cinematics == 2)
         {
-
             PlayDialogue(m_ending);
+            PlayOneShot(m_endSFX, m_game.m_player.transform.position);
             while (m_nextCinematic)
             {
                 await UniTask.Yield();
@@ -388,7 +374,7 @@ public class AudioManager : MonoBehaviour
 
     public void OnMenuSelect()
     {
-        //  PlayOneShot(m_selectedButton, m_game.m_player.gameObject.transform.position);
+        PlayOneShot(m_selectedButton, m_game.m_player.gameObject.transform.position);
     }
 
     public void OnMenuSlider()
@@ -405,8 +391,9 @@ public class AudioManager : MonoBehaviour
     {
         m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Combat");
     }
+
     public void StopCombatMusic()
     {
-        m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Exploring");
+        m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", m_currentZone);
     }
 }

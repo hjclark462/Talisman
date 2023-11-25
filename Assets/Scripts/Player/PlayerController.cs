@@ -283,6 +283,7 @@ public class PlayerController : MonoBehaviour, IBeing
     public void ChangeSensitivity(float change)
     {
         m_cameraSensitivity = change;
+        m_game.m_audioManager.OnMenuSlider();
     }
     #endregion
 
@@ -347,7 +348,7 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.release();
         m_talismanState = m_healing;
         m_talismanState.StartState(0);
-        ArmManaUp();
+        ArmManaUp().Forget();
     }
     private void StopHealing(InputAction.CallbackContext obj)
     {
@@ -359,7 +360,7 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         m_talismanState = m_idle;
         m_talismanState.StartState(0);
-        ArmManaDown();
+        ArmManaDown().Forget();
     }
 
     async UniTask ArmManaUp()
@@ -435,7 +436,7 @@ public class PlayerController : MonoBehaviour, IBeing
         {
             m_currentMana = m_maxMana;
         }
-        m_game.m_menuManager.UpdateMana();
+        m_game.m_menuManager.LerpMana().Forget();
     }
 
     #endregion    

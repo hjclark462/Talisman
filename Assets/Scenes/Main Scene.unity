@@ -361,28 +361,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 193078d3b066706499a8cc9d6f5e0b34, type: 3}
---- !u!114 &92241558 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1791306105140475677, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-  m_PrefabInstance: {fileID: 8225780666598699644}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424300d9a47c76e478c00b2eff9db8ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &92241560 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6401465964559973944, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-  m_PrefabInstance: {fileID: 8225780666598699644}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2883fc54c37289043bc345f94eb64bfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &103868701 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7612192247315411397, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
@@ -25669,6 +25647,10 @@ PrefabInstance:
     - target: {fileID: 6195379476003535159, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.7347983
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204017343392662370, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.32
       objectReference: {fileID: 0}
     - target: {fileID: 6205736765835600816, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -80811,6 +80793,11 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 445252171082543047, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
   m_PrefabInstance: {fileID: 1431290305}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1434449745 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2667286327200036164, guid: 0cf8b83c12e2ee3419b33f445e36bbed, type: 3}
+  m_PrefabInstance: {fileID: 291623527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1461189211
 GameObject:
   m_ObjectHideFlags: 0
@@ -84302,29 +84289,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_sigilSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_menuManager
-      value: 
-      objectReference: {fileID: 92241560}
-    - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_audioManager
-      value: 
-      objectReference: {fileID: 92241558}
-    - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_combatTutorial
       value: 
       objectReference: {fileID: 712967162}
     - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_moveToCinematicSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_rotateToCinematicSpeed
-      value: 50
-      objectReference: {fileID: 0}
+      propertyPath: m_sigilParticles
+      value: 
+      objectReference: {fileID: 1434449745}
     - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_cinematicPoints.Array.size
       value: 3
@@ -84534,13 +84505,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1791306105140475677, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_playerDeath
-      value: 
-      objectReference: {fileID: 11400000, guid: 894ec167e181ed042a86e345be4ec9b6, type: 2}
+      propertyPath: m_endSFX.Path
+      value: event:/SFX/Cutscene/Ending/SFX_Cutscene_Ending
+      objectReference: {fileID: 0}
     - target: {fileID: 1791306105140475677, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_allPuzzlesSolved
-      value: 
-      objectReference: {fileID: 11400000, guid: 11420f5504eb5544ba890679b8fc895f, type: 2}
+      propertyPath: m_endSFX.Guid.Data1
+      value: -325466346
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791306105140475677, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_endSFX.Guid.Data2
+      value: 1285153667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791306105140475677, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_endSFX.Guid.Data3
+      value: 1108747679
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791306105140475677, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_endSFX.Guid.Data4
+      value: 187447326
+      objectReference: {fileID: 0}
     - target: {fileID: 1791306105140475677, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_dialogues.Array.size
       value: 0
@@ -85185,6 +85168,10 @@ PrefabInstance:
       propertyPath: m_menuCamera
       value: 
       objectReference: {fileID: 1926004148}
+    - target: {fileID: 6401465964559973944, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_stopSubtitle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6401465964559973944, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_menuParticles
       value: 

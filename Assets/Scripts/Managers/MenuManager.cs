@@ -68,7 +68,7 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI m_tutorial;
     public TextMeshProUGUI m_interactText;
     [Space(5)]
-    bool m_showSubtitle = true;
+    public bool m_showSubtitle = true;
     public Image m_reticleHit;
     public float m_reticleHitTime = 0.5f;
     public Image m_damageVignette;
@@ -76,6 +76,7 @@ public class MenuManager : MonoBehaviour
     public float m_damageUpSpeed;
     public float m_damageWaitSpeed;
     public float m_damageDownSpeed;
+    public float m_manaUpSpeed;
     #endregion
 
     #region Cinematic Fields
@@ -128,11 +129,6 @@ public class MenuManager : MonoBehaviour
     GameManager m_game;
     public PlayerController m_player;
     public EventSystem m_eventSystem;
-
-    private void Awake()
-    {
-        LoadSettings();        
-    }
 
     private void Start()
     {
@@ -188,6 +184,7 @@ public class MenuManager : MonoBehaviour
         m_respawnButton.gameObject.SetActive(false);
         m_deathQuit.onClick.AddListener(delegate () { QuitGame(); });
         m_deathQuit.gameObject.SetActive(false);
+        LoadSettings();         
     }
     public void LoadSettings()
     {
@@ -370,18 +367,21 @@ public class MenuManager : MonoBehaviour
     }
     void StartGame()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.m_audioManager.PlayIntroDialogue();
         m_game.UpdateGameState(GameState.GAME);
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Resume()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.GAME);
         m_game.m_audioManager.m_dialogueInstance.setPaused(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
     void QuitGame()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.m_audioManager.EndFmodLoop(m_game.m_audioManager.m_menuMusicInstance);
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -391,6 +391,7 @@ public class MenuManager : MonoBehaviour
     }
     void Options()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.OPTIONS);
         if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
         {
@@ -408,10 +409,12 @@ public class MenuManager : MonoBehaviour
         {
             MainMenu();
         }
+        m_game.m_audioManager.OnMenuBack();
     }
 
     void ControlScreen()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.CONTROLS);
         if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
         {
@@ -457,6 +460,7 @@ public class MenuManager : MonoBehaviour
 
     void Credits()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.CREDITS);
         if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
         {
@@ -650,6 +654,18 @@ public class MenuManager : MonoBehaviour
         m_mana.value = m_player.m_currentMana;
     }
 
+    public async UniTask LerpMana()
+    {
+        float mana = m_mana.value;
+        while (mana < m_player.m_currentMana)
+        {
+            mana += Time.deltaTime * m_manaUpSpeed;
+            m_mana.value = mana;
+            await UniTask.Yield();
+        }
+        m_mana.value = m_player.m_currentMana;
+    }
+
     public async UniTask FadeDeathScreen(bool isEnd)
     {
         Color colourA = m_deathImage.color;
@@ -718,9 +734,22 @@ public class MenuManager : MonoBehaviour
 
     void Respawn()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_respawnButton.gameObject.SetActive(false);
         m_deathQuit.gameObject.SetActive(false);
-        m_deathImage.color = new Color(0, 0, 0, 0);
+        Color colourA = m_deathImage.color;
+        Color colourB = m_deathParticles.color;
+        Color colourC = m_endTitle.color;
+        Color colourD = m_thanksMessage.color;
+        float alpha = 0;
+        colourA.a = alpha;
+        colourB.a = alpha;
+        colourC.a = alpha;
+        colourD.a = alpha;
+        m_deathImage.color = colourA;
+        m_deathParticles.color = colourB;
+        m_endTitle.color = colourC;
+        m_thanksMessage.color = colourD;
         if (m_game.m_isEnd)
         {
             m_game.m_isEnd = false;
@@ -740,8 +769,7 @@ public class MenuManager : MonoBehaviour
     {
         m_showSubtitle = show;
     }
-
-    public bool m_stopSubtitle = false;
+       
     public void SetSubtitle(string subtitile, bool isPlayer)
     {
         m_subtitles.gameObject.SetActive(m_showSubtitle);
