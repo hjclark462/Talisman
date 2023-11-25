@@ -129,6 +129,11 @@ public class MenuManager : MonoBehaviour
     public PlayerController m_player;
     public EventSystem m_eventSystem;
 
+    private void Awake()
+    {
+        LoadSettings();        
+    }
+
     private void Start()
     {
         m_game = GameManager.Instance;
@@ -183,6 +188,20 @@ public class MenuManager : MonoBehaviour
         m_respawnButton.gameObject.SetActive(false);
         m_deathQuit.onClick.AddListener(delegate () { QuitGame(); });
         m_deathQuit.gameObject.SetActive(false);
+    }
+    public void LoadSettings()
+    {
+        m_showSubtitle = PlayerPrefs.GetInt("showSubtitle") == 1;
+    }
+    public void SaveSettings()
+    {
+        PlayerPrefs.SetFloat("showSubtitle", m_showSubtitle ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    void OnDestroy()
+    {
+        SaveSettings();
     }
 
     public void InputDeviceChanged(InputEventPtr eventPtr, InputDevice device)
@@ -331,9 +350,15 @@ public class MenuManager : MonoBehaviour
         m_game.m_audioManager.EndFmodLoop(m_game.m_audioManager.m_menuMusicInstance);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    bool first = true;
     void MainMenu()
     {
         m_game.UpdateGameState(GameState.MENU);
+        if(first)
+        {
+            first = false;
+            m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);
+        }
         if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);

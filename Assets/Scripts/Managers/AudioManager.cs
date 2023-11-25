@@ -89,6 +89,7 @@ public class AudioManager : MonoBehaviour
         m_sFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         m_master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         m_dialogue = FMODUnity.RuntimeManager.GetBus("bus:/Master/Dialogue");
+        LoadSettings();
     }
 
     void Start()
@@ -96,11 +97,12 @@ public class AudioManager : MonoBehaviour
         m_game = GameManager.Instance;
         m_game.m_audioManager = this;
 
+
         m_menuMusicInstance = FMODUnity.RuntimeManager.CreateInstance(m_menuMusic);
         StartFmodLoop(m_menuMusicInstance);
     }
 
-    private void Update()
+    void Update()
     {
         m_master.setVolume(m_masterVolume);
         m_music.setVolume(m_musicVolume);
@@ -108,6 +110,27 @@ public class AudioManager : MonoBehaviour
         m_sFX.setVolume(m_sFXVolume);
     }
 
+    void OnDestroy()
+    {
+        SaveSettings();
+    }
+
+    void LoadSettings()       
+    {
+        m_masterVolume = PlayerPrefs.GetFloat("masterVolume");
+        m_musicVolume = PlayerPrefs.GetFloat("musicVolume");
+        m_dialogueVolume = PlayerPrefs.GetFloat("dialogueVolume");
+        m_sFXVolume = PlayerPrefs.GetFloat("sfxVolume");
+    }
+
+    void SaveSettings()
+    {
+        PlayerPrefs.SetFloat("masterVolume", m_masterVolume);
+        PlayerPrefs.SetFloat("musicVolume", m_musicVolume);
+        PlayerPrefs.SetFloat("dialogueVolume", m_dialogueVolume);
+        PlayerPrefs.SetFloat("sfxVolume", m_sFXVolume);
+        PlayerPrefs.Save();
+    }
     public void MasterVolumeLevel(float newMasterVolume)
     {
         PlayOneShot(m_sliderSound, m_game.m_player.gameObject.transform.position);
