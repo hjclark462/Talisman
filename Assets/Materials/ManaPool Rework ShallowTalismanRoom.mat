@@ -46,9 +46,9 @@ Material:
     - _Blend: 0
     - _BlendAmount: 0.472
     - _CastShadows: 0
-    - _CausticDensity: 12.52
-    - _CausticSoftness: 0.02
-    - _CausticSpeed: 60
+    - _CausticDensity: 500
+    - _CausticSoftness: 0.08
+    - _CausticSpeed: 800
     - _CausticThiccness: 1.37
     - _Cull: 2
     - _Depth: 0
@@ -77,6 +77,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
+    - _CausticColor: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _Dampen: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 0}
     - _DeepWater: {r: 0, g: 0.37645918, b: 0.6886792, a: 0.43137255}
