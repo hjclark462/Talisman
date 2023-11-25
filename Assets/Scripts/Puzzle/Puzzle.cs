@@ -98,6 +98,7 @@ public class Puzzle : MonoBehaviour
         m_secondInputObject = p;
     }
   
+    public virtual void ForwardMana() { }
 }
 
 public enum Positions

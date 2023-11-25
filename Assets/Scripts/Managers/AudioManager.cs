@@ -14,14 +14,15 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.Bus m_sFX;
     FMOD.Studio.Bus m_dialogue;
     FMOD.Studio.Bus m_master;
-    public float m_musicVolume = 0.5f;
+    public float m_musicVolume = 0.5f;    
     public float m_sFXVolume = 0.5f;
     public float m_dialogueVolume = 0.5f;
     public float m_masterVolume = 1f;
 
     [Header("FMOD Music Event References")]
     public FMODUnity.EventReference m_menuMusic;
-    string m_currentZone;
+    [HideInInspector]
+    public string m_currentZone;
 
     [Space(5), Header("UI SFX")]
     public FMODUnity.EventReference m_navigatingMenu;
@@ -87,7 +88,6 @@ public class AudioManager : MonoBehaviour
         m_sFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         m_master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         m_dialogue = FMODUnity.RuntimeManager.GetBus("bus:/Master/Dialogue");
-        LoadSettings();
         m_currentZone = "Exploring";
     }
 
@@ -96,6 +96,7 @@ public class AudioManager : MonoBehaviour
         m_game = GameManager.Instance;
         m_game.m_audioManager = this;
 
+        LoadSettings();
 
         m_menuMusicInstance = FMODUnity.RuntimeManager.CreateInstance(m_menuMusic);
         StartFmodLoop(m_menuMusicInstance);

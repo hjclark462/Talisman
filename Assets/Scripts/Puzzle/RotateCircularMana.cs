@@ -672,4 +672,17 @@ public class RotateCircularMana : Puzzle
     {
         m_manaFailTwo.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
+
+    public override void ForwardMana()
+    {
+        m_rewindMana = false;
+        if (m_outputLeftObject != null)
+        {
+            m_outputLeftObject.ForwardMana();
+        }
+        if (m_outputRightObject != null)
+        {
+            m_outputRightObject.ForwardMana();
+        }
+    }
 }

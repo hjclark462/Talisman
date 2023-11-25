@@ -69,6 +69,7 @@ public class Lever : Puzzle
                 m_isOn = true;
                 if (m_connectedPuzzle != null)
                 {
+                    ForwardMana();
                     m_connectedPuzzle.m_updateMana = true;
                     m_connectedPuzzle.StopRotation();
                 }
@@ -89,5 +90,13 @@ public class Lever : Puzzle
                 door.CheckState();
             }
         }
+    }
+    public override void ForwardMana()
+    {
+        m_rewindMana = false;
+        if (m_connectedPuzzle != null)
+        {
+            m_connectedPuzzle.ForwardMana();
+        }        
     }
 }
