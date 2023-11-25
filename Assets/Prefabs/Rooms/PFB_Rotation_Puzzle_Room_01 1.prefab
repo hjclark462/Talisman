@@ -12429,6 +12429,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 8905676315366799388}
     m_Modifications:
     - target: {fileID: 1659204239206607576, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
+      propertyPath: m_Range
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
+      propertyPath: m_Intensity
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
+      propertyPath: m_SpotAngle
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: 6ae5c3ad6ecfdeb4ca3b1da61dadbc7c, type: 3}
       propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
@@ -22920,15 +22932,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1659204239206607576, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_Range
-      value: 49.8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1659204239206607576, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_Intensity
-      value: 123.7
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
+      propertyPath: m_SpotAngle
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 1659204239206607576, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_Lightmapping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1910163346137811108, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_Name
@@ -22978,21 +22998,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3950328712416974137, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
+      propertyPath: m_Range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950328712416974137, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950328712416974137, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950328712416974137, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5404386590753556829, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7045893
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5404386590753556829, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7045893
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5404386590753556829, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.059614807
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5404386590753556829, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.059614807
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5404386590753556829, guid: 84805a12f9c000e4abf14c11af2f76be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

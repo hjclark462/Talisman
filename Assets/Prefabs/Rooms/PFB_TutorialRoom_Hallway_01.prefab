@@ -215,8 +215,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.71761614, b: 0.3820755, a: 1}
-  m_Intensity: 194.2
-  m_Range: 18.25
+  m_Intensity: 65
+  m_Range: 12
   m_SpotAngle: 72.567566
   m_InnerSpotAngle: 11.749025
   m_CookieSize: 10
@@ -254,10 +254,10 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -2943,10 +2943,6 @@ PrefabInstance:
       value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
-      propertyPath: m_Range
-      value: 9.6045265
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Color.b
       value: 0.53333336
       objectReference: {fileID: 0}
@@ -4354,10 +4350,6 @@ PrefabInstance:
     - target: {fileID: 73443648786560341, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Name
       value: PFB_Sconce_Red (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
-      propertyPath: m_Range
-      value: 9.82814
       objectReference: {fileID: 0}
     - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Color.b
@@ -14544,10 +14536,6 @@ PrefabInstance:
     - target: {fileID: 73443648786560341, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 69
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
-      propertyPath: m_Range
-      value: 9.6045265
       objectReference: {fileID: 0}
     - target: {fileID: 2034487296124175024, guid: 7bfb9302586c1ef4990475622342303d, type: 3}
       propertyPath: m_Color.b

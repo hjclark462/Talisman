@@ -45,8 +45,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.79215693, b: 0.3921569, a: 1}
-  m_Intensity: 1.46
-  m_Range: 14.89
+  m_Intensity: 2
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -84,7 +84,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -13491,6 +13491,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8843243286599680231}
     m_Modifications:
+    - target: {fileID: 1659204239206607576, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_Range
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_Intensity
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_SpotAngle
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 1659204239206607576, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 1910163346137811108, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
       propertyPath: m_Name
       value: PFB_Tutorial_Roof_Light
@@ -13537,6 +13553,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3027509344994182793, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950328712416974137, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_Range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404386590753556829, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404386590753556829, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404386590753556829, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404386590753556829, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404386590753556829, guid: cc9ab8c5f2b70fd4c8711eb373236e10, type: 3}
+      propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
