@@ -467,6 +467,7 @@ public class RotateCircularMana : Puzzle
                 {
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_posTwoFail.position;
+                    m_failParticlesOne.Play();
                     StartOneFailSounds(m_failParticlesOne.transform);
                 }
                 if (m_outputRightObject != null && (m_outputRightObject.m_input == Positions.ONE || m_outputRightObject.m_output == Positions.ONE))
@@ -478,6 +479,7 @@ public class RotateCircularMana : Puzzle
                 {
                     //Activate futz graphic                                        
                     m_failParticlesTwo.gameObject.transform.position = m_posThreeFail.position;
+                    m_failParticlesTwo.Play();
                     StartTwoFailSounds(m_failParticlesTwo.transform);
                 }
             }
@@ -495,6 +497,7 @@ public class RotateCircularMana : Puzzle
                 {
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesPos.position;
+                    m_failParticlesOne.Play();
                     StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
@@ -511,6 +514,7 @@ public class RotateCircularMana : Puzzle
 
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesPos.position;
+                    m_failParticlesOne.Play();
                     StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
@@ -530,6 +534,7 @@ public class RotateCircularMana : Puzzle
 
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesNeg.position;
+                    m_failParticlesOne.Play();
                     StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
@@ -546,6 +551,7 @@ public class RotateCircularMana : Puzzle
 
                     //Activate futz graphic                    
                     m_failParticlesOne.gameObject.transform.position = m_failParticlesNeg.position;
+                    m_failParticlesOne.Play();
                     StartOneFailSounds(m_failParticlesOne.transform);
                 }
             }
