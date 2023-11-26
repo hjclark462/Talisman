@@ -10,7 +10,7 @@ public class TutorialRotateManaEditor: Editor
 
     private void OnEnable()
     {
-        string[] hiddenProperties = new string[] { "m_rewindMana", "m_bridge", "m_input", "m_output" }; 
+        string[] hiddenProperties = new string[] { "m_rewindMana", "m_bridge", "m_input", "m_output"}; 
         properties = EditorHelper.GetExposedProperties(this.serializedObject, hiddenProperties);
     }
 
