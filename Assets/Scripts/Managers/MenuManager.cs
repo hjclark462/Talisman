@@ -54,6 +54,9 @@ public class MenuManager : MonoBehaviour
     public Button m_quit;
     public ParticleSystem m_menuParticles;
     public Camera m_menuCamera;
+    public List<Image> m_images;
+    public List<TextMeshProUGUI> m_labels;
+    public float m_startTimeDown = 2f;
     #endregion
 
     #region HUD Fields
@@ -99,6 +102,7 @@ public class MenuManager : MonoBehaviour
     [Header("Options"), Space(5)]
     public Slider m_camSensitivitySlider;
     public Toggle m_subtitlesToggle;
+    public Toggle m_vibrationsToggle;
     public Slider m_masterVolumeSlider;
     public Slider m_musicVolumeSlider;
     public Slider m_sfxSlider;
@@ -112,6 +116,8 @@ public class MenuManager : MonoBehaviour
     public float m_defaultDialogueVolume = 0.5f;
     public float m_defaultMasterVolume = 1f;
     public bool m_defaultSubtitle = true;
+    public bool m_defaultVibrations = true;
+    public bool m_vibrations = true;
     #endregion
 
     #region Controller Screen Fields
@@ -151,7 +157,7 @@ public class MenuManager : MonoBehaviour
         LoadSettings();
 
         //Main Menu Setup
-        m_newGame.onClick.AddListener(delegate () { StartGame(); });
+        m_newGame.onClick.AddListener(delegate () { StartGame().Forget(); });
         m_menuOptions.onClick.AddListener(delegate () { Options(); });
         m_quit.onClick.AddListener(delegate () { QuitGame(); });
 
@@ -173,6 +179,8 @@ public class MenuManager : MonoBehaviour
         m_camSensitivitySlider.SetValueWithoutNotify(m_player.m_cameraSensitivity);
         m_subtitlesToggle.onValueChanged.AddListener(ShowSubtitles);
         m_subtitlesToggle.SetIsOnWithoutNotify(m_showSubtitle);
+        m_vibrationsToggle.onValueChanged.AddListener(AllowVibrations);
+        m_vibrationsToggle.SetIsOnWithoutNotify(m_vibrations);
         m_masterVolumeSlider.onValueChanged.AddListener(m_game.m_audioManager.MasterVolumeLevel);
         m_masterVolumeSlider.SetValueWithoutNotify(m_game.m_audioManager.m_masterVolume);
         m_musicVolumeSlider.onValueChanged.AddListener(m_game.m_audioManager.MusicVolumeLevel);
@@ -197,11 +205,27 @@ public class MenuManager : MonoBehaviour
     }
     public void LoadSettings()
     {
-        m_showSubtitle = PlayerPrefs.GetInt("showSubtitle") == 1;        
+        if (PlayerPrefs.HasKey("showSubtitle"))
+        {
+            m_showSubtitle = PlayerPrefs.GetInt("showSubtitle") == 1;
+        }
+        else
+        {
+            m_showSubtitle = true;
+        }
+        if (PlayerPrefs.HasKey("vibrations"))
+        {
+            m_vibrations = PlayerPrefs.GetInt("vibrations") == 1;
+        }
+        else
+        {
+            m_vibrations = true;
+        }
     }
     public void SaveSettings()
     {
         PlayerPrefs.SetInt("showSubtitle", m_showSubtitle ? 1 : 0);
+        PlayerPrefs.SetInt("vibrations", m_vibrations ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -378,9 +402,35 @@ public class MenuManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
         }
     }
-    void StartGame()
-    {
-        m_game.m_audioManager.OnMenuSelect();
+    async UniTask StartGame()
+    {        
+        Color background = Color.white;
+        float alpha = 1f;
+        while(alpha > 0f) 
+        {
+            float step = Time.unscaledDeltaTime * m_startTimeDown;
+            alpha -= step;
+            background.a = alpha;
+            foreach(Image i in m_images)
+            {
+                i.color = background;
+            }
+            foreach(TextMeshProUGUI text in m_labels)
+            {
+                text.color = background;
+            }
+            await UniTask.Yield();
+        }
+        alpha = 0;
+        background.a = alpha;
+        foreach (Image i in m_images)
+        {
+            i.color = background;
+        }
+        foreach (TextMeshProUGUI text in m_labels)
+        {
+            text.color = background;
+        }
         m_subtitles.gameObject.SetActive(m_showSubtitle);
         m_subtitlesBackground.gameObject.SetActive(m_showSubtitle);
         m_game.m_audioManager.PlayIntroDialogue();
@@ -434,6 +484,9 @@ public class MenuManager : MonoBehaviour
 
         m_subtitlesToggle.SetIsOnWithoutNotify(m_defaultSubtitle);
         m_showSubtitle = m_defaultSubtitle;
+        
+        m_vibrationsToggle.SetIsOnWithoutNotify(m_defaultVibrations);
+        m_vibrations = m_defaultVibrations;
 
         m_masterVolumeSlider.value = m_defaultMasterVolume;
         m_game.m_audioManager.MasterVolumeLevel(m_defaultMasterVolume);
@@ -806,6 +859,11 @@ public class MenuManager : MonoBehaviour
             m_damageVignette.color = zero;
             m_game.Respawn();
         }
+    }
+
+    void AllowVibrations(bool vibes)
+    {
+        m_vibrations = vibes;
     }
 
     void ShowSubtitles(bool show)

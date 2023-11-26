@@ -153,7 +153,14 @@ public class PlayerController : MonoBehaviour, IBeing
 
     public void LoadSettings()
     {
-        m_cameraSensitivity = PlayerPrefs.GetFloat("cameraSensitivity");
+        if(PlayerPrefs.HasKey("cameraSensitivity"))
+        {
+            m_cameraSensitivity = PlayerPrefs.GetFloat("cameraSensitivity");
+        }
+        else
+        {
+            m_cameraSensitivity = 150f;
+        }
     }
     public void SaveSettings()
     {
@@ -601,6 +608,10 @@ public class PlayerController : MonoBehaviour, IBeing
     int m_vibeCount = 0;
     public async UniTask Rumble(Vector3 rumble)
     {
+        if(!m_game.m_menuManager.m_vibrations)
+        {
+            return;
+        }
         m_vibeCount++;
         Gamepad pad = Gamepad.current;
         if (pad == null)

@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.Bus m_sFX;
     FMOD.Studio.Bus m_dialogue;
     FMOD.Studio.Bus m_master;
-    public float m_musicVolume = 0.5f;    
+    public float m_musicVolume = 0.5f;
     public float m_sFXVolume = 0.5f;
     public float m_dialogueVolume = 0.5f;
     public float m_masterVolume = 1f;
@@ -84,7 +84,7 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Awake()
-    {        
+    {
         m_music = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
         m_sFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         m_master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
@@ -116,12 +116,40 @@ public class AudioManager : MonoBehaviour
         SaveSettings();
     }
 
-    void LoadSettings()       
+    void LoadSettings()
     {
-        m_masterVolume = PlayerPrefs.GetFloat("masterVolume");
-        m_musicVolume = PlayerPrefs.GetFloat("musicVolume");
-        m_dialogueVolume = PlayerPrefs.GetFloat("dialogueVolume");
-        m_sFXVolume = PlayerPrefs.GetFloat("sfxVolume");
+        if (PlayerPrefs.HasKey("masterVolume"))
+        {
+            m_masterVolume = PlayerPrefs.GetFloat("masterVolume");
+        }
+        else
+        {
+            m_masterVolume = 1f;
+        }
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            m_musicVolume = PlayerPrefs.GetFloat("musicVolume");
+        }
+        else
+        {
+            m_musicVolume = 0.6f;
+        }
+        if (PlayerPrefs.HasKey("dialogueVolume"))
+        {
+            m_dialogueVolume = PlayerPrefs.GetFloat("dialogueVolume");
+        }
+        else
+        {
+            m_dialogueVolume = 0.5f;
+        }
+        if (PlayerPrefs.HasKey("sfxVolume"))
+        {
+            m_sFXVolume = PlayerPrefs.GetFloat("sfxVolume");
+        }
+        else
+        {
+            m_sFXVolume = 1f;
+        }
     }
 
     void SaveSettings()
@@ -189,10 +217,10 @@ public class AudioManager : MonoBehaviour
         m_dialogueInstance.getPlaybackState(out current);
 
         if (current == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        {            
+        {
             m_dialogueInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             m_game.m_menuManager.SetSubtitle(string.Empty, true);
-        }      
+        }
 
         int index = 0;
         m_playLines = true;
@@ -232,10 +260,10 @@ public class AudioManager : MonoBehaviour
         m_dialogueInstance.getPlaybackState(out current);
 
         if (current == FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        {         
+        {
             m_dialogueInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             m_game.m_menuManager.SetSubtitle(string.Empty, fmodEvent.m_isPlayer);
-        }       
+        }
         m_dialogueInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent.m_eventReference);
         RuntimeManager.AttachInstanceToGameObject(m_dialogueInstance, go.transform);
         m_dialogueInstance.start();
