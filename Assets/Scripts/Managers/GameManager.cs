@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     public List<Transform> m_cinematicPoints;
     public ParticleSystem m_sigilParticles;    
     public Vector3 m_teleportRumble = new Vector3(0.3f, 0.3f, 0.3f);
-    public float m_explosionTime;    
+    public float m_explosionTime;
+    public Vector3 m_leadInRumble = new Vector3(0.3f, 0f, 2f);
     public Vector3 m_explosionRumble = new Vector3(0.3f, 0.9f, 0.1f);
     public Vector3 m_lowRumble = new Vector3(0.3f, 0, 5f);
     public MeshRenderer m_sigilMesh;
@@ -297,6 +298,12 @@ public class GameManager : MonoBehaviour
     {
         float time = Time.time;
         while (Time.time < time + m_explosionTime)
+        {
+            await UniTask.Yield();
+        }
+        m_player.Rumble(m_leadInRumble).Forget();
+        time = Time.time;
+        while (Time.time < time + m_leadInRumble.z)
         {
             await UniTask.Yield();
         }
