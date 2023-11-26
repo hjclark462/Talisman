@@ -90,6 +90,7 @@ public class AudioManager : MonoBehaviour
         m_master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         m_dialogue = FMODUnity.RuntimeManager.GetBus("bus:/Master/Dialogue");
         m_currentZone = "Exploring";
+        LoadSettings();
     }
 
     void Start()
@@ -97,7 +98,6 @@ public class AudioManager : MonoBehaviour
         m_game = GameManager.Instance;
         m_game.m_audioManager = this;
 
-        LoadSettings();
 
         m_menuMusicInstance = FMODUnity.RuntimeManager.CreateInstance(m_menuMusic);
         StartFmodLoop(m_menuMusicInstance);

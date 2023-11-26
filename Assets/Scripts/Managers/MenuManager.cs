@@ -174,13 +174,13 @@ public class MenuManager : MonoBehaviour
         m_subtitlesToggle.onValueChanged.AddListener(ShowSubtitles);
         m_subtitlesToggle.SetIsOnWithoutNotify(m_showSubtitle);
         m_masterVolumeSlider.onValueChanged.AddListener(m_game.m_audioManager.MasterVolumeLevel);
-        m_masterVolumeSlider.SetValueWithoutNotify(1);
+        m_masterVolumeSlider.SetValueWithoutNotify(m_game.m_audioManager.m_masterVolume);
         m_musicVolumeSlider.onValueChanged.AddListener(m_game.m_audioManager.MusicVolumeLevel);
-        m_musicVolumeSlider.SetValueWithoutNotify(0.5f);
+        m_musicVolumeSlider.SetValueWithoutNotify(m_game.m_audioManager.m_musicVolume);
         m_sfxSlider.onValueChanged.AddListener(m_game.m_audioManager.SFXVolumeLevel);
-        m_sfxSlider.SetValueWithoutNotify(0.5f);
+        m_sfxSlider.SetValueWithoutNotify(m_game.m_audioManager.m_sFXVolume);
         m_dialogueSlider.onValueChanged.AddListener(m_game.m_audioManager.DialogueVolumeLevel);
-        m_dialogueSlider.SetValueWithoutNotify(0.5f);
+        m_dialogueSlider.SetValueWithoutNotify(m_game.m_audioManager.m_dialogueVolume);
         m_controlsMain.onClick.AddListener(delegate () { ControlScreen(); });
         m_credits.onClick.AddListener(delegate () { Credits(); });
         m_optionsBack.onClick.AddListener(delegate () { OptionsBack(); });
@@ -197,7 +197,7 @@ public class MenuManager : MonoBehaviour
     }
     public void LoadSettings()
     {
-        m_showSubtitle = PlayerPrefs.GetInt("showSubtitle") == 1;
+        m_showSubtitle = PlayerPrefs.GetInt("showSubtitle") == 1;        
     }
     public void SaveSettings()
     {

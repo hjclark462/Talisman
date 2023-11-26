@@ -80963,8 +80963,16 @@ PrefabInstance:
       value: 8.34e-43
       objectReference: {fileID: 0}
     - target: {fileID: 5968836732193619731, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968836732193619731, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
+      propertyPath: m_Center.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968836732193619731, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
       propertyPath: m_Center.z
-      value: 1.45
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 6027779181158409473, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
       propertyPath: m_IsActive
@@ -81278,8 +81286,7 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 585280416026078017, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e8c088c4519c64c8decef04f76f19c, type: 3}
 --- !u!4 &1431290306 stripped
 Transform:

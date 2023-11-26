@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour, IBeing
         Transform t = gameObject.transform;
         m_game.m_initialSpawn = t;
         m_skinnedMeshRenderer.enabled = false;
+        LoadSettings();
     }
     void Start()
     {
