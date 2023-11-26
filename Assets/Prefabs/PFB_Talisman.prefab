@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 69
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2750298617658409203
 Transform:
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82b53352e1324b94b9d15d85132017fe, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b53352e1324b94b9d15d85132017fe, type: 3}
@@ -150,3 +150,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82b53352e1324b94b9d15d85132017fe, type: 3}
   m_PrefabInstance: {fileID: 1423329709129825032}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2234285717309900377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 82b53352e1324b94b9d15d85132017fe, type: 3}
+  m_PrefabInstance: {fileID: 1423329709129825032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &3526229070419245734
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234285717309900377}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4e859c4bf73bf704a95c41fb54f050e9, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4e859c4bf73bf704a95c41fb54f050e9, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
