@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour, IBeing
     float m_smoothTime = 0.3f;
     Vector2 MoveDampVelocity;
     public SkinnedMeshRenderer m_skinnedMeshRenderer;
+    public float m_armManaSpeed = 2f;
     #endregion
 
     #region Animation Fields
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour, IBeing
     public float m_healRate;
     public ParticleSystem m_healParticles;
     HealingState m_healing;
-    Dictionary<string, float> m_enemiesHaveHit = new Dictionary<string, float>();    
+    Dictionary<string, float> m_enemiesHaveHit = new Dictionary<string, float>();
     #endregion
 
     #region Mana Fields    
@@ -72,11 +73,14 @@ public class PlayerController : MonoBehaviour, IBeing
     public bool m_canAttack = true;
     public float m_attackTime;
     public ParticleSystem m_attackParticle;
+    public Vector3 m_swingVibration = new Vector3(0.5f, 0, 0.2f);
+    public Vector3 m_hitVibration = new Vector3(0.5f, 0.8f, 1f);
     #endregion
 
     #region Block Parry Fields
     public bool m_isBlocking = false;
     public ParticleSystem m_blockAttackParticle;
+    public Vector3 m_blockVibration = new Vector3(0.2f, 0.9f, 0.9f);
     Material m_swordBlockMaterial;
     #endregion
 
@@ -127,7 +131,7 @@ public class PlayerController : MonoBehaviour, IBeing
         m_inputControl.Player_Map.Heal.performed += StartHealing;
         m_inputControl.Player_Map.Heal.canceled += StopHealing;
         m_inputControl.Player_Map.MeleeAttack.performed += MeleeAttack;
-        m_inputControl.Player_Map.Interact.performed += Interact;        
+        m_inputControl.Player_Map.Interact.performed += Interact;
 
         m_inputControl.Player_Map.BlockParry.performed += BlockParry;
         m_inputControl.Player_Map.BlockParry.canceled += StopBlockParry;
@@ -143,6 +147,21 @@ public class PlayerController : MonoBehaviour, IBeing
         m_game.m_menuManager.UpdateMana();
 
         m_game.m_aiManager.RegisterBeing(this);
+    }
+
+    public void LoadSettings()
+    {
+        m_cameraSensitivity = PlayerPrefs.GetFloat("cameraSensitivity");
+    }
+    public void SaveSettings()
+    {
+        PlayerPrefs.SetFloat("cameraSensitivity", m_cameraSensitivity);
+        PlayerPrefs.Save();
+    }
+
+    void OnDestroy()
+    {
+        SaveSettings();
     }
 
     private void PauseGame(InputAction.CallbackContext obj)
@@ -205,6 +224,7 @@ public class PlayerController : MonoBehaviour, IBeing
             else if (e != null && HitAlready(e.gameObject.name) == false && m_isBlocking)
             {
                 m_game.m_audioManager.PlayOneShot(m_blockedSound, gameObject.transform.position);
+                Rumble(m_blockVibration).Forget();
                 if (m_blockAttackParticle != null)
                 {
                     m_swordBlockMaterial.SetFloat("_TimeReset", Time.time);
@@ -225,10 +245,14 @@ public class PlayerController : MonoBehaviour, IBeing
         }
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        Vector2 move = m_inputControl.Player_Map.Movement.ReadValue<Vector2>().normalized;
-        bool isRunning = m_inputControl.Player_Map.Sprint.IsInProgress();
-        float speedX = m_canMove ? (isRunning ? m_runSpeed : m_walkSpeed) * move.y : 0;
-        float speedY = m_canMove ? (isRunning ? m_runSpeed : m_walkSpeed) * move.x : 0;
+        Vector2 move = m_inputControl.Player_Map.Movement.ReadValue<Vector2>();
+        if (move.magnitude < 0.1f)
+        {
+            move = Vector2.zero;
+        }
+        move = move.normalized;
+        float speedX = m_canMove ? m_walkSpeed * move.y : 0;
+        float speedY = m_canMove ? m_walkSpeed * move.x : 0;
         float yDirection = m_moveDirection.y;
         m_moveDirection = (forward * speedX) + (right * speedY);
         bool wasJumping = m_characterController.isGrounded;
@@ -267,6 +291,7 @@ public class PlayerController : MonoBehaviour, IBeing
     public void ChangeSensitivity(float change)
     {
         m_cameraSensitivity = change;
+        m_game.m_audioManager.OnMenuSlider();
     }
     #endregion
 
@@ -331,7 +356,7 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.release();
         m_talismanState = m_healing;
         m_talismanState.StartState(0);
-        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", 1);
+        ArmManaUp().Forget();
     }
     private void StopHealing(InputAction.CallbackContext obj)
     {
@@ -343,8 +368,32 @@ public class PlayerController : MonoBehaviour, IBeing
         m_healingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         m_talismanState = m_idle;
         m_talismanState.StartState(0);
-        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", 0);
+        ArmManaDown().Forget();
+    }
 
+    async UniTask ArmManaUp()
+    {
+        float arm = m_skinnedMeshRenderer.materials[3].GetFloat("_ArmActive");
+        while (arm < 1)
+        {
+            arm += Time.deltaTime * m_armManaSpeed;
+            m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", arm);
+            await UniTask.Yield();
+        }
+        arm = 1;
+        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", arm);
+    }
+    async UniTask ArmManaDown()
+    {
+        float arm = m_skinnedMeshRenderer.materials[3].GetFloat("_ArmActive");
+        while (arm > 0)
+        {
+            arm -= Time.deltaTime * m_armManaSpeed;
+            m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", arm);
+            await UniTask.Yield();
+        }
+        arm = 0;
+        m_skinnedMeshRenderer.materials[3].SetFloat("_ArmActive", arm);
     }
 
     public void Heal()
@@ -395,7 +444,7 @@ public class PlayerController : MonoBehaviour, IBeing
         {
             m_currentMana = m_maxMana;
         }
-        m_game.m_menuManager.UpdateMana();
+        m_game.m_menuManager.LerpMana().Forget();
     }
 
     #endregion    
@@ -424,6 +473,7 @@ public class PlayerController : MonoBehaviour, IBeing
             {
                 m_currentAttack = 1;
             }
+            Rumble(m_swingVibration).Forget();
         }
     }
 
@@ -540,8 +590,30 @@ public class PlayerController : MonoBehaviour, IBeing
 
     public void FinishCinematic()
     {
-     //   m_swordCollider.gameObject.transform.localPosition = new Vector3(0, 0.001446927f, 0);
         m_game.UpdateGameState(GameState.GAME);
     }
     #endregion
+
+
+    int m_vibeCount = 0;
+    public async UniTask Rumble(Vector3 rumble)
+    {
+        m_vibeCount++;
+        Gamepad pad = Gamepad.current;
+        if (pad == null)
+        {
+            return;
+        }
+        pad.SetMotorSpeeds(rumble.x, rumble.y);
+        float start = Time.time;
+        while (Time.time < start + rumble.z)
+        {
+            await UniTask.Yield();
+        }
+        m_vibeCount--;
+        if (m_vibeCount == 0)
+        {
+            pad.ResetHaptics();
+        }
+    }
 }

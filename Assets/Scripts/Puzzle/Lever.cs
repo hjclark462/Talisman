@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class Lever : Puzzle
@@ -62,13 +63,14 @@ public class Lever : Puzzle
         if (m_canBeInteracted)
         {
             GameManager.Instance.m_audioManager.PlayOneShot(m_interact, transform.position);
-
+            GameManager.Instance.m_player.Rumble(m_rumble).Forget();
             if (!m_isOn)
             {
                 m_canBeInteracted = false;
                 m_isOn = true;
                 if (m_connectedPuzzle != null)
                 {
+                    ForwardMana();
                     m_connectedPuzzle.m_updateMana = true;
                     m_connectedPuzzle.StopRotation();
                 }
@@ -89,5 +91,13 @@ public class Lever : Puzzle
                 door.CheckState();
             }
         }
+    }
+    public override void ForwardMana()
+    {
+        m_rewindMana = false;
+        if (m_connectedPuzzle != null)
+        {
+            m_connectedPuzzle.ForwardMana();
+        }        
     }
 }

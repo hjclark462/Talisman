@@ -11,6 +11,8 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue m_dialogue;
     public bool m_stopInteractions;
     AudioManager m_audioManager;
+    public bool m_exploringMana = false;
+    public bool m_exploringDarker = false;
 
     private void Start()
     {
@@ -24,6 +26,16 @@ public class DialogueTrigger : MonoBehaviour
         {
             m_audioManager.m_stopInteractions = m_stopInteractions;
             m_audioManager.PlayDialogue(m_dialogue);            
+            if(m_exploringMana)
+            {
+                m_audioManager.m_currentZone = "Exploring_Mana";
+                m_audioManager.StopCombatMusic();
+            }
+            if(m_exploringDarker)
+            {
+                m_audioManager.m_currentZone = "Exploring_Darker";
+                m_audioManager.StopCombatMusic();
+            }
             Destroy(gameObject);
         }
     }

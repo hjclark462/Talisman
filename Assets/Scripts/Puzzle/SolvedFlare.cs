@@ -44,11 +44,6 @@ public class SolvedFlare : Puzzle
         }
     }
 
-    public override void RotatePuzzle()
-    {
-        
-    }
-
     public override void RewindPuzzle()
     {
         m_inputObject.RewindPuzzle();

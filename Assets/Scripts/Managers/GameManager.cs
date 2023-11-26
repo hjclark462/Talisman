@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public List<Interactable> m_cinematicTriggers;
     public List<Transform> m_cinematicPoints;
+    public ParticleSystem m_sigilParticles;
     public MeshRenderer m_sigilMesh;
     Material m_sigil;
     public float m_sigilSpeed;
@@ -240,6 +241,7 @@ public class GameManager : MonoBehaviour
         m_menuManager.m_fadeWhite.gameObject.SetActive(false);
         m_menuManager.m_fadeBlack.gameObject.SetActive(false);
         FadeSigil().Forget();
+        m_sigilParticles.Play();
     }
 
     async UniTask FadeSigil()
@@ -290,8 +292,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         m_isEnd = true;
-        m_player.m_stopUpdate = false;
-        m_player.m_overlayCamera.enabled = true;
+        m_player.m_stopUpdate = false;        
         UpdateGameState(GameState.DEATH);
     }
 

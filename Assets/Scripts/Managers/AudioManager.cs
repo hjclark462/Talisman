@@ -14,17 +14,15 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.Bus m_sFX;
     FMOD.Studio.Bus m_dialogue;
     FMOD.Studio.Bus m_master;
-    public float m_musicVolume = 0.5f;
+    public float m_musicVolume = 0.5f;    
     public float m_sFXVolume = 0.5f;
     public float m_dialogueVolume = 0.5f;
     public float m_masterVolume = 1f;
 
     [Header("FMOD Music Event References")]
     public FMODUnity.EventReference m_menuMusic;
-
-    [Space(5), Header("FMOD SFX Event References")]
-    public FMODUnity.EventReference m_talisman;
-    public FMODUnity.EventReference m_gameOver;
+    [HideInInspector]
+    public string m_currentZone;
 
     [Space(5), Header("UI SFX")]
     public FMODUnity.EventReference m_navigatingMenu;
@@ -60,6 +58,7 @@ public class AudioManager : MonoBehaviour
     public Dialogue m_talismanGrab;
     public Dialogue m_teleport;
     public Dialogue m_ending;
+    public FMODUnity.EventReference m_endSFX;
     int m_cinematics = 0;
     bool m_nextCinematic = false;
 
@@ -89,6 +88,7 @@ public class AudioManager : MonoBehaviour
         m_sFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         m_master = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         m_dialogue = FMODUnity.RuntimeManager.GetBus("bus:/Master/Dialogue");
+        m_currentZone = "Exploring";
     }
 
     void Start()
@@ -96,11 +96,13 @@ public class AudioManager : MonoBehaviour
         m_game = GameManager.Instance;
         m_game.m_audioManager = this;
 
+        LoadSettings();
+
         m_menuMusicInstance = FMODUnity.RuntimeManager.CreateInstance(m_menuMusic);
         StartFmodLoop(m_menuMusicInstance);
     }
 
-    private void Update()
+    void Update()
     {
         m_master.setVolume(m_masterVolume);
         m_music.setVolume(m_musicVolume);
@@ -108,6 +110,27 @@ public class AudioManager : MonoBehaviour
         m_sFX.setVolume(m_sFXVolume);
     }
 
+    void OnDestroy()
+    {
+        SaveSettings();
+    }
+
+    void LoadSettings()       
+    {
+        m_masterVolume = PlayerPrefs.GetFloat("masterVolume");
+        m_musicVolume = PlayerPrefs.GetFloat("musicVolume");
+        m_dialogueVolume = PlayerPrefs.GetFloat("dialogueVolume");
+        m_sFXVolume = PlayerPrefs.GetFloat("sfxVolume");
+    }
+
+    void SaveSettings()
+    {
+        PlayerPrefs.SetFloat("masterVolume", m_masterVolume);
+        PlayerPrefs.SetFloat("musicVolume", m_musicVolume);
+        PlayerPrefs.SetFloat("dialogueVolume", m_dialogueVolume);
+        PlayerPrefs.SetFloat("sfxVolume", m_sFXVolume);
+        PlayerPrefs.Save();
+    }
     public void MasterVolumeLevel(float newMasterVolume)
     {
         PlayOneShot(m_sliderSound, m_game.m_player.gameObject.transform.position);
@@ -168,8 +191,7 @@ public class AudioManager : MonoBehaviour
         {            
             m_dialogueInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             m_game.m_menuManager.SetSubtitle(string.Empty, true);
-        }
-        m_game.m_menuManager.m_stopSubtitle = false;
+        }      
 
         int index = 0;
         m_playLines = true;
@@ -228,18 +250,6 @@ public class AudioManager : MonoBehaviour
             await UniTask.Yield();
         }
         m_game.m_menuManager.SetSubtitle(string.Empty, true);
-    }
-
-    public void PlayTalismanLoop()
-    {
-        m_talismanInstance = RuntimeManager.CreateInstance(m_talisman);
-        RuntimeManager.AttachInstanceToGameObject(m_talismanInstance, m_game.m_player.gameObject.transform);
-        m_talismanInstance.start();
-    }
-
-    public void GameOver()
-    {
-        PlayOneShot(m_gameOver, m_game.m_player.gameObject.transform.position);
     }
 
     async UniTask StopInteractions(FMOD.Studio.EventInstance instance)
@@ -347,8 +357,8 @@ public class AudioManager : MonoBehaviour
         }
         else if (m_cinematics == 2)
         {
-
             PlayDialogue(m_ending);
+            PlayOneShot(m_endSFX, m_game.m_player.transform.position);
             while (m_nextCinematic)
             {
                 await UniTask.Yield();
@@ -365,7 +375,7 @@ public class AudioManager : MonoBehaviour
 
     public void OnMenuSelect()
     {
-        //  PlayOneShot(m_selectedButton, m_game.m_player.gameObject.transform.position);
+        PlayOneShot(m_selectedButton, m_game.m_player.gameObject.transform.position);
     }
 
     public void OnMenuSlider()
@@ -382,8 +392,9 @@ public class AudioManager : MonoBehaviour
     {
         m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Combat");
     }
+
     public void StopCombatMusic()
     {
-        m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", "Exploring");
+        m_menuMusicInstance.setParameterByNameWithLabel("Music_Zone", m_currentZone);
     }
 }

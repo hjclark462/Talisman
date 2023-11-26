@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
 {
     public event Action<ControllerType> OnControllerChanged;
     public ControllerType m_currentController;
-    InputDevice m_lastDevice = null;
+    public InputDevice m_currentDevice = null;
 
     public ControllerImages m_keyboardImages;
     public ControllerImages m_xBoxImages;
@@ -68,7 +68,7 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI m_tutorial;
     public TextMeshProUGUI m_interactText;
     [Space(5)]
-    bool m_showSubtitle = true;
+    public bool m_showSubtitle = true;
     public Image m_reticleHit;
     public float m_reticleHitTime = 0.5f;
     public Image m_damageVignette;
@@ -76,6 +76,7 @@ public class MenuManager : MonoBehaviour
     public float m_damageUpSpeed;
     public float m_damageWaitSpeed;
     public float m_damageDownSpeed;
+    public float m_manaUpSpeed;
     #endregion
 
     #region Cinematic Fields
@@ -103,6 +104,14 @@ public class MenuManager : MonoBehaviour
     public Slider m_sfxSlider;
     public Slider m_dialogueSlider;
     public Button m_optionsBack;
+
+    public Button m_resetToDefault;
+    public float m_defaultSensitivity = 150;
+    public float m_defaultMusicVolume = 0.5f;
+    public float m_defaultSFXVolume = 0.5f;
+    public float m_defaultDialogueVolume = 0.5f;
+    public float m_defaultMasterVolume = 1f;
+    public bool m_defaultSubtitle = true;
     #endregion
 
     #region Controller Screen Fields
@@ -139,6 +148,7 @@ public class MenuManager : MonoBehaviour
         m_currentImages = m_keyboardImages;
 
         m_game.OnGameStateChanged += OnGameStateChanged;
+        LoadSettings();
 
         //Main Menu Setup
         m_newGame.onClick.AddListener(delegate () { StartGame(); });
@@ -174,6 +184,7 @@ public class MenuManager : MonoBehaviour
         m_controlsMain.onClick.AddListener(delegate () { ControlScreen(); });
         m_credits.onClick.AddListener(delegate () { Credits(); });
         m_optionsBack.onClick.AddListener(delegate () { OptionsBack(); });
+        m_resetToDefault.onClick.AddListener(delegate () { ResetToDefaults(); });
 
         //Controls Screen Setup
         m_controlsBackButton.onClick.AddListener(delegate () { OptionsBack(); });
@@ -184,10 +195,24 @@ public class MenuManager : MonoBehaviour
         m_deathQuit.onClick.AddListener(delegate () { QuitGame(); });
         m_deathQuit.gameObject.SetActive(false);
     }
+    public void LoadSettings()
+    {
+        m_showSubtitle = PlayerPrefs.GetInt("showSubtitle") == 1;
+    }
+    public void SaveSettings()
+    {
+        PlayerPrefs.SetInt("showSubtitle", m_showSubtitle ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    void OnDestroy()
+    {
+        SaveSettings();
+    }
 
     public void InputDeviceChanged(InputEventPtr eventPtr, InputDevice device)
     {
-        if (m_lastDevice == device)
+        if (m_currentDevice == device)
         {
             return;
         }
@@ -196,7 +221,6 @@ public class MenuManager : MonoBehaviour
         {
             return;
         }
-        m_lastDevice = device;
         bool validPress = false;
         foreach (InputControl control in eventPtr.EnumerateChangedControls(device, 0.01F))
         {
@@ -207,24 +231,28 @@ public class MenuManager : MonoBehaviour
 
         if (device is Keyboard || device is Mouse)
         {
-            m_lastDevice = device;
+            m_currentDevice = device;
             if (m_currentController == ControllerType.KEYBOARD) return;
             OnControllerChanged?.Invoke(ControllerType.KEYBOARD);
         }
         if (device is XInputController)
         {
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.XBOX);
         }
         else if (device is DualShockGamepad)
         {
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.PS);
         }
         else if (device is SwitchProControllerHID)
         {
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.NINTENDO);
         }
         else if (device is Gamepad)
         {
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.GENERIC);
         }
     }
@@ -317,8 +345,8 @@ public class MenuManager : MonoBehaviour
         m_creditsScreen.SetActive(state == GameState.CREDITS);
         if (state == GameState.CINEMATIC || state == GameState.GAME)
         {
-            m_subtitles.gameObject.SetActive(true);
-            m_subtitlesBackground.gameObject.SetActive(true);
+            m_subtitles.gameObject.SetActive(m_showSubtitle);
+            m_subtitlesBackground.gameObject.SetActive(m_showSubtitle);
         }
         else
         {
@@ -331,29 +359,44 @@ public class MenuManager : MonoBehaviour
         m_game.m_audioManager.EndFmodLoop(m_game.m_audioManager.m_menuMusicInstance);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    bool first = true;
     void MainMenu()
     {
         m_game.UpdateGameState(GameState.MENU);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (first)
         {
+            first = false;
             m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);
         }
-        Cursor.lockState = CursorLockMode.Confined;
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
+        {
+            m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
     }
     void StartGame()
     {
+        m_game.m_audioManager.OnMenuSelect();
+        m_subtitles.gameObject.SetActive(m_showSubtitle);
+        m_subtitlesBackground.gameObject.SetActive(m_showSubtitle);
         m_game.m_audioManager.PlayIntroDialogue();
         m_game.UpdateGameState(GameState.GAME);
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Resume()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.GAME);
         m_game.m_audioManager.m_dialogueInstance.setPaused(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
     void QuitGame()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.m_audioManager.EndFmodLoop(m_game.m_audioManager.m_menuMusicInstance);
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -363,8 +406,9 @@ public class MenuManager : MonoBehaviour
     }
     void Options()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.OPTIONS);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_camSensitivitySlider.gameObject);
         }
@@ -380,12 +424,35 @@ public class MenuManager : MonoBehaviour
         {
             MainMenu();
         }
+        m_game.m_audioManager.OnMenuBack();
+    }
+
+    void ResetToDefaults()
+    {
+        m_camSensitivitySlider.value = m_defaultSensitivity;
+        m_player.ChangeSensitivity(m_defaultSensitivity);
+
+        m_subtitlesToggle.SetIsOnWithoutNotify(m_defaultSubtitle);
+        m_showSubtitle = m_defaultSubtitle;
+
+        m_masterVolumeSlider.value = m_defaultMasterVolume;
+        m_game.m_audioManager.MasterVolumeLevel(m_defaultMasterVolume);
+
+        m_musicVolumeSlider.value = m_defaultMusicVolume;
+        m_game.m_audioManager.MusicVolumeLevel(m_defaultMusicVolume);
+
+        m_sfxSlider.value = m_defaultSFXVolume;
+        m_game.m_audioManager.SFXVolumeLevel(m_defaultSFXVolume);
+
+        m_dialogueSlider.value = m_defaultDialogueVolume;
+        m_game.m_audioManager.DialogueVolumeLevel(m_defaultDialogueVolume);
     }
 
     void ControlScreen()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.CONTROLS);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_controlsBackButton.gameObject);
         }
@@ -396,12 +463,15 @@ public class MenuManager : MonoBehaviour
     void Pause()
     {
         m_game.UpdateGameState(GameState.PAUSE);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_resume.gameObject);
         }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
         m_game.m_audioManager.m_dialogueInstance.setPaused(true);
-        Cursor.lockState = CursorLockMode.Confined;
     }
     public void Cancel(InputAction.CallbackContext obj)
     {
@@ -429,8 +499,9 @@ public class MenuManager : MonoBehaviour
 
     void Credits()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.CREDITS);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_creditsBack.gameObject);
         }
@@ -622,6 +693,18 @@ public class MenuManager : MonoBehaviour
         m_mana.value = m_player.m_currentMana;
     }
 
+    public async UniTask LerpMana()
+    {
+        float mana = m_mana.value;
+        while (mana < m_player.m_currentMana)
+        {
+            mana += Time.deltaTime * m_manaUpSpeed;
+            m_mana.value = mana;
+            await UniTask.Yield();
+        }
+        m_mana.value = m_player.m_currentMana;
+    }
+
     public async UniTask FadeDeathScreen(bool isEnd)
     {
         Color colourA = m_deathImage.color;
@@ -681,18 +764,35 @@ public class MenuManager : MonoBehaviour
             m_respawnButton.GetComponentInChildren<TextMeshProUGUI>().text = "Respawn";
         }
         m_deathQuit.gameObject.SetActive(true);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_respawnButton.gameObject);
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
 
 
     void Respawn()
     {
+        m_game.m_audioManager.OnMenuSelect();
         m_respawnButton.gameObject.SetActive(false);
         m_deathQuit.gameObject.SetActive(false);
-        m_deathImage.color = new Color(0, 0, 0, 0);
+        Color colourA = m_deathImage.color;
+        Color colourB = m_deathParticles.color;
+        Color colourC = m_endTitle.color;
+        Color colourD = m_thanksMessage.color;
+        float alpha = 0;
+        colourA.a = alpha;
+        colourB.a = alpha;
+        colourC.a = alpha;
+        colourD.a = alpha;
+        m_deathImage.color = colourA;
+        m_deathParticles.color = colourB;
+        m_endTitle.color = colourC;
+        m_thanksMessage.color = colourD;
         if (m_game.m_isEnd)
         {
             m_game.m_isEnd = false;
@@ -713,7 +813,6 @@ public class MenuManager : MonoBehaviour
         m_showSubtitle = show;
     }
 
-    public bool m_stopSubtitle = false;
     public void SetSubtitle(string subtitile, bool isPlayer)
     {
         m_subtitles.gameObject.SetActive(m_showSubtitle);

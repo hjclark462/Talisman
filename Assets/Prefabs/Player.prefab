@@ -470,6 +470,7 @@ MonoBehaviour:
   m_runSpeed: 10
   m_jumpSpeed: 5
   m_skinnedMeshRenderer: {fileID: 6563270942802778274}
+  m_armManaSpeed: 0.8
   m_animator: {fileID: 4555566681993181620}
   m_health: 30
   m_currentHealth: 0
@@ -2472,7 +2473,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   m_endLights: []
-  m_lightOffSpeed: 2
+  m_lightOffSpeed: 30
 --- !u!4 &7627042877158400974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e319751cf1f6e049b90c45c80b16147, type: 3}

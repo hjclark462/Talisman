@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +42,7 @@ public class Puzzle : MonoBehaviour
     public FMODUnity.EventReference m_secondOnSound;
     public FMODUnity.EventReference m_manaFlowFail;
 
+    public Vector3 m_rumble = new Vector3(0.5f, 0.3f, 0.5f);
 
     public Bridge m_bridge;
 
@@ -77,6 +79,7 @@ public class Puzzle : MonoBehaviour
             m_rotations++;
             m_rotate = true;
             GameManager.Instance.m_audioManager.PlayOneShot(m_interact, transform.position);
+            GameManager.Instance.m_player.Rumble(m_rumble).Forget();
         }
     }
 
@@ -98,6 +101,7 @@ public class Puzzle : MonoBehaviour
         m_secondInputObject = p;
     }
   
+    public virtual void ForwardMana() { }
 }
 
 public enum Positions

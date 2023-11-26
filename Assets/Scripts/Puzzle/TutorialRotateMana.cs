@@ -244,4 +244,12 @@ public class TutorialRotateMana : Puzzle
             }
         }
     }
+    public override void ForwardMana()
+    {
+        m_rewindMana = false;
+        if (m_outputObject != null)
+        {
+            m_outputObject.ForwardMana();
+        }       
+    }
 }
