@@ -58,6 +58,7 @@ public class AudioManager : MonoBehaviour
     public Dialogue m_talismanGrab;
     public Dialogue m_teleport;
     public Dialogue m_ending;
+    public FMODUnity.EventReference m_talismanSFX;
     public FMODUnity.EventReference m_endSFX;
     int m_cinematics = 0;
     bool m_nextCinematic = false;
@@ -339,6 +340,7 @@ public class AudioManager : MonoBehaviour
         else if (m_cinematics == 0)
         {
             PlayDialogue(m_talismanGrab);
+            PlayOneShot(m_talismanSFX, m_game.m_player.transform.position);
             while (m_nextCinematic)
             {
                 await UniTask.Yield();
