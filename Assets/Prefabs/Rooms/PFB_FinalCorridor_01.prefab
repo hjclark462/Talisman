@@ -3511,6 +3511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dialogue: {fileID: 11400000, guid: dfab19b238c0dad4caa8ba4f66d237af, type: 2}
   m_stopInteractions: 0
+  m_exploringMana: 0
+  m_exploringDarker: 0
 --- !u!1001 &493059136528979858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5876,6 +5878,10 @@ PrefabInstance:
     - target: {fileID: 4513304456997122459, guid: 2539fe39c25ce0047bdb6a5377fb91d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181649860332801582, guid: 2539fe39c25ce0047bdb6a5377fb91d1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.012
       objectReference: {fileID: 0}
     - target: {fileID: 6328293690845330771, guid: 2539fe39c25ce0047bdb6a5377fb91d1, type: 3}
       propertyPath: m_puzzleList.Array.size
