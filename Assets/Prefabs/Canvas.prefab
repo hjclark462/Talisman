@@ -10447,7 +10447,7 @@ MonoBehaviour:
   m_damageUpSpeed: 0.3
   m_damageWaitSpeed: 0
   m_damageDownSpeed: 0.3
-  m_manaUpSpeed: 5
+  m_manaUpSpeed: 15
   m_topBlackBar: {fileID: 2283653589445396962}
   m_bottomBlackBar: {fileID: 4899269226077620064}
   m_fadeBlack: {fileID: 3123551918927218219}
