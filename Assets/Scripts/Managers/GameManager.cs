@@ -20,7 +20,11 @@ public class GameManager : MonoBehaviour
 
     public List<Interactable> m_cinematicTriggers;
     public List<Transform> m_cinematicPoints;
-    public ParticleSystem m_sigilParticles;
+    public ParticleSystem m_sigilParticles;    
+    public Vector3 m_teleportRumble = new Vector3(0.3f, 0.3f, 0.3f);
+    public float m_explosionTime;    
+    public Vector3 m_explosionRumble = new Vector3(0.3f, 0.9f, 0.1f);
+    public Vector3 m_lowRumble = new Vector3(0.3f, 0, 5f);
     public MeshRenderer m_sigilMesh;
     Material m_sigil;
     public float m_sigilSpeed;
@@ -78,9 +82,7 @@ public class GameManager : MonoBehaviour
                 MainMenu();
                 break;
             case GameState.GAME:
-
                 ResumeGame();
-
                 break;
             case GameState.CINEMATIC:
                 break;
@@ -258,6 +260,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateGameState(GameState.CINEMATIC);
         m_player.m_stopUpdate = true;
+        EndRumbles().Forget();
         bool rot = false;
         bool pos = false;
         while (!rot || !pos)
@@ -288,6 +291,24 @@ public class GameManager : MonoBehaviour
         m_player.m_overlayCamera.enabled = false;
         m_audioManager.PlayCinematic().Forget();
     }
+
+    async UniTask EndRumbles()
+    {
+        float time = Time.time;
+        while (Time.time < time + m_explosionTime)
+        {
+            await UniTask.Yield();
+        }
+        m_player.Rumble(m_explosionRumble).Forget();
+        time = Time.time;
+        while (Time.time < time + m_explosionRumble.z)
+        {
+            await UniTask.Yield();
+        }
+        m_player.Rumble(m_lowRumble).Forget();
+    }
+
+
     public bool m_isEnd = false;
     public void EndGame()
     {

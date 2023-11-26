@@ -10504,6 +10504,10 @@ MonoBehaviour:
   m_cinematicTriggers: []
   m_cinematicPoints: []
   m_sigilParticles: {fileID: 0}
+  m_teleportRumble: {x: 0.3, y: 0.3, z: 0.3}
+  m_explosionTime: 0
+  m_explosionRumble: {x: 0.3, y: 0.9, z: 0.5}
+  m_lowRumble: {x: 0.3, y: 0, z: 5}
   m_sigilMesh: {fileID: 0}
   m_sigilSpeed: 0.2
   m_talismanFadeWhite: 1
@@ -10589,6 +10593,13 @@ MonoBehaviour:
   m_talismanGrab: {fileID: 11400000, guid: 804e7f7a7e7fedd4a9c5b4c76f135d9c, type: 2}
   m_teleport: {fileID: 11400000, guid: 3f848c0ac6d933a44a794b09ee973152, type: 2}
   m_ending: {fileID: 11400000, guid: 52abd24a45127064091ca31b692ade4e, type: 2}
+  m_talismanSFX:
+    Guid:
+      Data1: -1496661051
+      Data2: 1077278050
+      Data3: -265297244
+      Data4: 1064370782
+    Path: event:/SFX/Cutscene/Talisman/SFX_Cutscene_Talisman
   m_endSFX:
     Guid:
       Data1: -325466346

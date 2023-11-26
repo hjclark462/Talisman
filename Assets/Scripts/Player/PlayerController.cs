@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour, IBeing
     public ParticleSystem m_healParticles;
     HealingState m_healing;
     Dictionary<string, float> m_enemiesHaveHit = new Dictionary<string, float>();
+    public Vector3 m_takeDamage = new Vector3(0.5f, 0.5f, 0.6f);
     #endregion
 
     #region Mana Fields    
@@ -219,6 +220,7 @@ public class PlayerController : MonoBehaviour, IBeing
                 m_game.m_audioManager.PlayOneShot(m_weaponHit, hit.ClosestPoint(transform.position));
                 m_game.m_menuManager.DamageVignette().Forget();
                 e.m_swordCollider.enabled = false;
+                Rumble(m_takeDamage).Forget();
                 TakeDamage(e.m_damage);
             }
             else if (e != null && HitAlready(e.gameObject.name) == false && m_isBlocking)

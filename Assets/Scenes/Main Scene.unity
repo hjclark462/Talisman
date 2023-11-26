@@ -56690,10 +56690,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 333986485684112829, guid: 9d7f0173fd2172a419efe93a90e57649, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 1031474756478482777, guid: 9d7f0173fd2172a419efe93a90e57649, type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: NaN
@@ -56813,10 +56809,6 @@ PrefabInstance:
     - target: {fileID: 3977648500403006897, guid: 9d7f0173fd2172a419efe93a90e57649, type: 3}
       propertyPath: m_interactStrings.Array.data[0]
       value: ' Interact'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4520249883936715578, guid: 9d7f0173fd2172a419efe93a90e57649, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4744273483968472071, guid: 9d7f0173fd2172a419efe93a90e57649, type: 3}
       propertyPath: m_RootOrder
@@ -84284,6 +84276,10 @@ PrefabInstance:
     - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_firstEnemy
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
+      propertyPath: m_explosionTime
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_combatTutorial
