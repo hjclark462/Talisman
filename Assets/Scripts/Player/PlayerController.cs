@@ -73,11 +73,14 @@ public class PlayerController : MonoBehaviour, IBeing
     public bool m_canAttack = true;
     public float m_attackTime;
     public ParticleSystem m_attackParticle;
+    public Vector3 m_swingVibration = new Vector3(0.5f, 0, 0.2f);
+    public Vector3 m_hitVibration = new Vector3(0.5f, 0.8f, 1f);
     #endregion
 
     #region Block Parry Fields
     public bool m_isBlocking = false;
     public ParticleSystem m_blockAttackParticle;
+    public Vector3 m_blockVibration = new Vector3(0.2f, 0.9f, 0.9f);
     Material m_swordBlockMaterial;
     #endregion
 
@@ -221,6 +224,7 @@ public class PlayerController : MonoBehaviour, IBeing
             else if (e != null && HitAlready(e.gameObject.name) == false && m_isBlocking)
             {
                 m_game.m_audioManager.PlayOneShot(m_blockedSound, gameObject.transform.position);
+                Rumble(m_blockVibration).Forget();
                 if (m_blockAttackParticle != null)
                 {
                     m_swordBlockMaterial.SetFloat("_TimeReset", Time.time);
@@ -469,7 +473,7 @@ public class PlayerController : MonoBehaviour, IBeing
             {
                 m_currentAttack = 1;
             }
-            Rumble(0.5f, 0, 0.2f).Forget();
+            Rumble(m_swingVibration).Forget();
         }
     }
 
@@ -592,7 +596,7 @@ public class PlayerController : MonoBehaviour, IBeing
 
 
     int m_vibeCount = 0;
-    public async UniTask Rumble(float low, float high, float time)
+    public async UniTask Rumble(Vector3 rumble)
     {
         m_vibeCount++;
         Gamepad pad = Gamepad.current;
@@ -600,16 +604,16 @@ public class PlayerController : MonoBehaviour, IBeing
         {
             return;
         }
-        pad.SetMotorSpeeds(low, high);
+        pad.SetMotorSpeeds(rumble.x, rumble.y);
         float start = Time.time;
-        while (Time.time < start + time)
+        while (Time.time < start + rumble.z)
         {
             await UniTask.Yield();
         }
         m_vibeCount--;
         if (m_vibeCount == 0)
         {
-            pad.ResetHaptics();            
+            pad.ResetHaptics();
         }
     }
 }

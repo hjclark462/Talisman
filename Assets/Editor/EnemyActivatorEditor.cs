@@ -11,7 +11,7 @@ public class EnemyActivatorEditor : Editor
     private void OnEnable()
     {
         string[] hiddenProperties = new string[] { "m_input", "m_output", "m_rewindMana", "m_interactMessage",
-            "m_bridge", "m_lowRumble", "m_highRumble", "m_rumbleTime"};
+            "m_bridge", "m_rumble"};
         properties = EditorHelper.GetExposedProperties(this.serializedObject, hiddenProperties);
     }
 

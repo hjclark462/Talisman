@@ -121,9 +121,7 @@ MonoBehaviour:
       Data3: -1787750267
       Data4: 1291722021
     Path: event:/SFX/Puzzle/SFX_Puzzle_Incomplete_Mana_Flow_01
-  m_lowRumble: 0.5
-  m_highRumble: 0.3
-  m_rumbleTime: 0.7
+  m_rumble: {x: 0.5, y: 0.5, z: 0.5}
   m_bridge: {fileID: 0}
   m_isThreeWay: 0
   m_twoInputs: 0

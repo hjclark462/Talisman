@@ -42,9 +42,7 @@ public class Puzzle : MonoBehaviour
     public FMODUnity.EventReference m_secondOnSound;
     public FMODUnity.EventReference m_manaFlowFail;
 
-    public float m_lowRumble = 0.5f;
-    public float m_highRumble = 0.3f;
-    public float m_rumbleTime = 0.3f;
+    public Vector3 m_rumble = new Vector3(0.5f, 0.3f, 0.5f);
 
     public Bridge m_bridge;
 
@@ -81,7 +79,7 @@ public class Puzzle : MonoBehaviour
             m_rotations++;
             m_rotate = true;
             GameManager.Instance.m_audioManager.PlayOneShot(m_interact, transform.position);
-            GameManager.Instance.m_player.Rumble(m_lowRumble, m_highRumble, m_rumbleTime).Forget();
+            GameManager.Instance.m_player.Rumble(m_rumble).Forget();
         }
     }
 
