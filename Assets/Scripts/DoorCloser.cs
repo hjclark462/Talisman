@@ -12,6 +12,7 @@ public class DoorCloser : MonoBehaviour
         if(other.gameObject.GetComponent<PlayerController>() != null)
         {
             m_door.m_unlocked = !m_door.m_unlocked;
+            m_door.CheckState();
             if(m_safetyNet != null)
             {
                 m_safetyNet.gameObject.SetActive(true);
