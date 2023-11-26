@@ -84415,10 +84415,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
-      propertyPath: m_explosionTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 424437078005057766, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
       propertyPath: m_combatTutorial
       value: 
       objectReference: {fileID: 712967162}
