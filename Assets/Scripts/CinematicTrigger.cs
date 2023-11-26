@@ -27,19 +27,10 @@ public class CinematicTrigger : MonoBehaviour
         foreach (GameObject go in m_endPPs)
         {
             go.SetActive(true);
-        }
-        LightsDown().Forget();
-    }
-
-    public async UniTask LightsDown()
-    {
+        } 
         foreach (Light light in m_endLights)
         {
-            if(light.intensity > 0)
-            {
-                light.intensity -= Time.deltaTime * m_lightOffSpeed;
-            }
-        }
-        await UniTask.Yield();  
+            light.enabled = false;
+        }               
     }
 }
