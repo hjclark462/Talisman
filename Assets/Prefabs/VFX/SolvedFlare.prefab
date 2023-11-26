@@ -9679,9 +9679,7 @@ MonoBehaviour:
       Data3: 1178622085
       Data4: -636398506
     Path: event:/TempSFX
-  m_lowRumble: 0.5
-  m_highRumble: 0.3
-  m_rumbleTime: 0.1
+  m_rumble: {x: 0.5, y: 0.3, z: 0.4}
   m_bridge: {fileID: 0}
   m_flare: {fileID: 285617159566704090}
   m_outputObject: {fileID: 0}

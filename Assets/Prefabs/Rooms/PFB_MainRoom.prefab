@@ -29857,6 +29857,18 @@ PrefabInstance:
       value: 0.176
       objectReference: {fileID: 0}
     - target: {fileID: 2448029751640447748, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
+      propertyPath: m_rumble.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448029751640447748, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
+      propertyPath: m_rumble.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448029751640447748, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
+      propertyPath: m_rumble.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448029751640447748, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
       propertyPath: m_outputObject
       value: 
       objectReference: {fileID: 0}
@@ -34622,6 +34634,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3831862568432814445}
     m_Modifications:
+    - target: {fileID: 2448029751640447748, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
+      propertyPath: m_rumble.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448029751640447748, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
+      propertyPath: m_rumble.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2448029751640447748, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
+      propertyPath: m_rumble.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7419081004510016908, guid: 34ebc92a5339e664583e9596dd3f0902, type: 3}
       propertyPath: m_RootOrder
       value: 41
