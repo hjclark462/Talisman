@@ -218,6 +218,7 @@ public class GameManager : MonoBehaviour
         m_respawnPoint = m_cinematicPoints[1];
         m_player.transform.position = m_cinematicPoints[1].position;
         m_player.m_camera.SetRotation(m_cinematicPoints[1].rotation.eulerAngles);
+        m_player.Rumble(m_teleportRumble).Forget();
 
         while (m_menuManager.m_fadeWhite.color.a >= 0)
         {
