@@ -73,11 +73,14 @@ public class PlayerController : MonoBehaviour, IBeing
     public bool m_canAttack = true;
     public float m_attackTime;
     public ParticleSystem m_attackParticle;
+    public Vector3 m_swingVibration = new Vector3(0.5f, 0, 0.2f);
+    public Vector3 m_hitVibration = new Vector3(0.5f, 0.8f, 1f);
     #endregion
 
     #region Block Parry Fields
     public bool m_isBlocking = false;
     public ParticleSystem m_blockAttackParticle;
+    public Vector3 m_blockVibration = new Vector3(0.2f, 0.9f, 0.9f);
     Material m_swordBlockMaterial;
     #endregion
 
@@ -221,6 +224,7 @@ public class PlayerController : MonoBehaviour, IBeing
             else if (e != null && HitAlready(e.gameObject.name) == false && m_isBlocking)
             {
                 m_game.m_audioManager.PlayOneShot(m_blockedSound, gameObject.transform.position);
+                Rumble(m_blockVibration).Forget();
                 if (m_blockAttackParticle != null)
                 {
                     m_swordBlockMaterial.SetFloat("_TimeReset", Time.time);
@@ -241,10 +245,14 @@ public class PlayerController : MonoBehaviour, IBeing
         }
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        Vector2 move = m_inputControl.Player_Map.Movement.ReadValue<Vector2>().normalized;
-        bool isRunning = m_inputControl.Player_Map.Sprint.IsInProgress();
-        float speedX = m_canMove ? (isRunning ? m_runSpeed : m_walkSpeed) * move.y : 0;
-        float speedY = m_canMove ? (isRunning ? m_runSpeed : m_walkSpeed) * move.x : 0;
+        Vector2 move = m_inputControl.Player_Map.Movement.ReadValue<Vector2>();
+        if (move.magnitude < 0.1f)
+        {
+            move = Vector2.zero;
+        }
+        move = move.normalized;
+        float speedX = m_canMove ? m_walkSpeed * move.y : 0;
+        float speedY = m_canMove ? m_walkSpeed * move.x : 0;
         float yDirection = m_moveDirection.y;
         m_moveDirection = (forward * speedX) + (right * speedY);
         bool wasJumping = m_characterController.isGrounded;
@@ -465,6 +473,7 @@ public class PlayerController : MonoBehaviour, IBeing
             {
                 m_currentAttack = 1;
             }
+            Rumble(m_swingVibration).Forget();
         }
     }
 
@@ -581,8 +590,30 @@ public class PlayerController : MonoBehaviour, IBeing
 
     public void FinishCinematic()
     {
-        //   m_swordCollider.gameObject.transform.localPosition = new Vector3(0, 0.001446927f, 0);
         m_game.UpdateGameState(GameState.GAME);
     }
     #endregion
+
+
+    int m_vibeCount = 0;
+    public async UniTask Rumble(Vector3 rumble)
+    {
+        m_vibeCount++;
+        Gamepad pad = Gamepad.current;
+        if (pad == null)
+        {
+            return;
+        }
+        pad.SetMotorSpeeds(rumble.x, rumble.y);
+        float start = Time.time;
+        while (Time.time < start + rumble.z)
+        {
+            await UniTask.Yield();
+        }
+        m_vibeCount--;
+        if (m_vibeCount == 0)
+        {
+            pad.ResetHaptics();
+        }
+    }
 }

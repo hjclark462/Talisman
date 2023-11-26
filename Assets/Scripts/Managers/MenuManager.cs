@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
 {
     public event Action<ControllerType> OnControllerChanged;
     public ControllerType m_currentController;
-    InputDevice m_lastDevice = null;
+    public InputDevice m_currentDevice = null;
 
     public ControllerImages m_keyboardImages;
     public ControllerImages m_xBoxImages;
@@ -212,7 +212,7 @@ public class MenuManager : MonoBehaviour
 
     public void InputDeviceChanged(InputEventPtr eventPtr, InputDevice device)
     {
-        if (m_lastDevice == device)
+        if (m_currentDevice == device)
         {
             return;
         }
@@ -231,28 +231,28 @@ public class MenuManager : MonoBehaviour
 
         if (device is Keyboard || device is Mouse)
         {
-            m_lastDevice = device;
+            m_currentDevice = device;
             if (m_currentController == ControllerType.KEYBOARD) return;
             OnControllerChanged?.Invoke(ControllerType.KEYBOARD);
         }
         if (device is XInputController)
         {
-            m_lastDevice = device;
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.XBOX);
         }
         else if (device is DualShockGamepad)
         {
-            m_lastDevice = device;
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.PS);
         }
         else if (device is SwitchProControllerHID)
         {
-            m_lastDevice = device;
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.NINTENDO);
         }
         else if (device is Gamepad)
         {
-            m_lastDevice = device;
+            m_currentDevice = device;
             OnControllerChanged?.Invoke(ControllerType.GENERIC);
         }
     }
@@ -368,7 +368,7 @@ public class MenuManager : MonoBehaviour
             first = false;
             m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);
         }
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_newGame.gameObject);
             Cursor.lockState = CursorLockMode.Locked;
@@ -408,7 +408,7 @@ public class MenuManager : MonoBehaviour
     {
         m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.OPTIONS);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_camSensitivitySlider.gameObject);
         }
@@ -452,7 +452,7 @@ public class MenuManager : MonoBehaviour
     {
         m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.CONTROLS);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_controlsBackButton.gameObject);
         }
@@ -463,7 +463,7 @@ public class MenuManager : MonoBehaviour
     void Pause()
     {
         m_game.UpdateGameState(GameState.PAUSE);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_resume.gameObject);
         }
@@ -501,7 +501,7 @@ public class MenuManager : MonoBehaviour
     {
         m_game.m_audioManager.OnMenuSelect();
         m_game.UpdateGameState(GameState.CREDITS);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_creditsBack.gameObject);
         }
@@ -764,7 +764,7 @@ public class MenuManager : MonoBehaviour
             m_respawnButton.GetComponentInChildren<TextMeshProUGUI>().text = "Respawn";
         }
         m_deathQuit.gameObject.SetActive(true);
-        if (!(m_lastDevice is Keyboard || m_lastDevice is Mouse) && m_lastDevice != null)
+        if (!(m_currentDevice is Keyboard || m_currentDevice is Mouse) && m_currentDevice != null)
         {
             m_eventSystem.SetSelectedGameObject(m_respawnButton.gameObject);
         }

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class Lever : Puzzle
@@ -62,7 +63,7 @@ public class Lever : Puzzle
         if (m_canBeInteracted)
         {
             GameManager.Instance.m_audioManager.PlayOneShot(m_interact, transform.position);
-
+            GameManager.Instance.m_player.Rumble(m_rumble).Forget();
             if (!m_isOn)
             {
                 m_canBeInteracted = false;
