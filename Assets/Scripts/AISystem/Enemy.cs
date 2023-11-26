@@ -216,6 +216,7 @@ namespace AISystem
                     m_deathParticle.gameObject.transform.SetPositionAndRotation(collision.GetContact(0).point, Quaternion.Euler(collision.GetContact(0).normal));                 
                     m_isDamagedParticle.Play();
                 }
+                m_playerController.Rumble(0.5f, 0.8f, 0.1f).Forget();
             }
         }
 

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -77,6 +78,7 @@ public class Puzzle : MonoBehaviour
             m_rotations++;
             m_rotate = true;
             GameManager.Instance.m_audioManager.PlayOneShot(m_interact, transform.position);
+            GameManager.Instance.m_player.Rumble(0.5f, 0.5f, 0.7f).Forget();
         }
     }
 
