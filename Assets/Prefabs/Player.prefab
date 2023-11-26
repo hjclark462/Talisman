@@ -476,7 +476,7 @@ MonoBehaviour:
   m_currentHealth: 0
   m_healRate: 5
   m_healParticles: {fileID: 571604481877483942}
-  m_takeDamage: {x: 0.5, y: 0.5, z: 0.1}
+  m_takeDamage: {x: 0.5, y: 0.5, z: 0.2}
   m_maxMana: 30
   m_startMana: 30
   m_manaHealCost: 5
@@ -487,11 +487,11 @@ MonoBehaviour:
   m_canAttack: 1
   m_attackTime: 0.35
   m_attackParticle: {fileID: 7785506659784278104}
-  m_swingVibration: {x: 0.5, y: 0, z: 0.2}
-  m_hitVibration: {x: 0.5, y: 0.8, z: 1}
+  m_swingVibration: {x: 0.6, y: 0, z: 0.1}
+  m_hitVibration: {x: 0.6, y: 0.8, z: 0.15}
   m_isBlocking: 0
   m_blockAttackParticle: {fileID: 5215614195394771911}
-  m_blockVibration: {x: 0.2, y: 0.9, z: 0.1}
+  m_blockVibration: {x: 0.2, y: 0.9, z: 0.15}
   m_interactionDistance: 5
   m_stopInteracts: 0
   m_stopUpdate: 0
