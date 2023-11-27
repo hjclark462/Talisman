@@ -9688,6 +9688,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6943256073173096497, guid: 3325d7dbffb975f42a1f787a3b566850, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 6960274464928992246, guid: 3325d7dbffb975f42a1f787a3b566850, type: 3}
       propertyPath: m_Name
       value: PFB_Rubble_Trim_01 (21)
@@ -16671,6 +16675,18 @@ PrefabInstance:
     - target: {fileID: 2350255121070697267, guid: 0028b4cb4434db54fac82cc491f41788, type: 3}
       propertyPath: m_Name
       value: PFB_PuzzeRoom_Pillar_Cracked
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042129125941541092, guid: 0028b4cb4434db54fac82cc491f41788, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.0534096
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042129125941541092, guid: 0028b4cb4434db54fac82cc491f41788, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042129125941541092, guid: 0028b4cb4434db54fac82cc491f41788, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0028b4cb4434db54fac82cc491f41788, type: 3}
