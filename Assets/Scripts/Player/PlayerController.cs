@@ -601,6 +601,7 @@ public class PlayerController : MonoBehaviour, IBeing
     public void FinishCinematic()
     {
         m_game.UpdateGameState(GameState.GAME);
+        m_game.m_swordPodium.Stop();
     }
     #endregion
 

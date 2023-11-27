@@ -197,9 +197,10 @@ public class GameManager : MonoBehaviour
         }
         m_player.m_skinnedMeshRenderer.enabled = true;
     }
-
+    public ParticleSystem m_swordPodium;
     public async UniTask SecondCinematic()
     {
+        m_swordPodium.Play();
         m_player.m_stopUpdate = false;
         m_menuManager.m_fadeWhite.gameObject.SetActive(true);
         Color w;
