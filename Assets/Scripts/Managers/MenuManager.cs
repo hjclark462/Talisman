@@ -419,6 +419,7 @@ public class MenuManager : MonoBehaviour
             {
                 text.color = background;
             }
+            Time.timeScale = 1 - alpha;
             await UniTask.Yield();
         }
         alpha = 0;
