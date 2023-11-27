@@ -81480,6 +81480,7 @@ MonoBehaviour:
   m_enemies:
   - {fileID: 1804968587}
   - {fileID: 1184675465}
+  m_isHallway: 0
 --- !u!1 &1562459827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5979369961273355040, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
@@ -82919,6 +82920,7 @@ MonoBehaviour:
   m_enemies:
   - {fileID: 1766918309}
   - {fileID: 579276317}
+  m_isHallway: 0
 --- !u!1 &1986449941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2371763423767852661, guid: 17a9315f91885da4981183cb389f0ef9, type: 3}
