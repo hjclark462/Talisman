@@ -3398,6 +3398,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 871697124636276369}
     m_Modifications:
     - target: {fileID: -3755576265204603034, guid: 771d12b716366174daa50ac11f88f422, type: 3}
+      propertyPath: m_isHallway
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3755576265204603034, guid: 771d12b716366174daa50ac11f88f422, type: 3}
       propertyPath: m_enemies.Array.size
       value: 2
       objectReference: {fileID: 0}

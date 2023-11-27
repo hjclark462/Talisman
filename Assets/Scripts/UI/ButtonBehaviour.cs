@@ -7,16 +7,19 @@ public class ButtonBehaviour : MonoBehaviour, ISelectHandler, IPointerEnterHandl
 {
     EventSystem m_eventSystem;
     AudioManager m_audioManager;
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Awake()
+    {        
         m_eventSystem = EventSystem.current;
         m_audioManager = GameManager.Instance.m_audioManager;
     }
 
     public void OnSelect(BaseEventData eventData)
     {
+       
         m_audioManager.OnMenuNavigation();      
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
