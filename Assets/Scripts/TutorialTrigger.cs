@@ -9,6 +9,7 @@ public class TutorialTrigger : MonoBehaviour
     public bool m_spriteFirst;
     public TutorialTrigger m_secondText;
     public List<EnemyActivator> m_enemies;
+    public bool m_isHallway;
 
     private void Start()
     {
@@ -41,6 +42,10 @@ public class TutorialTrigger : MonoBehaviour
 
     public void SecondTutorial()
     {
+        if(m_isHallway)
+        {
+            return;
+        }
         m_secondText.gameObject.SetActive(true);      
         m_manager.ClearTutorial();
         GameManager.Instance.m_firstEnemy = false;
