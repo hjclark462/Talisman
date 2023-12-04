@@ -2,6 +2,7 @@
 
 namespace AISystem.Data
 {
+    // Contains all the relevant information that the behaviour tree needs for a particular attack
     [CreateAssetMenu(menuName = "Talisman/Attack")]
     public class Attack : ScriptableObject
     {

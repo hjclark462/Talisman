@@ -10,6 +10,7 @@ namespace AISystem.Behaviours
         float m_startTime;
         public float m_duration;
 
+        // When is hit activate the animation based off of the direction it was hit
         protected override void BeginNode()
         {
             base.BeginNode();

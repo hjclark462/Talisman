@@ -10,6 +10,8 @@ namespace AISystem.Behaviours
         float m_startTime;
         public float m_duration;
 
+        // Avtivates the Interruption animation and delays their movement until that is finished.
+
         protected override void BeginNode()
         {
             base.BeginNode();

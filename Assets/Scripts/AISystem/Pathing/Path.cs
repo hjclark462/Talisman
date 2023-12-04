@@ -42,7 +42,6 @@ namespace AISystem.Pathing
             else
             {
                 float t = targetDist / m_length;
-                // ISSUE IS HERE or is it further up
                 m_pathSpline.Evaluate(t, out position, out tangent, out float3 up);                
             }
         }
