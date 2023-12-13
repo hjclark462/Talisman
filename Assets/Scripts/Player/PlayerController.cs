@@ -396,6 +396,7 @@ public class PlayerController : MonoBehaviour, IBeing
     async UniTask ArmManaDown()
     {
         float arm = m_skinnedMeshRenderer.materials[3].GetFloat("_ArmActive");
+        arm = (arm < 1) ? arm : 1;
         while (arm > 0)
         {
             arm -= Time.deltaTime * m_armManaSpeed;

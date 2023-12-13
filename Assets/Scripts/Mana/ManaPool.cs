@@ -13,7 +13,7 @@ public class ManaPool : MonoBehaviour
     float m_emissiveMax;
     float m_currentEmissive;
     public MeshRenderer m_waterMesh;
-    public ParticleSystem m_manaRing;
+    public List<ParticleSystem> m_manaRing;
 
 
     public bool m_spritesFirst;
@@ -73,13 +73,19 @@ public class ManaPool : MonoBehaviour
             {
                 m_waterMesh.material.SetFloat("_EmissiveStrength", m_currentEmissive -= waterStep);
             }
-            if (m_isActive && m_manaRing.isStopped)
+            if (m_isActive && m_manaRing[0].isStopped)
             {
-                m_manaRing.Play();
+                foreach (ParticleSystem p in m_manaRing)
+                {
+                    p.Play();
+                }
             }
-            else if (!m_isActive && m_manaRing.isPlaying)
+            else if (!m_isActive && m_manaRing[0].isPlaying)
             {
-                m_manaRing.Stop();
+                foreach (ParticleSystem p in m_manaRing)
+                {
+                    p.Stop();
+                }
             }
         }
     }

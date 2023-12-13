@@ -7,6 +7,8 @@ using System;
 
 public static class EditorHelper
 {
+    //Static function to be utilised by the scripts to edit their inspectors to hide unnecessary values
+
     public static List<SerializedProperty> GetExposedProperties(SerializedObject so, IEnumerable<string> namesToHide = null)
     {
         if (namesToHide == null) namesToHide = new string[] { };
